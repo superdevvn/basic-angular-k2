@@ -1,0 +1,47 @@
+<p>
+  practice works!
+</p>
+<p>
+  <input class="form-control" [(ngModel)]="firstName" />
+  <br>
+  <input class="form-control" [(ngModel)]="lastName" />
+  <br>
+  <input class="form-control" [(ngModel)]="age" type="number" />
+  <br>
+  <input class="form-control" disabled [(ngModel)]="fullName" />
+  <br> Your Name: {{firstName}} {{lastName}}
+  <br> Age: {{age}}
+
+</p>
+<p *ngFor="let name of ArrList">{{name}}</p>
+<p *ngFor="let teacher of ArrTeachers">
+  <strong style="color: rgb(14, 8, 8);">Name: {{teacher.Name}}, </strong>
+  <i style="color: rgb(17, 8, 8);">Age: {{teacher.Age}}, </i>
+  <u style="color: rgb(14, 11, 11);">Salary: {{teacher.Salary}}.</u>
+  <br>
+</p>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Salary</th>
+  </tr>
+  <tr *ngFor="let teacher of ArrTeachers">
+    <th>{{teacher.Name}}</th>
+    <th>{{teacher.Age}}</th>
+    <th>{{teacher.Salary}}</th>
+  </tr>
+</table>
+
+<button (click)="click()">Test</button>
+<br>
+<!-- <input class="form-control" (keyup.enter)="keyup(val)" />
+<input class="form-control" [(ngModel)]="val" /> -->
+
+<input class="form-control" [(ngModel)]="val" (keyup.enter)="keyup(val)" />
+<p>{{val}}</p>
+
+<!-- val=""; 
+keyup(value:string){
+   this.val=value;
+   } -->
