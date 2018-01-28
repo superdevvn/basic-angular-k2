@@ -1,0 +1,12 @@
+<p>
+  <input class="form-control" [(ngModel)]="firstName" />
+  <input class="form-control" [(ngModel)]="lastName" />
+  <button (click)="click()">click me</button>
+  
+  Hello: {{firstName}} {{lastName}}
+</p>
+<p *ngFor = "let hero of heroes" > {{hero}}</p>
+<p *ngFor = "let student of students" >
+  <strong style="color:brown">Name: {{student.name}}</strong>
+  <strong style="color:blue">Age: {{student.age}} </strong>
+</p>

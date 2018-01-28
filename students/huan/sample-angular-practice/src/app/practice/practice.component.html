@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="col-lg-2">
+  <input class="form-control" [(ngModel)]="firstName" placeholder="Firstname" />
+</div>
+<div class="col-lg-2">
+  <input class="form-control" [(ngModel)]="lastName" placeholder="Lastname"/>
+</div>
+<div class="col-lg-2">
+  <button (click)="Click()" class="btn btn-warning">Click me</button>
+  Hello: {{firstName}} {{lastName}}
+</div>
+<div class="col-lg-4">
+<p *ngFor="let student of students">
+  <strong style="color:rgb(90, 182, 29)">Name: {{student.name}}</strong>
+  <strong style="color:rgb(85, 133, 54)">Age: {{student.age}} </strong>
+</p>
+<p *ngFor="let hero of heroes"> {{hero}}</p>
+</div>
