@@ -1,0 +1,25 @@
+<p>
+  test works!
+  <input class="form-control" [(ngModel)]="firstName"/>
+  <input class="form-control" [(ngModel)]="lastName"/>
+  Hello: {{firstName}} {{lastName}}
+  <button (click)="click()">Click Me</button>
+</p>
+<p *ngFor="let hero of heroes">{{hero}}</p>
+<p *ngFor="let student of students">
+  <strong style="color:aquamarine">Name: {{student.name}}</strong>
+  <strong style="color:rgb(241, 48, 155)">Age: {{student.age}}</strong>
+</p>
+<div class="card card-block"
+     *ngFor="let joke of jokes">
+  <h4 class="card-title">{{joke.setup}}</h4>
+  <p class="card-text"
+     [hidden]="joke.hide">{{joke.punchline}}</p>
+  <a class="btn btn-primary">Tell Me</a>
+</div>
+<a class="btn btn-primary"
+   (click)="joke.hide = !joke.hide">Tell Me
+</a>
+<a class="btn btn-primary"
+   (click)="toggle(joke)">Tell Me
+</a>
