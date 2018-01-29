@@ -6,6 +6,8 @@ import { Page2Component } from "./page2.component";
 import { Page3Component } from "./page3.component";
 import { AppComponent } from "../app.component";
 import { BrowserModule } from "@angular/platform-browser/src/browser";
+import { FormsModule } from "@angular/forms";
+export {Page1Component};
 
 const routes: Routes = [
     {
@@ -28,7 +30,8 @@ const routes: Routes = [
         Page3Component,
     ],
     imports:[
-       RouterModule.forChild(routes)
+       RouterModule.forChild(routes),
+       FormsModule
     ],
   
 })
