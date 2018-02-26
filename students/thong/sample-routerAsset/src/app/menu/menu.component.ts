@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.utilityService.fullName = "Le Van Thong";
-    this.utilityService.hello("Dark", "Peter");
+    
   }
 
 }

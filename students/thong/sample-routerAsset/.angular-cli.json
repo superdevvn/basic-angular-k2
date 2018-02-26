@@ -31,7 +31,6 @@
       "scripts": [
         "./assets/auto-hint/js/jquery/jquery-1.11.3.min.js",
         "./assets/auto-hint/js/jquery/jquery_ui/jquery-ui.min.js",
-        "./assets/auto-hint/js/plugins/highcharts/highcharts.js",
         "./assets/auto-hint/js/plugins/c3charts/d3.min.js",
         "./assets/auto-hint/js/plugins/c3charts/c3.min.js",
         "./assets/auto-hint/js/plugins/circles/circles.js",
