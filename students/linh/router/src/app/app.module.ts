@@ -14,13 +14,14 @@ import { RoleListComponent } from './role-list/role-list.component';
 import { RoleDetailComponent } from './role-detail/role-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UService } from './services/u.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   {
     path: 'main', component: TestComponent, children: [
       { path: '', redirectTo: 'user-list', pathMatch: 'full' },
-      { path: 'user-list', component: UserListComponent },
+      { path: 'test', component: TestComponent },
       { path: 'user-detail', component: UserDetailComponent },
       { path: 'role-list', component: RoleListComponent },
       { path: 'role-detail', component: RoleDetailComponent },
@@ -44,7 +45,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [UService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
