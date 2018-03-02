@@ -13,7 +13,7 @@ export class FashionComponent {
   }
 
   ngOnInit() {
-    this.utilityService.login("DarkPeter","12345").then(res=>{
+    this.utilityService.login("Sang","123").then(res=>{
       alert(res.json());
     }).catch((err)=>{
       console.log(err);
