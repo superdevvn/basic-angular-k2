@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UnitityService } from '../service/utinity.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private unitityService:UnitityService) { }
 
   ngOnInit() {
+   this.unitityService.hello('Dark','Peter'); 
   }
 
 }
