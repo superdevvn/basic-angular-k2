@@ -15,6 +15,7 @@ import { DocGiaComponent } from './doc-gia/doc-gia.component';
 import { SachComponent } from './sach/sach.component';
 import { MuonTraComponent } from './muon-tra/muon-tra.component';
 import { UtilityService } from "./services/utility.service";
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes =[
     {path : 'doc-gia', component: DocGiaComponent},
     {path : 'sach', component: SachComponent},
     {path : 'muon-tra', component: MuonTraComponent},
-  ]}
+  ]},
+  {path: 'login', redirectTo: 'LoginComponent', pathMatch: 'full'},
 ]
 
 @NgModule({
@@ -39,7 +41,8 @@ const routes: Routes =[
     NhanVienComponent,
     DocGiaComponent,
     SachComponent,
-    MuonTraComponent
+    MuonTraComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
