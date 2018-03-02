@@ -1,8 +1,11 @@
+import { Injectable } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 import { HttpModule } from "@angular/http";
 import {FormsModule} from "@angular/forms";
+
+
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -11,6 +14,10 @@ import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
 import { DocGiaComponent } from './doc-gia/doc-gia.component';
 import { SachComponent } from './sach/sach.component';
 import { MuonTraComponent } from './muon-tra/muon-tra.component';
+import { UtilityService } from "./services/utility.service";
+
+
+
 
 const routes: Routes =[
   {path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -40,7 +47,7 @@ const routes: Routes =[
     HttpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
