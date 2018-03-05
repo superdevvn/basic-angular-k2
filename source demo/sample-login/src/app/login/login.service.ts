@@ -13,6 +13,7 @@ export class LoginService {
                 password: password
             }).then(res=>{
                 console.log(res);
+                this.apiService.token = res.json();
                 resolve(res.json());
             }).catch(err=>{
                 console.error(err);
