@@ -27,18 +27,18 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											<div>
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" [(ngModel)]="username" placeholder="Username" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" [(ngModel)]="password" placeholder="Password" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -51,7 +51,7 @@
 															<span class="lbl"> Remember Me</span>
 														</label>
 
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+														<button type="button" class="width-35 pull-right btn btn-sm btn-primary" (click)="login()">
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">Login</span>
 														</button>
@@ -59,7 +59,7 @@
 
 													<div class="space-4"></div>
 												</fieldset>
-											</form>
+											</div>
 
 											<div class="social-or-login center">
 												<span class="bigger-110">Or Login Using</span>
@@ -241,16 +241,14 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery-2.1.4.min.js"></script>
+		
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
+		
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">

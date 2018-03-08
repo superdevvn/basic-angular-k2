@@ -568,25 +568,27 @@
 						</ul>
 					</li>
 
-					<li class="">
-						<a [routerLink]="['/main/nhan-vien']" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Nhân viên </span>
+					
 
-							
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
 							<li class="">
-								<a href="tables.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Simple &amp; Dynamic
+								<a [routerLink]="['/main/nhan-vien']" class="dropdown-toggle">
+									<i class="menu-icon fa fa-list"></i>
+									<span class="menu-text"> Nhân viên </span>
+		
+									
 								</a>
-
+		
 								<b class="arrow"></b>
-							</li>
+		
+								<ul class="submenu">
+									<li class="">
+										<a href="tables.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Simple &amp; Dynamic
+										</a>
+		
+										<b class="arrow"></b>
+									</li>
 
 							<li class="">
 								<a href="jqgrid.html">
@@ -597,6 +599,24 @@
 								<b class="arrow"></b>
 							</li>
 						</ul>
+					</li>
+
+					<li class="">
+						<a [routerLink]="['/main/role-list']">
+							<i class="menu-icon fa fa-cog"></i>
+							<span class="menu-text"> Vai trò </span>
+						</a>
+	
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a [routerLink]="['/main/user-list']">
+							<i class="menu-icon fa fa-cog"></i>
+							<span class="menu-text"> Người Dùng </span>
+						</a>
+	
+						<b class="arrow"></b>
 					</li>
 
 					<li class="">
