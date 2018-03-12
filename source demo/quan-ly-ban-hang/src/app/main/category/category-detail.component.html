@@ -1,0 +1,61 @@
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header" style="background-color: black;">
+                <h2 style="color: white;">
+                    Detail Of Category
+                    <small>{{title}}</small>
+                </h2>
+            </div>
+            <div class="body">
+                <div class="col-md-6">
+                    <h2 class="card-inside-title">Category</h2>
+                    <div class="row clearfix">
+                        <select class="form-control" [(ngModel)]="category.ParentId">
+                            <option *ngFor="let category of categories" [ngValue]="category.Id">{{category.Name}}</option>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <h2 class="card-inside-title" style="margin-top: 100px;">Name</h2>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" [(ngModel)]="category.Name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="card-inside-title">Description</h2>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..." [(ngModel)]="category.Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-md-12" style="margin-left: 15px;">
+                        <button type="submit" class="btn btn-info" style="margin-right: 15px; width: 105px; height: 40px;" (click)="onclick(); save()">
+                            <i class="fa fa-floppy-o"></i>
+                            Save
+                        </button>
+                        <button type="submit" class="btn btn-danger" style="margin-right: 15px;width: 105px; height: 40px;" (click)="back()">
+                            <i class="fa fa-backward"></i>
+                            Back
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4" style="margin-left: 0px; opacity: 0; background-color: lawngreen; text-align: center; padding-bottom: 10px;"
+    id="successTable">
+    <h2 style="color: white;">Save Successfully!!!!</h2>
+</div>

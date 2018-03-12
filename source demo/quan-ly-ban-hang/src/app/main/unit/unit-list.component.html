@@ -1,0 +1,62 @@
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    List Of Units
+                    <button class="btn btn-primary" (click)="onClick()" id="clickMe" style="float: right; margin-bottom: 10px; margin-left: 10px;">
+                        Action
+                    </button>
+                    <button class="btn btn-success"id="clickMe" style="float: right;height: 30px;">
+                        <a [routerLink]="['/main/unit-detail/0']" style="text-decoration: none; color: white;">Add New ++</a>
+                    </button>
+                </h2>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Search" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <colgroup>
+                            <col style="width: 10%;" />
+                            <col style="width: 40%;" />
+                            <col style="width: 5%;" />
+                            <col style="width: 5%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: center;">Detail</th>
+                                <th style="text-align: center;">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let unit of units">
+                                <td style="padding-top: 15px;">{{unit.Name}}</td>
+                                <td style="padding-top: 15px;">{{unit.Description}}</td>
+                                <td style="text-align:center;">
+                                    <button class="btn btn-primary" (click)="detail(unit)">
+                                        <i class="fa fa-file" style="height: 25px;"></i>
+                                    </button>
+                                </td>
+                                <td style="text-align:center;">
+                                    <button class="btn btn-danger">
+                                        <i class="fa fa-trash" style="height: 25px;"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
