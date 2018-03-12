@@ -26,7 +26,7 @@ export class RoleService {
     });
   }
 
-  saveRole(role){
+  saveRole(role) {
     return new Promise((resolve, reject) => {
       this.apiService.post('/api/saveRole/', role).then(res => {
         resolve(res.json());
