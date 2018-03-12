@@ -44,7 +44,7 @@ namespace SuperDev.Repositories
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Roles.AsEnumerable();
+                return context.Roles.ToList();
             }
         }
 

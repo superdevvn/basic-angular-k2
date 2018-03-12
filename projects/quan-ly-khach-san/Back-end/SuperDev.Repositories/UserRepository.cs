@@ -59,7 +59,7 @@ namespace SuperDev.Repositories
                     CreatedDate = entity.CreatedDate,
                     CreatedBy = entity.CreatedBy,
                     CreatorName = entity.CreatedBy == null ? string.Empty : context.Users.FirstOrDefault(e => e.Id == entity.CreatedBy.Value).Username
-                }).AsEnumerable();
+                }).ToList();
             }
         }
 

@@ -60,7 +60,7 @@ namespace SuperDev.Services
             var userRepository = new UserRepository();
             string username = token.Split('~')[0];
             string password = token.Split('~')[1];
-            return userRepository.GetEntity(username, Utility.HashMD5(password));
+            return userRepository.GetEntity(username, password);
         }
 
         public User GetCurrentUser()

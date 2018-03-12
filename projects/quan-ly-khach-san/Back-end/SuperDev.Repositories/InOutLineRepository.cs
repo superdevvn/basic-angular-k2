@@ -44,7 +44,7 @@ namespace SuperDev.Repositories
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.InOutLines.AsEnumerable();
+                return context.InOutLines.ToList();
             }
         }
 
