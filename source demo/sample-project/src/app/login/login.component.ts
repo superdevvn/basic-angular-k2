@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.loginService.login(this.username,this.password).then(()=>{
-      this.router.navigate(["/main/role-list"]);
+       this.router.navigate(["/main/role-list"]);
     }).catch((err)=>{
       alert("Login Fail");
       console.error(err);

@@ -16,6 +16,15 @@ import { SachComponent } from './sach/sach.component';
 import { MuonTraComponent } from './muon-tra/muon-tra.component';
 import { UtilityService } from "./services/utility.service";
 import { LoginComponent } from './login/login.component';
+import { ApiService } from "./services/api.service";
+import { LoginService } from "./login/login.service";
+import { RoleListComponent } from './role/role-list.component';
+import { RoleService } from "./role/role.service";
+import { RoleDetailComponent } from "./role/role-detail.component";
+import { UserDetailComponent } from "./user/user-detail.component";
+import { UserListComponent } from "./user/user-list.component";
+import { UserService } from "./user/user.service";
+
 
 
 
@@ -29,8 +38,12 @@ const routes: Routes =[
     {path : 'doc-gia', component: DocGiaComponent},
     {path : 'sach', component: SachComponent},
     {path : 'muon-tra', component: MuonTraComponent},
+    {path : 'role-list',component:RoleListComponent},
+    {path : 'role-detail',component:RoleDetailComponent},
+    {path : 'user-detail',component:UserDetailComponent},
+    {path : 'user-list',component:UserListComponent}
   ]},
-  {path: 'login', redirectTo: 'LoginComponent', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent, pathMatch: 'full'},
 ]
 
 @NgModule({
@@ -42,7 +55,11 @@ const routes: Routes =[
     DocGiaComponent,
     SachComponent,
     MuonTraComponent,
-    LoginComponent
+    LoginComponent,
+    RoleListComponent,
+    RoleDetailComponent,
+    UserListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +67,7 @@ const routes: Routes =[
     HttpModule,
     FormsModule
   ],
-  providers: [UtilityService],
+  providers: [UtilityService,ApiService,LoginService,RoleService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

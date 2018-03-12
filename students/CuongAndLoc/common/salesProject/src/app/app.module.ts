@@ -8,11 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { ApiService } from './api.service';
 import { loginService } from './login/login.service';
 import { HttpModule } from '@angular/http';
+import { UserListComponent } from './home/user/user-list.component';
+import { UserService } from './home/user/user.service';
+
 const router: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   {
     path: 'main', component: HomeComponent, children: [
-
+      {path: '', redirectTo:"user-list", pathMatch: 'full'},
+      {path: 'user-list', component:UserListComponent}
 
     ]
   },
@@ -22,7 +26,8 @@ const router: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ const router: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [ApiService,loginService],
+  providers: [ApiService,loginService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
