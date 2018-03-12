@@ -1,0 +1,113 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "sales-project"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "assets/AutoHintTheme/fonts/icomoon/icomoon.css",
+        "assets/AutoHintTheme/js/plugins/fullcalendar/fullcalendar.min.css",
+        "assets/AutoHintTheme/js/plugins/magnific/magnific-popup.css",
+        "assets/AutoHintTheme/js/plugins/c3charts/c3.min.css",
+        "assets/AutoHintTheme/skin/default_skin/css/theme.css",
+        "assets/AutoHintTheme/allcp/forms/css/forms.css",
+
+        "assets/AutoHintTheme/new/css/bootstrap-editable.min.css",
+        "assets/AutoHintTheme/new/css/bootstrap.min.css",
+        "assets/AutoHintTheme/new/font-awesome/4.5.0/css/font-awesome.min.css",
+        "assets/AutoHintTheme/new/css/jquery-ui.custom.min.css",
+        "assets/AutoHintTheme/new/css/jquery.gritter.min.css",
+        "assets/AutoHintTheme/new/css/select2.min.css",
+        "assets/AutoHintTheme/new/css/bootstrap-datepicker3.min.css",
+        "assets/AutoHintTheme/new/css/fonts.googleapis.com.css",
+        "assets/AutoHintTheme/new/css/ace-skins.min.css",
+        "assets/AutoHintTheme/new/css/ace-rtl.min.css"
+        
+      ],
+      "scripts": [
+        "assets/AutoHintTheme/js/jquery/jquery-1.11.3.min.js",
+        "assets/AutoHintTheme/js/jquery/jquery_ui/jquery-ui.min.js",
+        "assets/AutoHintTheme/js/plugins/highcharts/highcharts.js",
+        "assets/AutoHintTheme/js/plugins/c3charts/d3.min.js",
+        "assets/AutoHintTheme/js/plugins/c3charts/c3.min.js",
+        "assets/AutoHintTheme/js/plugins/circles/circles.js",
+        "assets/AutoHintTheme/js/plugins/jvectormap/jquery.jvectormap.min.js",
+        "assets/AutoHintTheme/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js",
+        "assets/AutoHintTheme/js/plugins/fullcalendar/lib/moment.min.js",
+        "assets/AutoHintTheme/js/plugins/fullcalendar/fullcalendar.min.js",
+        "assets/AutoHintTheme/allcp/forms/js/jquery-ui-monthpicker.min.js",
+        "assets/AutoHintTheme/allcp/forms/js/jquery-ui-datepicker.min.js",
+        "assets/AutoHintTheme/js/plugins/magnific/jquery.magnific-popup.js",
+        "assets/AutoHintTheme/js/utility/utility.js",
+        "assets/AutoHintTheme/js/demo/demo.js",
+        "assets/AutoHintTheme/js/main.js",
+        "assets/AutoHintTheme/js/demo/widgets.js",
+        "assets/AutoHintTheme/js/demo/widgets_sidebar.js",
+        "assets/AutoHintTheme/js/pages/dashboard1.js",
+
+        "assets/AutoHintTheme/new/js/ace-extra.min.js",
+        "assets/AutoHintTheme/new/js/jquery-ui.custom.min.js",
+        "assets/AutoHintTheme/new/js/jquery.ui.touch-punch.min.js",
+        "assets/AutoHintTheme/new/js/jquery.gritter.min.js",
+        "assets/AutoHintTheme/new/js/bootbox.js",
+        "assets/AutoHintTheme/new/js/jquery.easypiechart.min.js",
+        "assets/AutoHintTheme/new/js/bootstrap-datepicker.min.js",
+        "assets/AutoHintTheme/new/js/jquery.hotkeys.index.min.js",
+        "assets/AutoHintTheme/new/js/bootstrap-wysiwyg.min.js",
+        "assets/AutoHintTheme/new/js/select2.min.js",
+        "assets/AutoHintTheme/new/js/spinbox.min.js",
+        "assets/AutoHintTheme/new/js/bootstrap-editable.min.js",
+        "assets/AutoHintTheme/new/js/ace-editable.min.js",
+        "assets/AutoHintTheme/new/js/jquery.maskedinput.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}
