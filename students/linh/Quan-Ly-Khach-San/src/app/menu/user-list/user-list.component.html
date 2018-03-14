@@ -4,30 +4,33 @@
       <div class="panel-heading">
         <span class="panel-title">DANH SÁCH TÀI KHOẢN</span>
       </div>
-      <div class="panel-body pn">
+      <div style="padding-left: 1030px;">
+        <button class="btn btn-primary" (click)="create()">Thêm
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+      <div class="panel-body pn" style="margin-top: 10px;">
         <div class="table-responsive">
           <div class="bs-component">
             <table class="table table-bordered table-hover">
               <colgroup>
-                <col width="50" />
                 <col width="150" />
                 <col width="150" />
                 <col width="100" />
-                <col width="150" />
-                <col/>
-                <col width="100" />
+                <col width="120" />
+                <col width="120" />
+                <col />
                 <col width="100" />
                 <col width="100" />
                 <col width="90" />
               </colgroup>
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>TÊN TÀI KHOẢN</th>
                   <th>HỌ</th>
                   <th>TÊN</th>
                   <th>VAI TRÒ</th>
-                  <th>MÔ TẢ</th>
+                  <th>NGƯỜI TẠO</th>
                   <th>NGÀY TẠO</th>
                   <th>TÌNH TRẠNG</th>
                   <th>CHỈNH SỬA</th>
@@ -35,18 +38,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <tr *ngFor="let user of users">
+                  <td>{{user.Username}}</td>
+                  <td>{{user.LastName}}</td>
+                  <td>{{user.FirstName}}</td>
+                  <td>{{user.RoleName}}</td>
+                  <td>{{user.CreatorName}}</td>
+                  <td>{{user.CreatedDate | date: 'HH:mm:ss dd/MM/yyyy'}}</td>
+                  <td>{{user.IsActived}}</td>
                   <td>
                     <div class="hidden-sm hidden-xs btn-group">
-                      <button class="btn btn-xs btn-info">
+                      <button class="btn btn-xs btn-info" (click)="detail(user)">
                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
                     </div>

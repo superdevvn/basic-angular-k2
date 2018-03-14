@@ -1,28 +1,28 @@
-<section id="content" class="table-layout animated fadeIn">
+<section id="content" class="table-layout animated fadeOut">
   <div class="chute chute-center">
     <div class="panel" id="spy2">
       <header class="panel-heading">
-        <span class="panel-title"><strong>DANH SÁCH VAI TRÒ</strong></span>
+        <span class="panel-title">
+          <strong>DANH SÁCH VAI TRÒ</strong>
+        </span>
       </header>
-      <div style="padding-left: 960px;">
+      <div style="padding-left: 1030px;">
         <button class="btn btn-primary" (click)="create()">Thêm
           <i class="fa fa-plus"></i>
         </button>
       </div>
-      <div style="margin-top: 10px;">
+      <div class="panel-body pn" style="margin-top: 10px;">
         <div class="table-responsive">
           <div class="bs-component">
             <table class="table table-bordered table-hover mb-none">
               <colgroup>
-                <col width="50" />
                 <col width="150" />
                 <col />
-                <col width="70" />
-                <col width="70" />
+                <col width="100" />
+                <col width="100" />
               </colgroup>
               <thead>
                 <tr align-text="center">
-                  <th>Id</th>
                   <th>Name</th>
                   <th>Description</th>
                   <th>Edit</th>
@@ -31,7 +31,6 @@
               </thead>
               <tbody>
                 <tr *ngFor="let role of roles">
-                  <td>{{role.Id}}</td>
                   <td>{{role.Name}}</td>
                   <td>{{role.Description}}</td>
                   <td align="center">
@@ -43,7 +42,7 @@
                   </td>
                   <td align="center">
                     <div class="hidden-sm hidden-xs btn-group">
-                      <button class="btn btn-xs btn-danger">
+                      <button class="btn btn-xs btn-danger" (click)="delete(role)">
                         <i class="ace-icon fa fa-trash-o bigger-120"></i>
                       </button>
                     </div>
