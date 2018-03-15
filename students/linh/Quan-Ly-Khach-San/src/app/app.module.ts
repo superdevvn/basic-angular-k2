@@ -25,6 +25,10 @@ import { DichVuComponent } from './menu/dich-vu/dich-vu.component';
 import { LoadingService } from './loading.service';
 import { NotificationService } from './notification.service';
 import { UserDetailService } from './menu/user-detail/user-detail.service';
+import { ThuePhongComponent } from './menu/thue-phong/thue-phong.component';
+import { PhongService } from './menu/phong/phong.service';
+import { RoomDetailComponent } from './menu/room-detail/room-detail.component';
+import { RoomDetailService } from './menu/room-detail/room-detail.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -37,8 +41,10 @@ const routes: Routes = [
       { path: 'role-detail/:id', component: RoleDetailComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'dich-vu', component: DichVuComponent },
-      { path: 'phong', component: PhongComponent },
-      { path: 'nhan-vien', component: NhanVienComponent }
+      { path: 'room-list', component: PhongComponent },
+      { path: 'nhan-vien', component: NhanVienComponent },
+      { path: 'thue-phong', component: ThuePhongComponent },
+      { path: 'room-detail/:id', component: RoomDetailComponent }
     ]
   },
   { path: 'login', component: LoginComponent, pathMatch: 'full' }
@@ -56,7 +62,9 @@ const routes: Routes = [
     DashboardComponent,
     NhanVienComponent,
     PhongComponent,
-    DichVuComponent
+    DichVuComponent,
+    ThuePhongComponent,
+    RoomDetailComponent
   ],
   imports: [
     FormsModule,
@@ -72,7 +80,9 @@ const routes: Routes = [
     UserListService,
     LoadingService,
     NotificationService,
-    UserDetailService],
+    UserDetailService,
+    PhongService,
+    RoomDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

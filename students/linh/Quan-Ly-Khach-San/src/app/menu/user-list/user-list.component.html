@@ -15,8 +15,7 @@
             <table class="table table-bordered table-hover">
               <colgroup>
                 <col width="150" />
-                <col width="150" />
-                <col width="100" />
+                <col width="200" />
                 <col width="120" />
                 <col width="120" />
                 <col />
@@ -27,8 +26,7 @@
               <thead>
                 <tr>
                   <th>TÊN TÀI KHOẢN</th>
-                  <th>HỌ</th>
-                  <th>TÊN</th>
+                  <th>HỌ TÊN</th>
                   <th>VAI TRÒ</th>
                   <th>NGƯỜI TẠO</th>
                   <th>NGÀY TẠO</th>
@@ -40,8 +38,7 @@
               <tbody>
                 <tr *ngFor="let user of users">
                   <td>{{user.Username}}</td>
-                  <td>{{user.LastName}}</td>
-                  <td>{{user.FirstName}}</td>
+                  <td>{{user.FirstName +' '+user.LastName}}</td>
                   <td>{{user.RoleName}}</td>
                   <td>{{user.CreatorName}}</td>
                   <td>{{user.CreatedDate | date: 'HH:mm:ss dd/MM/yyyy'}}</td>
@@ -55,7 +52,6 @@
                   </td>
                   <td>
                     <div class="hidden-sm hidden-xs btn-group">
-
                       <button class="btn btn-xs btn-danger">
                         <i class="ace-icon fa fa-trash-o bigger-120"></i>
                       </button>

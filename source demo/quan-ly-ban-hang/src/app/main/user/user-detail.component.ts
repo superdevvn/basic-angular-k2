@@ -18,7 +18,11 @@ export class UserDetailComponent {
     roles: Role[] = [];
     routerSubscription: any;
     title = '';
-    constructor(private route: ActivatedRoute, private router: Router, private userService: UserService, private roleService: RoleService, private notiService:NotificationSerivce) {
+    constructor(private route: ActivatedRoute,
+         private router: Router,
+          private userService: UserService, 
+          private roleService: RoleService,
+           private notiService:NotificationSerivce) {
 
     }
 
