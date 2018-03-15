@@ -22,6 +22,9 @@ import { UserListService } from './menu/user-list/user-list.service';
 import { NhanVienComponent } from './menu/nhan-vien/nhan-vien.component';
 import { PhongComponent } from './menu/phong/phong.component';
 import { DichVuComponent } from './menu/dich-vu/dich-vu.component';
+import { LoadingService } from './loading.service';
+import { NotificationService } from './notification.service';
+import { UserDetailService } from './menu/user-detail/user-detail.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -29,7 +32,7 @@ const routes: Routes = [
     path: 'main', component: MenuComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'user-list', component: UserListComponent },
-      { path: 'user-detail', component: UserDetailComponent },
+      { path: 'user-detail/:id', component: UserDetailComponent },
       { path: 'role-list', component: RoleListComponent },
       { path: 'role-detail/:id', component: RoleDetailComponent },
       { path: 'dashboard', component: DashboardComponent },
@@ -61,7 +64,15 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, LoginService, RoleListService, CookieService, RoleDetailService, UserListService],
+  providers: [ApiService,
+    LoginService,
+    RoleListService,
+    CookieService,
+    RoleDetailService,
+    UserListService,
+    LoadingService,
+    NotificationService,
+    UserDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

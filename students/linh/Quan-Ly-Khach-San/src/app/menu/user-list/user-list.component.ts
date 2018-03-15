@@ -13,12 +13,16 @@ export class UserListComponent implements OnInit {
   constructor(private userListService: UserListService, private router: Router) { }
 
   ngOnInit() {
-    this.userListService.getList().then((users: any) => {
+    this.userListService.getUsers().then((users: any) => {
       this.users = users;
     });
   }
 
   detail(user) {
-    this.router.navigate(["/main/user-detail",user.id]);
+    this.router.navigate(["/main/user-detail", user.Id]);
+  }
+
+  create() {
+    this.router.navigate(["/main/user-detail", 0]);
   }
 }

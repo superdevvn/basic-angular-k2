@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RoleDetailService } from './role-detail.service';
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-role-detail',
@@ -13,7 +14,10 @@ export class RoleDetailComponent implements OnInit {
   id: number;
   role: any = {};
   title: string;
-  constructor(private route: ActivatedRoute, private router: Router, private roledetailService: RoleDetailService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private roledetailService: RoleDetailService,
+    private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.routerSubscription = this.route.params.subscribe(params => {//
@@ -31,6 +35,7 @@ export class RoleDetailComponent implements OnInit {
   save() {
     this.roledetailService.saveRole(this.role).then((res: any) => {
       if (this.id == 0) this.router.navigate(["/main/role-detail", res.id]);
+      this.notificationService.success('Saved');
     })
   }
   back() {
