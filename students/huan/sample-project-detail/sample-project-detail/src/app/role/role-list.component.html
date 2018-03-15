@@ -1,0 +1,61 @@
+<div class="page-content">
+  <div class="page-header">
+    <h1>
+      Role List
+    </h1>
+  </div>
+  <!-- /.page-header -->
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-primary" (click)="create()">New Role</button>
+        </div>
+        <div class="col-xs-12">
+          <table id="simple-table" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th class="center">
+                  <label class="pos-rel">
+                    <input type="checkbox" class="ace" />
+                    <span class="lbl"></span>
+                  </label>
+                </th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let role of roles">
+                <td class="center">
+                  <label class="pos-rel">
+                    <input type="checkbox" class="ace" />
+                    <span class="lbl"></span>
+                  </label>
+                </td>
+                <td>{{role.Id}}</td>
+                <td>{{role.Name}}</td>
+                <td>{{role.Description}}</td>
+                <td>
+                  <div class="hidden-sm hidden-xs btn-group">
+                    <button class="btn btn-xs btn-info" (click)="detail(role)">
+                      <i class="ace-icon fa fa-pencil bigger-120"></i>
+                    </button>
+
+                    <button class="btn btn-xs btn-danger">
+                      <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /.span -->
+      </div><!-- /.row -->
+    </div>
+  </div>
+</div>

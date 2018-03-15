@@ -1,0 +1,129 @@
+<div id="main">
+
+    <!-- -------------- Header  -------------- -->
+    <header class="navbar navbar-fixed-top bg-dark">
+        <div class="navbar-logo-wrapper">
+            <a class="navbar-logo-text" href="dashboard1.html" [routerLink]="['/main/dashboard']">
+                <b>KHÁCH SẠN MỘNG MƠ</b>
+            </a>
+            <span id="sidebar_left_toggle" class="ad ad-lines"></span> 
+            <div class="text-center mb20">
+                <img src="assets/AutoHintTheme/img/logo_login1.jpg" class="img-responsive" alt="Logo" />
+            </div>
+        </div>
+
+    </header>
+    <aside id="sidebar_left" class="nano nano-light affix">
+        <div class="sidebar-left-content nano-content">
+
+            <ul class="nav sidebar-menu">
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/dashboard']">
+                        <span class="fa fa-dashboard"></span>
+                        <span class="sidebar-title">DASHBOARD</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/role-list']">
+                        <span class="fa fa-cog"></span>
+                        <span class="sidebar-title">VAI TRÒ</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/user-list']">
+                        <span class="fa fa-desktop"></span>
+                        <span class="sidebar-title">TÀI KHOẢN</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#">
+                        <span class="fa fa-male"></span>
+                        <span class="sidebar-title">QUẢN LÝ NHÂN VIÊN</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li>
+                            <a href="management-tools-panels.html">
+                                <span class="glyphicon glyphicon-book"></span> LOẠI NHÂN VIÊN </a>
+                        </li>
+                        <li>
+                            <a href="management-tools-modals.html">
+                                <span class="glyphicon glyphicon-modal-window"></span> DANH SÁCH NHÂN VIÊN </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#">
+                        <span class="fa fa-university"></span>
+                        <span class="sidebar-title">QUẢN LÝ PHÒNG</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li>
+                            <a href="management-tools-panels.html">
+                                <span class="glyphicon glyphicon-book"></span> LOẠI PHÒNG </a>
+                        </li>
+                        <li>
+                            <a href="management-tools-modals.html">
+                                <span class="glyphicon glyphicon-modal-window"></span> DANH SÁCH PHÒNG </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="active">
+                    <a class="accordion-toggle menu" href="#">
+                        <span class="fa fa-home"></span>
+                        <span class="sidebar-title">ĐẶT/TRẢ PHÒNG</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li class="active">
+                            <a href="dashboard1.html">
+                                <span class="fa fa-file-text-o"></span> Đặt phòng </a>
+                        </li>
+                        <li>
+                            <a href="dashboard2.html">
+                                <span class="fa fa-file-text-o"></span> Trả phòng </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#">
+                        <span class="fa fa-coffee"></span>
+                        <span class="sidebar-title">DỊCH VỤ</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li>
+                            <a href="forms-elements.html">
+                                <span class="glyphicon glyphicon-shopping-cart"></span> Elements </a>
+                        </li>
+                        <li>
+                            <a href="forms-widgets.html">
+                                <span class="glyphicon glyphicon-calendar"></span> Widgets </a>
+                        </li>
+                        <li>
+                            <a href="forms-layouts.html">
+                                <span class="fa fa-desktop"></span> Layouts </a>
+                        </li>
+                        <li>
+                            <a href="forms-wizard.html">
+                                <span class="fa fa-clipboard"></span> Wizard </a>
+                        </li>
+                        <li>
+                            <a href="forms-validation.html">
+                                <span class="glyphicon glyphicon-check"></span> Validation </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </aside>
+    <section id="content_wrapper">
+        <router-outlet></router-outlet>
+    </section>
+
+</div>

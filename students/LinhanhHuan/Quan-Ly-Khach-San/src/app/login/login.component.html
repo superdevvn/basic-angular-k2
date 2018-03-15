@@ -1,0 +1,97 @@
+<div class="utility-page sb-l-c sb-r-c">
+
+  <!-- -------------- Body Wrap  -------------- -->
+  <div id="main" class="animated fadeIn">
+
+    <!-- -------------- Main Wrapper -------------- -->
+    <section id="content_wrapper">
+
+      <div id="canvas-wrapper">
+        <canvas id="demo-canvas"></canvas>
+      </div>
+
+      <!-- -------------- Content -------------- -->
+      <section id="content">
+
+        <!-- -------------- Login Form -------------- -->
+        <div class="allcp-form theme-primary mw320" id="login">
+          <div class="text-center mb20">
+            <img src="assets/AutoHintTheme/img/logo_login1.jpg" class="img-responsive" alt="Logo" />
+          </div>
+          <div class="panel mw320">
+
+            <div method="post" action="/" id="form-login">
+              <div class="panel-body pn mv10">
+
+                <div class="section">
+                  <label for="username" class="field prepend-icon">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" [(ngModel)]="username">
+                    <label for="username" class="field-icon">
+                      <i class="fa fa-user"></i>
+                    </label>
+                  </label>
+                </div>
+                <!-- -------------- /section -------------- -->
+
+                <div class="section">
+                  <label for="password" class="field prepend-icon">
+                    <input type="text" name="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="password">
+                    <label for="password" class="field-icon">
+                      <i class="fa fa-lock"></i>
+                    </label>
+                  </label>
+                </div>
+                <!-- -------------- /section -------------- -->
+
+                <div class="section">
+                  <div class="bs-component pull-left pt5">
+                    <div class="radio-custom radio-primary mb5 lh25">
+                      <input type="radio" id="remember" name="remember">
+                      <label for="remember">Remember me</label>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-bordered btn-primary pull-right" (click)="login()">Log in</button>
+                </div>
+                <!-- -------------- /section -------------- -->
+
+              </div>
+              <!-- -------------- /Form -------------- -->
+            </div>
+          </div>
+          <!-- -------------- /Panel -------------- -->
+        </div>
+        <!-- -------------- /Spec Form -------------- -->
+
+      </section>
+      <!-- -------------- /Content -------------- -->
+
+    </section>
+    <!-- -------------- /Main Wrapper -------------- -->
+
+  </div>
+  <!-- -------------- Page JS -------------- -->
+  <script type="text/javascript">
+    jQuery(document).ready(function () {
+
+      "use strict";
+
+      // Init Theme Core
+      Core.init();
+
+      // Init Demo JS
+      Demo.init();
+
+      // Init CanvasBG
+      CanvasBG.init({
+        Loc: {
+          x: window.innerWidth / 5,
+          y: window.innerHeight / 10
+        }
+      });
+
+    });
+  </script>
+
+  <!-- -------------- /Scripts -------------- -->
+
+</div>
