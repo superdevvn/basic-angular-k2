@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDev.Services", "SuperD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDev.APIs", "SuperDev.APIs\SuperDev.APIs.csproj", "{EE1E9F87-7153-443E-B375-6BFDA07E4985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDev.Utilities", "SuperDev.Utilities\SuperDev.Utilities.csproj", "{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EE1E9F87-7153-443E-B375-6BFDA07E4985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1E9F87-7153-443E-B375-6BFDA07E4985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1E9F87-7153-443E-B375-6BFDA07E4985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
