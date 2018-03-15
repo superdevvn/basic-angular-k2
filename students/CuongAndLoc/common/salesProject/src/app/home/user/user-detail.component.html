@@ -1,0 +1,123 @@
+
+
+    <!-- -------------- Topbar Menu Wrapper -------------- -->
+    
+    <!-- -------------- /Topbar Menu Wrapper -------------- -->
+
+    <!-- -------------- Topbar -------------- -->
+    <header id="topbar" class="alt">
+        <div class="topbar-left">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-icon">
+                    <a href="dashboard1.html">
+                        <span class="fa fa-home"></span>
+                    </a>
+                </li>
+                <li class="breadcrumb-active">
+                    <a href="dashboard1.html">Dashboard</a>
+                </li>
+                <li class="breadcrumb-link">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-current-item">Standart Inputs</li>
+            </ol>
+        </div>
+        <div class="topbar-right">
+            <div class="ib topbar-dropdown">
+                <label for="topbar-multiple" class="control-label">Reporting Period</label>
+                <select id="topbar-multiple" class="hidden">
+                    <optgroup label="Filter By:">
+                        <option value="1-1">Last 30 Days</option>
+                        <option value="1-2" selected="selected">Last 60 Days</option>
+                        <option value="1-3">Last Year</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="ml15 ib va-m" id="sidebar_right_toggle">
+                <div class="navbar-btn btn-group btn-group-number mv0">
+                    <button class="btn btn-sm btn-default btn-bordered prn pln">
+                        <i class="fa fa-bar-chart fs22 text-default"></i>
+                    </button>
+                    <button class="btn btn-primary btn-sm btn-bordered hidden-xs"> 3</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- -------------- /Topbar -------------- -->
+
+    <!-- -------------- Content -------------- -->
+    <div id="content" class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                
+                <!-- -------------- Standard Fields -------------- -->
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">User Information</span>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal" role="form">
+                            
+                            <div class="form-group">
+                                
+                                <label for="inputStandard" class="col-lg-3 control-label">Name</label>
+
+                                <div class="col-lg-8">
+                                    <div class="bs-component">
+                                        <input type="text"  class="form-control"
+                                               [(ngModel)]="user.Name" name="Name"/>
+                                    </div>
+                                </div>
+                                <br/><br/>
+                                <label for="inputStandard" class="col-lg-3 control-label">Orders</label>
+
+                                <div class="col-lg-8">
+                                    <div class="bs-component">
+                                        <input type="text"  class="form-control"
+                                               [(ngModel)]="user.Orders" name="Orders"/>
+                                    </div>
+                                </div>
+                                <br/><br/>
+                                <label for="inputStandard" class="col-lg-3 control-label">Description</label>
+
+                                <div class="col-lg-8">
+                                    <div class="bs-component">
+                                        <input type="text"  class="form-control"
+                                               [(ngModel)]="user.Description" name="Description"/>
+                                    </div>
+                                </div>
+                                <br/><br/>
+                                <label for="inputStandard" class="col-lg-3 control-label">Address</label>
+
+                                <div class="col-lg-8">
+                                    <div class="bs-component">
+                                        <input type="text"  class="form-control"
+                                               [(ngModel)]="user.Address" name="Address"/>
+                                    </div>
+                                </div>
+                                <br/><br/>
+                                <label for="inputStandard" class="col-lg-3 control-label">Code</label>
+
+                                <div class="col-lg-8">
+                                    <div class="bs-component">
+                                        <input type="text"  class="form-control"
+                                               [(ngModel)]="user.Code" name="Code"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" (click)="save(user)">Save</button>
+                        </form>  
+                        
+                            
+
+                
+
+            </div>
+
+            
+        </div>
+
+    </div>
+    <!-- -------------- /Content -------------- -->
