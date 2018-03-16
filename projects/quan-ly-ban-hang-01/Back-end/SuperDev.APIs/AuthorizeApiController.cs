@@ -18,12 +18,12 @@ namespace SuperDev.APIs
         }
 
         [HttpGet]
-        [Route("api/authorize/{token}")]
-        public IHttpActionResult Authorize(string token)
+        [Route("api/authorize")]
+        public IHttpActionResult Authorize()
         {
             var response = new HttpResponseMessage();
             var userService = new UserService();
-            return Ok(userService.Decrypt(token));
+            return Ok(userService.GetCurrentUser());
         }
     }
 }

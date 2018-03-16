@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4A7A682-68EF-4F2B-8448-BB9E8639190B}</ProjectGuid>
+    <ProjectGuid>{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuperDev.Services</RootNamespace>
-    <AssemblyName>SuperDev.Services</AssemblyName>
+    <RootNamespace>SuperDev.Utilities</RootNamespace>
+    <AssemblyName>SuperDev.Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,29 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManufacturerService.cs" />
-    <Compile Include="CategoryService.cs" />
-    <Compile Include="CustomerService.cs" />
-    <Compile Include="OrderService.cs" />
-    <Compile Include="UnitService.cs" />
-    <Compile Include="ProductService.cs" />
-    <Compile Include="UserService.cs" />
-    <Compile Include="RoleService.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SuperDev.Models\SuperDev.Models.csproj">
-      <Project>{4b4735fd-4e2c-4744-a263-20f507c911b4}</Project>
-      <Name>SuperDev.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuperDev.Repositories\SuperDev.Repositories.csproj">
-      <Project>{af953309-81ae-4cad-ac48-467be7e49a9c}</Project>
-      <Name>SuperDev.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuperDev.Utilities\SuperDev.Utilities.csproj">
-      <Project>{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}</Project>
-      <Name>SuperDev.Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
