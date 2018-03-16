@@ -29,8 +29,6 @@ export class ApiService {
                 });
         });
     }
-
-
     get(url: string) {
         return new Promise<Response>((resolve, reject) => {
             let headers = new Headers();
@@ -44,5 +42,19 @@ export class ApiService {
                     else reject(err);
                 });
         });
+    }
+
+    delete(url: string) {
+        return new Promise<Response>((resolve, reject) => {
+            let headers = new Headers();
+            headers.append("Auth-SuperDev", this.token);
+            this.http.delete(this.host + url, { headers: headers })
+                .toPromise()
+                .then(res => {
+                    resolve(res);
+                }).catch(err => {
+                    if (err.status == 401) this.router.navigate(["/login"]);
+                })
+        })
     }
 }

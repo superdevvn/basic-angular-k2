@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilityService } from '../services/utility.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,14 +7,15 @@ import { UtilityService } from '../services/utility.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  user: any;
+  constructor(private loginService: LoginService) {
 
-  constructor(private utilityService: UtilityService) {
-
-   }
+  }
 
   ngOnInit() {
-
-    this.utilityService.hello("Dark", "Peter");
+    this.loginService.getAuthorize().then(user => {
+      this.user = user;
+    });
   }
 
 }
