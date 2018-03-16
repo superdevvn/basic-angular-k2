@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RoleService } from './role.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotificationService } from '../services/notification.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'role-detail',
@@ -15,7 +16,7 @@ export class RoleDetailComponent implements OnInit {
   role: any={};
   id: number;
   constructor(private roleService:RoleService, private route:ActivatedRoute, private router: Router,
-     private notification: NotificationService) { }
+     private notification: NotificationService, private apiService:ApiService) { }
 
   ngOnInit() {
 this.routerSubscription = this.route.params.subscribe(params=>{
@@ -39,4 +40,7 @@ save(){
 ngOnDestroy(){
   this.routerSubscription.unsubscribe();
 }
+
+
+  
 }
