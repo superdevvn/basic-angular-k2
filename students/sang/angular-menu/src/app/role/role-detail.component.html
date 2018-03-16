@@ -1,12 +1,12 @@
-
 <div>
 <div class="form-group" id="old">
-  <label for="usr">Tên</label>
+  <label for="usr">Name:</label>
   <input type="text" class="form-control" id="usr" [(ngModel)]="role.Name">
 </div>
 <div class="form-group" id="new">
-  <label for="pwd">Vai trò</label>
-  <input type="" class="form-control" id="pwd" [(ngModel)]="role.Description">
+  <label for="pwd">Password:</label>
+  <input type="password" class="form-control" id="pwd" [(ngModel)]="role.Description">
 </div>
-<div class="myBtn"><button class="btn btn-primary" (click)="save()">Save</button></div>
+<div class="myBtn">
+  <button class="btn btn-primary" (click)="save()">Save</button></div>
 </div>

@@ -5,7 +5,8 @@ import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'role-detail',
-  templateUrl: './role-detail.component.html'
+  templateUrl: './role-detail.component.html',
+  styleUrls: ['./role-detail.component.css']
  
 })
 export class RoleDetailComponent implements OnInit {
