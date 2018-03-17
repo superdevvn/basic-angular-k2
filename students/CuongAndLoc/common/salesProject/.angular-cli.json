@@ -24,11 +24,12 @@
         "assets/AutoHintTheme/js/plugins/fullcalendar/fullcalendar.min.css",
         "assets/AutoHintTheme/js/plugins/magnific/magnific-popup.css",
         "assets/AutoHintTheme/js/plugins/c3charts/c3.min.css",
-        "assets/AutoHintTheme/skin/default_skin/css/theme.css",
+        "assets/AutoHintTheme/skin/default_skin/css/theme.min.css",
         "assets/AutoHintTheme/allcp/forms/css/forms.css"
     
       ],
       "scripts": [
+        "assets/AutoHintTheme/js/plugins/canvasbg/canvasbg.js",
         "assets/AutoHintTheme/js/jquery/jquery-1.11.3.min.js",
         "assets/AutoHintTheme/js/jquery/jquery_ui/jquery-ui.min.js",
         "assets/AutoHintTheme/js/plugins/highcharts/highcharts.js",

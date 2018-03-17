@@ -60,6 +60,10 @@
       <Project>{af953309-81ae-4cad-ac48-467be7e49a9c}</Project>
       <Name>SuperDev.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuperDev.Utilities\SuperDev.Utilities.csproj">
+      <Project>{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}</Project>
+      <Name>SuperDev.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,12 +12,11 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-    Core.init();
   }
   ngAfterViewInit() {
-    $.getScript(  "assets/AutoHintTheme/js/utility/utility.js", function( data, textStatus, jqxhr ) {
-      $.getScript( "assets/AutoHintTheme/js/demo/demo.js", function( data, textStatus, jqxhr ) {
-        $.getScript( "assets/AutoHintTheme/js/main.js", function( data, textStatus, jqxhr ) {
+    $.getScript("assets/AutoHintTheme/js/utility/utility.js", function( data, textStatus, jqxhr ) {
+      $.getScript("assets/AutoHintTheme/js/demo/demo.js", function( data, textStatus, jqxhr ) {
+        $.getScript("assets/AutoHintTheme/js/main.js", function( data, textStatus, jqxhr ) {
           Core.init();
         });
       });

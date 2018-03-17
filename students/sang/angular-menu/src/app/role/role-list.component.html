@@ -10,6 +10,7 @@
       <!-- PAGE CONTENT BEGINS -->
       <div class="row">
         <div class="col-xs-12">
+        
           <table id="simple-table" class="table table-bordered table-hover">
             <thead>
               <tr>
@@ -39,21 +40,17 @@
                 <td>{{role.Description}}</td>
                 <td>
                   <div class="hidden-sm hidden-xs btn-group">
-                    <button class="btn btn-xs btn-success">
-                      <i class="ace-icon fa fa-check bigger-120"></i>
-                    </button>
+                    
 
-                    <button class="btn btn-xs btn-info">
+                    <button class="btn btn-xs btn-info" (click)="detail(role)">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </button>
 
-                    <button class="btn btn-xs btn-danger">
+                    <button class="btn btn-xs btn-danger" (click)="delete(role)">
                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
 
-                    <button class="btn btn-xs btn-warning">
-                      <i class="ace-icon fa fa-flag bigger-120"></i>
-                    </button>
+                    
                   </div>
 
                   <div class="hidden-md hidden-lg">
@@ -93,6 +90,7 @@
               </tr>
             </tbody>
           </table>
+          <button class="btn btn-primary" (click)="create()">New Role </button>
         </div><!-- /.span -->
       </div><!-- /.row -->
     </div>

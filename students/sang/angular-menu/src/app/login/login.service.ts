@@ -3,10 +3,11 @@ import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import {Headers, Response} from "@angular/http";
 import { ApiService } from '../services/api.service';
+import {CookieService} from "ngx-cookie-service"
 @Injectable()
 export class LoginService{
     
-    constructor(private apiService:ApiService){
+    constructor(private apiService:ApiService, private cookieService:CookieService){
 
     }
 
@@ -18,6 +19,7 @@ login(username:string, password: string){
         }).then(res=>{
             console.log(res);
             this.apiService.token = res.json();
+            this.cookieService.set('auth-superdev',this.apiService.token);
             resolve(res.json());
         }).catch(err=>{
             console.log(err);

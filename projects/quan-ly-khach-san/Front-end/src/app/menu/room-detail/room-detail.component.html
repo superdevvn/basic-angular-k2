@@ -49,7 +49,7 @@
                     <div class="form-line">
                       <!-- <input type="text" class="form-control" [(ngModel)]="room.Size" /> -->
                       <select class="form-control" [(ngModel)]="room.Size">
-                        <option *ngFor="let size of listSize" [ngValue]="size">{{size}}</option>
+                        <option *ngFor="let size of listSize" [ngValue]="size.value">{{size.text}}</option>
                       </select>
                     </div>
                   </div>
