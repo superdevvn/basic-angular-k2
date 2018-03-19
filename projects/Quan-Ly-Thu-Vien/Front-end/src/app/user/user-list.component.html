@@ -1,10 +1,12 @@
 <div class="page-content">
   <div class="page-header">
     <h1>
-      Người dùng
+      User
     </h1>
   </div>
   <!-- /.page-header -->
+  <button class="btn btn-primary" (click)="create()">New User </button>
+  <hr>
   <div class="row">
     <div class="col-xs-12">
       <!-- PAGE CONTENT BEGINS -->
@@ -20,40 +22,48 @@
                   </label>
                 </th>
                 <th>Id</th>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th>Password</th>
                 <th>Description</th>
-                <th></th>
+                <th>Setting</th>
+                <th>Delete role</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr *ngFor="let role of roles">
+              <tr *ngFor="let user of users">
                 <td class="center">
                   <label class="pos-rel">
                     <input type="checkbox" class="ace" />
                     <span class="lbl"></span>
                   </label>
                 </td>
-                <td>{{role.Id}}</td>
-                <td>{{role.Name}}</td>
-                <td>{{role.Description}}</td>
+                <td>{{user.Id}}</td>
+                <td>{{user.FirstName}}</td>
+                <td>{{user.LastName}}</td>
+                <td>{{user.IsActived}}</td>
+                <td>{{user.RoleName}}</td>
+                <td>{{user.Password}}</td>
+                <td>{{user.Description}}</td>
                 <td>
                   <div class="hidden-sm hidden-xs btn-group">
-                    <button class="btn btn-xs btn-success">
-                      <i class="ace-icon fa fa-check bigger-120"></i>
-                    </button>
+                   
 
-                    <button class="btn btn-xs btn-info">
+                    <button class="btn btn-xs btn-info" (click)="detail(user)">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </button>
-
-                    <button class="btn btn-xs btn-danger">
+                  </div>
+                  </td>
+                  <td>
+                  <div>
+                    <button class="btn btn-xs btn-danger" (click)="delete(user)">
                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
 
-                    <button class="btn btn-xs btn-warning">
-                      <i class="ace-icon fa fa-flag bigger-120"></i>
-                    </button>
+                   
                   </div>
 
                   <div class="hidden-md hidden-lg">

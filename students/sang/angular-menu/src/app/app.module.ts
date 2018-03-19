@@ -33,6 +33,10 @@ import { CateDetailComponent } from './category/cate-detail.component';
 import { CustomerService } from './customer/customer.service';
 import { CustomerListComponent } from './customer/customer-list.component';
 import { CustomerDetailComponent } from './customer/customer-detail.component';
+import { BookingService } from './booking/booking.service';
+import { BookingListComponent } from './booking/booking-list.component';
+import { BookingDetailComponent } from './booking/booking-detail.component';
+
 
 
 
@@ -41,7 +45,7 @@ import { CustomerDetailComponent } from './customer/customer-detail.component';
 const routes: Routes =[
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: "main", component: MenuComponent, children:[
-    {path :'', redirectTo:"sach-list",pathMatch:"full"},
+    {path :'', redirectTo:"booking-list",pathMatch:"full"},
     {path : 'sach-list', component: SachListComponent},
     {path : 'sach-detail/:id', component: SachDetailComponent},
     {path : 'muon-tra', component: MuonTraComponent},
@@ -52,7 +56,9 @@ const routes: Routes =[
     {path : 'cate-list',component:CateListComponent},
     {path : 'customer-list',component:CustomerListComponent},
     {path : 'customer-detail/:id',component:CustomerDetailComponent},
-    {path : 'cate-detail/:id',component:CateDetailComponent}
+    {path : 'cate-detail/:id',component:CateDetailComponent},
+    {path : 'booking-detail/:id',component:BookingDetailComponent},
+    {path : 'booking-list',component:BookingListComponent}
 
 
   ]},
@@ -75,7 +81,9 @@ const routes: Routes =[
     CateListComponent,
     CateDetailComponent,
     CustomerDetailComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    BookingListComponent,
+    BookingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +92,7 @@ const routes: Routes =[
     FormsModule
   ],
   providers: [UtilityService,ApiService,LoginService,RoleService,UserService,CookieService,
-    NotificationService,LoadingService,SachService,CateService,CustomerService],
+    NotificationService,LoadingService,SachService,CateService,CustomerService,BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

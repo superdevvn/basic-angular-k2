@@ -1,18 +1,17 @@
 <div class="page-content">
   <div class="page-header">
     <h1>
-      Role List
+      Booking List
     </h1>
   </div>
   <!-- /.page-header -->
-  <button class="btn btn-primary" (click)="create()">New Role </button>
+  <button class="btn btn-primary" (click)="create()">New transaction </button>
   <hr>
   <div class="row">
     <div class="col-xs-12">
       <!-- PAGE CONTENT BEGINS -->
       <div class="row">
         <div class="col-xs-12">
-
           <table id="simple-table" class="table table-bordered table-hover">
             <thead>
               <tr>
@@ -23,36 +22,46 @@
                   </label>
                 </th>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th></th>
+                <th>User ID</th>
+                <th>Customer ID</th>
+                <th>Book ID</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Setting</th>
+                <th>Delete role</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr *ngFor="let role of roles">
+              <tr *ngFor="let user of users">
                 <td class="center">
                   <label class="pos-rel">
                     <input type="checkbox" class="ace" />
                     <span class="lbl"></span>
                   </label>
                 </td>
-                <td>{{role.Id}}</td>
-                <td>{{role.Name}}</td>
-                <td>{{role.Description}}</td>
+                <td>{{user.Id}}</td>
+                <td>{{user.UserId}}</td>
+                <td>{{user.CustomerId}}</td>
+                <td>{{user.BookId}}</td>
+                <td>{{user.FromDate}}</td>
+                <td>{{user.ToDate}}</td>
                 <td>
                   <div class="hidden-sm hidden-xs btn-group">
+                   
 
-
-                    <button class="btn btn-xs btn-info" (click)="detail(role)">
+                    <button class="btn btn-xs btn-info" (click)="detail(user)">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </button>
-
-                    <button class="btn btn-xs btn-danger" (click)="delete(role)">
+                  </div>
+                  </td>
+                  <td>
+                  <div>
+                    <button class="btn btn-xs btn-danger" (click)="delete(user)">
                       <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
 
-
+                   
                   </div>
 
                   <div class="hidden-md hidden-lg">
@@ -92,11 +101,8 @@
               </tr>
             </tbody>
           </table>
-
-        </div>
-        <!-- /.span -->
-      </div>
-      <!-- /.row -->
+        </div><!-- /.span -->
+      </div><!-- /.row -->
     </div>
   </div>
 </div>

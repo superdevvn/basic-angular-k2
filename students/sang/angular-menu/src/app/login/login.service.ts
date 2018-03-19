@@ -1,30 +1,43 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import {Headers, Response} from "@angular/http";
+import { Headers, Response } from "@angular/http";
 import { ApiService } from '../services/api.service';
-import {CookieService} from "ngx-cookie-service"
+import { CookieService } from "ngx-cookie-service"
 @Injectable()
-export class LoginService{
-    
-    constructor(private apiService:ApiService, private cookieService:CookieService){
+export class LoginService {
+user: any[];
+    constructor(private apiService: ApiService, private cookieService: CookieService, private router: Router) {
 
     }
-
-login(username:string, password: string){
-    return new Promise((resolve,reject)=>{
-        this.apiService.post('/api/login/',{
-            username: username,
-            password: password
-        }).then(res=>{
-            console.log(res);
+//auth-superdev
+login(username:string, password:string){
+    return new Promise((resolve,reject) => {
+        this.apiService.post('/api/login',{
+            username:username,
+            password:password
+        }).then(res =>{
             this.apiService.token = res.json();
-            this.cookieService.set('auth-superdev',this.apiService.token);
+            this.cookieService.set('Auth',this.apiService.token);
             resolve(res.json());
         }).catch(err=>{
-            console.log(err);
-            reject(err);
+            console.log(err)
         })
-    })
+    });
 }
+
+    getAuthorize() {
+        return new Promise((resolve, reject) => {
+            this.apiService.get(`api/authorize/${this.apiService.token}`).then(res => {
+                this.user = res.json();
+                resolve(this.user);
+            }).catch(err => {
+                reject(err);
+            })
+        })
+    }
+
+    logout() {
+           return this.cookieService.delete('auth-superdev');
+    }
 }
