@@ -24,13 +24,9 @@ export class MenuComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    $.getScript("assets/AutoHintTheme/js/utility/utility.js", function (data, textStatus, jqxhr) {
-      $.getScript("assets/AutoHintTheme/js/demo/demo.js", function (data, textStatus, jqxhr) {
-        $.getScript("assets/AutoHintTheme/js/main.js", function (data, textStatus, jqxhr) {
-          Core.init();
-        });
-      });
-    });
+    setTimeout(() => {
+      Core.init();
+    }, 1000);
   }
   logout() {
     this.cookieService.deleteAll(this.apiService.token);
