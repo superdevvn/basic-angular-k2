@@ -11,27 +11,15 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   constructor(private utilityService: UtilityService, private loginService: LoginService,
-  private router:Router) {
+    private router: Router) {
 
-   }
+  }
 
   ngOnInit() {
 
-   
+
   }
-logout(){
-  return new Promise((resolve,reject)=>{
-    this.router.navigate(["/main/sach-list"]).then(res=>{
-      this.loginService.logout();
-      resolve(res);
-    }).catch(err=>{
-      reject(err)
-    })
-
-    
-  })
- 
-  
-}
-
+  logout() {
+    this.loginService.logout();
+  }
 }
