@@ -19,20 +19,21 @@ export class UserDetailComponent implements OnInit {
   title: string = '';
   users: any[];
   roles: any[];
+  fullName: string = '';
   constructor(private router: Router,
     private route: ActivatedRoute,
-     private userdetailService: UserDetailService,
+    private userdetailService: UserDetailService,
     private notificationService: NotificationService,
-     private userlistService: UserListService,
+    private userlistService: UserListService,
     private rolelistService: RoleListService) { }
 
   ngOnInit() {
     this.routerSubscription = this.route.params.subscribe(params => {
-      this.rolelistService.getRoles().then((roles:any)=>{
-        this.roles=roles;
+      this.rolelistService.getRoles().then((roles: any) => {
+        this.roles = roles;
         console.log(this.roles);
-        if(this.id==0){
-          this.user.RoleId=roles[0].Id;
+        if (this.id == 0) {
+          this.user.RoleId = roles[0].Id;
         }
       });
       this.id = +params['id']; // (+) converts string 'id' to a number
@@ -41,7 +42,7 @@ export class UserDetailComponent implements OnInit {
         this.userdetailService.getUser(this.id).then(res => {
           this.user = res;
           console.log(this.user);
-          
+
         });
       }
       else this.title = "BẠN ĐANG THÊM MỚI MỘT THÀNH VIÊN";
