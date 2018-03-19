@@ -1,0 +1,83 @@
+
+
+<!-- -------------- Content -------------- -->
+<section id="content" class="table-layout animated fadeIn">
+
+    <!-- -------------- Column Center -------------- -->
+    <div class="chute chute-center">
+
+        <!-- -------------- Products Status Table -------------- -->
+        <div class="row">
+            <div class="col-xs-12">
+                    <button class="btn btn-primary" (click)="create()">Create new Customer</button><br/><br/>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title hidden-xs"> Customer status</span>
+                    </div>
+                    <div class="panel-body pn">
+                        <div class="table-responsive">
+                            <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
+                                <thead>
+                                    <tr class="bg-light">
+                                        <th class="text-center  bg-primary"></th>
+                                        <th class="text-center bg-primary">ID</th>
+                                
+                                        <th class="text-center bg-primary">Name</th>
+                                        <th class="text-center bg-primary">Code</th>
+                                        <th class="text-center bg-primary">Address</th>
+                                        <th class="text-center bg-primary">Description</th>
+                                        <th class="text-center bg-primary">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let customer of customers'>
+                                        <td class="text-center">
+                                            <label class="option block mn">
+                                                <input type="checkbox" name="inputname" value="FR">
+                                                <span class="checkbox mn"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            {{customer.Id}}
+                                        </td>
+                                        
+                                        <td>
+                                            {{customer.Name}}
+                                        </td>
+                                        <td>
+                                            {{customer.Code}}
+                                        </td>
+                                        <td>
+                                            {{customer.Address}}
+                                        </td>
+                                        <td>
+                                            {{customer.Description}}
+                                        </td>
+                                        <td>
+                                          <!-- <button class="btn btn-primary" (click)="detail(customer)">edit</button>
+                                          <button class="btn btn-primary" (click)="delete(customer)">delete</button> -->
+                                          <div class="btn-group">
+                                                <button type="button" class="btn btn-info" (click)="detail(customer)">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-info dark" (click)="delete(customer)">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+
+    </div>
+    <!-- -------------- /Column Center -------------- -->
+
+</section>
+<!-- -------------- /Content -------------- -->

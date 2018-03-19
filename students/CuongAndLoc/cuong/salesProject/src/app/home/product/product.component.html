@@ -1,0 +1,79 @@
+<!-- -------------- Content1 -------------- -->
+<div id="content" class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- -------------- Standard Fields -------------- -->
+      <div class="panel">
+        <div class="panel-heading">
+          <span class="panel-title">Customer Information</span>
+        </div>
+        <div class="panel-body">
+          <div class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputStandard" class="col-lg-3 control-label">Manufacturer</label>
+              <div class="col-lg-8">
+                <select class="btn btn-primary" [(ngModel)]="product.ManufacturerId">
+                  <option *ngFor='let manufacturer of manufacturers' [ngValue]=manufacturer.Id name="something">{{manufacturer.Name}}</option>
+                </select>
+              </div>
+              <br/>
+              <br/>
+              <label for="inputStandard" class="col-lg-3 control-label">Category</label>
+              <div class="col-lg-8 ">
+                <select class="btn btn-primary" [(ngModel)]="product.CategoryId">
+                  <option *ngFor="let category of categories" [ngValue]="category.Id" name="something">{{category.Name}}</option>
+                </select>
+              </div>
+              <br/>
+              <br/>
+              <label for="inputStandard" class="col-lg-3 control-label"> Unit</label>
+              <div class="col-lg-8">
+                <div>
+                  <select class="btn btn-primary" [(ngModel)]="product.UnitId">
+                    <option *ngFor='let unit of units' [ngValue]=unit.Id name="something">{{unit.Name}}</option>
+                  </select>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <label for="inputStandard" class="col-lg-3 control-label">Code</label>
+              <div class="col-lg-8">
+                <div>
+                  <input type="text" class="form-control" name="Code"  [(ngModel)]="product.Code"/>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <label for="inputStandard" class="col-lg-3 control-label" >Name</label>
+              <div class="col-lg-8">
+                <div>
+                  <input type="text" class="form-control" name="Name"   [(ngModel)]="product.Name"/>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <label for="inputStandard" class="col-lg-3 control-label" >Price</label>
+              <div class="col-lg-8">
+                <div>
+                  <input type="number" class="form-control" name="Price"  [(ngModel)]="product.Price"/>
+                </div>
+              </div>
+              <br/>
+              <br/>
+              <label for="inputStandard" class="col-lg-3 control-label">Description</label>
+              <div class="col-lg-8">
+                <div>
+                  <input type="text" class="form-control" name="Description" [(ngModel)]="product.Description"/>
+                </div>
+              </div>
+              <div class="col-lg-12  btn-submit ">
+                <button class="btn btn-primary" (click)="save(user)">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -------------- /Content1 -------------- -->
