@@ -1,0 +1,53 @@
+<div class="form">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="form-group box">
+        <label for="usr">First Name:</label>
+        <input type="text" class="form-control" id="usr" [(ngModel)]="user.FirstName">
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="form-group box">
+        <label for="pwd">Last Name:</label>
+        <input type="" class="form-control" id="pwd" [(ngModel)]="user.LastName">
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="form-group box">
+        <label for="pwd">Role</label>
+        <Select class="form-control" id="pwd" [(ngModel)]="user.RoleID" ngDefaultControl>
+          <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+        </Select>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="form-group box">
+        <label for="pwd">Status:</label>
+        <input type="" class="form-control" id="pwd" [(ngModel)]="user.IsActived">
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <div class="form-group box">
+        <label for="usr">Description:</label>
+        <input type="text" class="form-control" id="usr" [(ngModel)]="user.Description">
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="form-group box">
+        <label for="pwd">Password:</label>
+        <input type="" class="form-control" id="pwd" [(ngModel)]="user.Password">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="myBtn">
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+
+</div>
