@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../services/utility.service';
+import { LoginService } from '../login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,13 +10,28 @@ import { UtilityService } from '../services/utility.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private utilityService: UtilityService) {
+  constructor(private utilityService: UtilityService, private loginService: LoginService,
+  private router:Router) {
 
    }
 
   ngOnInit() {
 
-    this.utilityService.hello("Dark", "Peter");
+   
   }
+logout(){
+  return new Promise((resolve,reject)=>{
+    this.router.navigate(["/main/sach-list"]).then(res=>{
+      this.loginService.logout();
+      resolve(res);
+    }).catch(err=>{
+      reject(err)
+    })
+
+    
+  })
+ 
+  
+}
 
 }

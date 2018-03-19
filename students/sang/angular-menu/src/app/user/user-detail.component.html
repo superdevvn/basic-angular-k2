@@ -1,5 +1,7 @@
 <div class="form">
+  <h2 style="text-align:center">{{title}}</h2>
   <div class="row">
+
     <div class="col-sm-6 col-md-6 col-lg-6">
       <div class="form-group box">
         <label for="usr">First Name:</label>
@@ -36,6 +38,13 @@
         <input type="text" class="form-control" id="usr" [(ngModel)]="user.Description">
       </div>
     </div>
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="form-group box">
+          <label for="pwd">Username:</label>
+          <input type="" class="form-control" id="pwd" [(ngModel)]="user.Username">
+        </div>
+      </div>
 
     <div class="col-sm-12 col-md-12 col-lg-12">
       <div class="form-group box">

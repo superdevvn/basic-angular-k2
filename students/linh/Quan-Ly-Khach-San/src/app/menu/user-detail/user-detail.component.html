@@ -18,9 +18,9 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <h6 class="card-inside-title">Role *</h6>
-                    <select class="form-control" [(ngModel)]="user.RoleId">
+                    <select class="form-control" [(ngModel)]="user.RoleId"></select>
                       <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
-                    </select>
+                    
                   </div>
                 </div>
               </div>
