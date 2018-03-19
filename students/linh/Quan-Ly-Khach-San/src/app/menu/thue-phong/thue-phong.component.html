@@ -1,3 +1,69 @@
-<p>
-  thue-phong works!
-</p>
+<section id="content" class="table-layout animated fadeIn">
+  <div class="chute chute-center">
+    <div class="panel" id="spy2">
+      <div class="panel-heading">
+        <span class="panel-title">LỊCH SỬ THUÊ PHÒNG</span>
+      </div>
+      <div style="padding-left: 1030px;">
+        <button class="btn btn-primary" (click)="create()">Thêm
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+      <div class="panel-body pn" style="margin-top: 10px;">
+        <div class="table-responsive">
+          <div class="bs-component">
+            <table class="table table-bordered table-hover">
+              <colgroup>
+                <col width="100" />
+                <col />
+                <col width="120" />
+                <col width="140" />
+                <col width="140" />
+                <col width="100" />
+                <col width="100" />
+                <col width="200" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>CMND</th>
+                  <th>CUSTOMER NAME</th>
+                  <th>ROOM</th>
+                  <th>FROM DATE</th>
+                  <th>TO DATE</th>
+                  <th>CHỈNH SỬA</th>
+                  <th>XÓA</th>
+                  <th>TOTAL COST</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let list of listInOuts">
+                  <td>{{list.CMND}}</td>
+                  <td>{{list.CustomerName}}</td>
+                  <td>{{list.Room}}</td>
+                  <td>{{list.FromDate | date:'HH:mm dd/MM/yyyy'}}</td>
+                  <td>{{list.ToDate | date:'HH:mm dd/MM/yyyy'}}</td>
+                  <td>
+                    <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-info" (click)="detail(list)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hidden-sm hidden-xs btn-group">
+
+                      <button class="btn btn-xs btn-danger">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>{{list.TotalCost}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
