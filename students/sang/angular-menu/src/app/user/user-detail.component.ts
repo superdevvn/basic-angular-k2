@@ -17,6 +17,7 @@ export class UserDetailComponent implements OnInit {
   id: number;
   roles: any[];
   users: any[];
+  title: string='';
   constructor(private userService:UserService, private route:ActivatedRoute, private router: Router,
      private notification: NotificationService, private apiService:ApiService,private roleService: RoleService) { }
 
@@ -30,11 +31,15 @@ this.routerSubscription = this.route.params.subscribe(params=>{
     }
   });
   this.id = +params['id']; //convert string 'id' to a number
-  if (this.id >0)
+  if (this.id >0){
+  this.title= "You are editing profile of a user"
   this.userService.getUser(this.id).then(res=>{
     this.user = res;
     console.log(this.user);
   })
+}
+  else this.title ="You are creating a new user";
+
 })
 this.userService.getUsers().then((users: any) => {
   this.users = users;
