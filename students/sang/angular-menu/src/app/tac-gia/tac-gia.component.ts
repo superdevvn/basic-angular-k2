@@ -22,11 +22,5 @@ export class TacGiaComponent{
     //   alert("Sai ten dang nhau hoac mat khau");
     // })
 
-   this.utilityService.login2("Sang","123").then(res=>{
-      alert(res.json());
-    }).catch((err)=>{
-      console.log(err);
-      alert("Sai Ten Dang Nhap Hoac Mat Khau");
-    })
   }
 }

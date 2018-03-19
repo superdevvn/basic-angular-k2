@@ -14,3 +14,14 @@
 .myBtn{
     text-align: center;
 }
+.form{
+    border: 1px solid;
+    border-color: #906E7D;
+    padding-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 300px;
+    margin-right: 300px;
+    
+    
+    
+}

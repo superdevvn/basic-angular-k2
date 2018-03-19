@@ -1,0 +1,167 @@
+<section id="content" class="table-layout animated fadeIn">
+
+  <div class="allcp-form theme-primary tab-pane mw600" id="register" role="tabpanel">
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">
+          {{title}}
+        </span>
+      </div>
+      <!-- -------------- /Panel Heading -------------- -->
+
+      <div method="post" action="/" id="form-register">
+
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Role *</h6>
+                    <select class="form-control" [(ngModel)]="user.RoleId">
+                      <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Username *</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.Username" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Password *</h6>
+                    <div class="form-line">
+                      <input type="password" class="form-control" [(ngModel)]="user.Password" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Full Name</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" disabled="disabled" value="{{user.FirstName +' '+ user.LastName}}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">First Name</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.FirstName" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Last Name</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.LastName" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <div class="form-line">
+                      <h6 style="font-size: 20px;">
+                        <input type="checkbox" style="width: 20px; height: 20px;" checked="checked"  [(ngModel)]="user.IsActived"/>
+                        <strong>&nbsp;&nbsp;&nbsp;&nbsp;Already is Actived</strong>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <button class="btn btn-primary">Thêm</button>
+        </div>
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <div class="bs-component">
+              <table class="table table-bordered table-hover">
+                <colgroup>
+                  <col width="50px" />
+                  <col />
+                  <col width="150px" />
+                  <col width="100px" />
+                  <col width="150px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Dịch vụ</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let inOutLine of inOut.InOutLines">
+                    <td>#</td>
+                    <td><input class="form-control" [(ngModel)]="inOutLine.Name" /></td>
+                    <td><input class="form-control" [(ngModel)]="inOutLine.Cost" /></td>
+                    <td><input class="form-control" [(ngModel)]="inOutLine.Quantity" /></td>
+                    <td>{{inOutLine.Cost*inOutLine.Quantity}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-6 text-right">
+              <button type="button" class="btn btn-default" (click)="back()">
+                <i class="fa fa-arrow-circle-left"></i>
+                BACK</button>
+              <button class="btn btn-primary" (click)="save()">
+                <i style="cursor:pointer" class="fa fa-save"></i>
+                SAVE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

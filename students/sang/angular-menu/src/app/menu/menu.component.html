@@ -31,10 +31,10 @@
 					
 
 						<li>
-							<a href="#">
+							<button (click)="logout()">
 								<i class="ace-icon fa fa-power-off"></i>
 								Logout
-							</a>
+							</button>
 						</li>
 					</ul>
 				</div>
@@ -74,27 +74,10 @@
 
 						<b class="arrow"></b>
 					</li>
-
-					<li class="">
-							<a [routerLink]="['/main/tac-gia']" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							
-							<span class="menu-text">
-								Tác giả
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-
-						
-					</li>
-
-					
-
 							<li class="">
-								<a [routerLink]="['/main/nhan-vien']" class="dropdown-toggle">
+								<a [routerLink]="['/main/user-list']" class="dropdown-toggle">
 									<i class="menu-icon fa fa-list"></i>
-									<span class="menu-text"> Nhân viên </span>
+									<span class="menu-text"> User </span>
 		
 									
 								</a>
@@ -107,83 +90,35 @@
 					<li class="">
 						<a [routerLink]="['/main/role-list']">
 							<i class="menu-icon fa fa-cog"></i>
-							<span class="menu-text"> Vai trò </span>
+							<span class="menu-text"> Role </span>
 						</a>
 	
 						<b class="arrow"></b>
 					</li>
 
 					<li class="">
-						<a [routerLink]="['/main/user-list']">
+						<a [routerLink]="['/main/customer-list']">
 							<i class="menu-icon fa fa-cog"></i>
-							<span class="menu-text"> Người Dùng </span>
+							<span class="menu-text"> Customer </span>
 						</a>
 	
 						<b class="arrow"></b>
 					</li>
 
+				
 					<li class="">
-						<a [routerLink]="['/main/doc-gia']" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text"> Đọc giả </span>
-
-							
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="form-elements.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Form Elements
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="form-elements-2.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Form Elements 2
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="form-wizard.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Wizard &amp; Validation
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="wysiwyg.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Wysiwyg &amp; Markdown
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="dropzone.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Dropzone File Upload
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a [routerLink]="['/main/sach']">
+						<a [routerLink]="['/main/sach-list']">
 							<i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text"> Sách </span>
+							<span class="menu-text"> Book </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a [routerLink]="['/main/cate-list']">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> Category </span>
 						</a>
 
 						<b class="arrow"></b>
@@ -192,9 +127,9 @@
 	
 
 					<li class="">
-						<a [routerLink]="['/main/muon-tra']">
+						<a [routerLink]="['/main/booking-list']">
 							<i class="menu-icon fa fa-picture-o"></i>
-							<span class="menu-text"> Mượn trả sách </span>
+							<span class="menu-text">Booking </span>
 						</a>
 
 						<b class="arrow"></b>
@@ -215,25 +150,10 @@
 			<div class="footer">
 				<div class="footer-inner">
 					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
-						</span>
+						
 
 						&nbsp; &nbsp;
-						<span class="action-buttons">
-							<a href="#">
-								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-							</a>
-
-							<a href="#">
-								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-							</a>
-
-							<a href="#">
-								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-							</a>
-						</span>
+						
 					</div>
 				</div>
 			</div>

@@ -15,8 +15,29 @@ export class RoomDetailComponent implements OnInit {
   title: string = '';
   rooms: any[];
   types: any[];
-  listSize: string[]=['One','Two','Three','Four','Five'];
-  listTypes: string[]=['VIP','Standard','Suite','Superior','Deluxe'];
+  listSize: any[] = [
+    {
+      value: 'One',
+      text: 'Phòng đơn'
+    },
+    {
+      value: 'Two',
+      text: 'Phòng đôi'
+    },
+    {
+      value: 'Three',
+      text: 'Phòng ba người'
+    },
+    {
+      value: 'Four',
+      text: 'Phòng bốn người'
+    },
+    {
+      value: 'Five',
+      text: 'Phòng năm người'
+    }
+  ];
+  listTypes: string[] = ['VIP', 'Standard', 'Suite', 'Superior', 'Deluxe'];
   constructor(private router: Router,
     private route: ActivatedRoute,
     private roomdetailService: RoomDetailService,
@@ -24,13 +45,6 @@ export class RoomDetailComponent implements OnInit {
 
   ngOnInit() {
     this.routerSubscription = this.route.params.subscribe(params => {
-      this.roomlistService.getRooms().then((rooms: any) => {
-        this.rooms = rooms;
-        console.log(this.rooms);
-        if (this.id == 0) {
-          this.room.Id = rooms[0].Id;
-        }
-      });
       this.id = +params['id']; // (+) converts string 'id' to a number
       if (this.id > 0) {
         this.title = "BẠN ĐANG CHỈNH SỬA THÔNG TIN MỘT PHÒNG";
@@ -40,7 +54,13 @@ export class RoomDetailComponent implements OnInit {
 
         });
       }
-      else this.title = "BẠN ĐANG THÊM MỚI THÔNG TIN MỘT PHÒNG";
+      else {
+        this.room = {
+          Size: 'One',
+          Type: 'Standard'
+        }
+        this.title = "BẠN ĐANG THÊM MỚI THÔNG TIN MỘT PHÒNG";
+      }
     });
     this.roomlistService.getRooms().then((rooms: any) => {
       this.rooms = rooms;
@@ -52,7 +72,7 @@ export class RoomDetailComponent implements OnInit {
   }
   saveRoom() {
     this.roomdetailService.saveRoom(this.room).then((res: any) => {
-      if(this.id==0) this.router.navigate(["/main/room-detail", res.Id]);
+      if (this.id == 0) this.router.navigate(["/main/room-detail", res.Id]);
     })
   }
 

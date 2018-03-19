@@ -11,9 +11,6 @@ import {CookieService} from"ngx-cookie-service";
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { TacGiaComponent } from './tac-gia/tac-gia.component';
-import { NhanVienComponent } from './nhan-vien/nhan-vien.component';
-import { DocGiaComponent } from './doc-gia/doc-gia.component';
-import { SachComponent } from './sach/sach.component';
 import { MuonTraComponent } from './muon-tra/muon-tra.component';
 import { UtilityService } from "./services/utility.service";
 import { LoginComponent } from './login/login.component';
@@ -27,6 +24,19 @@ import { UserListComponent } from "./user/user-list.component";
 import { UserService } from "./user/user.service";
 import { NotificationService } from './services/notification.service';
 import { LoadingService } from './services/loading.service';
+import { SachService } from './sach/sach.service';
+import { SachDetailComponent } from './sach/sach-detail.component';
+import { SachListComponent } from './sach/sach-list.component';
+import { CateService } from './category/cate.service';
+import { CateListComponent } from './category/cate-list.component';
+import { CateDetailComponent } from './category/cate-detail.component';
+import { CustomerService } from './customer/customer.service';
+import { CustomerListComponent } from './customer/customer-list.component';
+import { CustomerDetailComponent } from './customer/customer-detail.component';
+import { BookingService } from './booking/booking.service';
+import { BookingListComponent } from './booking/booking-list.component';
+import { BookingDetailComponent } from './booking/booking-detail.component';
+
 
 
 
@@ -35,16 +45,22 @@ import { LoadingService } from './services/loading.service';
 const routes: Routes =[
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: "main", component: MenuComponent, children:[
-    {path :'', redirectTo:"tac-gia",pathMatch:"full"},
-    {path : 'tac-gia', component: TacGiaComponent},
-    {path : 'nhan-vien', component: NhanVienComponent},
-    {path : 'doc-gia', component: DocGiaComponent},
-    {path : 'sach', component: SachComponent},
+    {path :'', redirectTo:"booking-list",pathMatch:"full"},
+    {path : 'sach-list', component: SachListComponent},
+    {path : 'sach-detail/:id', component: SachDetailComponent},
     {path : 'muon-tra', component: MuonTraComponent},
     {path : 'role-list',component:RoleListComponent},
     {path : 'role-detail/:id',component:RoleDetailComponent},
-    {path : 'user-detail',component:UserDetailComponent},
-    {path : 'user-list',component:UserListComponent}
+    {path : 'user-detail/:id',component:UserDetailComponent},
+    {path : 'user-list',component:UserListComponent},
+    {path : 'cate-list',component:CateListComponent},
+    {path : 'customer-list',component:CustomerListComponent},
+    {path : 'customer-detail/:id',component:CustomerDetailComponent},
+    {path : 'cate-detail/:id',component:CateDetailComponent},
+    {path : 'booking-detail/:id',component:BookingDetailComponent},
+    {path : 'booking-list',component:BookingListComponent}
+
+
   ]},
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
 ]
@@ -54,15 +70,20 @@ const routes: Routes =[
     AppComponent,
     MenuComponent,
     TacGiaComponent,
-    NhanVienComponent,
-    DocGiaComponent,
-    SachComponent,
+    SachListComponent,
+    SachDetailComponent,
     MuonTraComponent,
     LoginComponent,
     RoleListComponent,
     RoleDetailComponent,
     UserListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    CateListComponent,
+    CateDetailComponent,
+    CustomerDetailComponent,
+    CustomerListComponent,
+    BookingListComponent,
+    BookingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +91,8 @@ const routes: Routes =[
     HttpModule,
     FormsModule
   ],
-  providers: [UtilityService,ApiService,LoginService,RoleService,UserService,CookieService,NotificationService,LoadingService],
+  providers: [UtilityService,ApiService,LoginService,RoleService,UserService,CookieService,
+    NotificationService,LoadingService,SachService,CateService,CustomerService,BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

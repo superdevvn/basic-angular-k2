@@ -19,7 +19,7 @@
                 <col width="120" />
                 <col width="120" />
                 <col />
-                <col width="100" />
+                <col width="150" />
                 <col width="100" />
                 <col width="90" />
               </colgroup>
@@ -42,7 +42,11 @@
                   <td>{{user.RoleName}}</td>
                   <td>{{user.CreatorName}}</td>
                   <td>{{user.CreatedDate | date: 'HH:mm:ss dd/MM/yyyy'}}</td>
-                  <td>{{user.IsActived}}</td>
+                  <td style="text-align: center;">
+                      <button class="btn" [disabled]="true" [ngClass]="{'btn-success':user.IsActived, 'btn-danger': !user.IsActived}">
+                          {{user.IsActived?'Actived':'Blocked'}}
+                      </button>
+                  </td>
                   <td>
                     <div class="hidden-sm hidden-xs btn-group">
                       <button class="btn btn-xs btn-info" (click)="detail(user)">

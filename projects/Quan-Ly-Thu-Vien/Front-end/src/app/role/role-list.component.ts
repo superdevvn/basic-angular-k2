@@ -25,7 +25,7 @@ roles: any[];
     }
 
     detail(role){
-      alert(role.Name);
+
       this.router.navigate(["/main/role-detail",role.Id]);
     }
 
