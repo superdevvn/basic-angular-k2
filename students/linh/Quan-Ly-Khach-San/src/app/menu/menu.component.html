@@ -8,9 +8,11 @@
             </a>
             <span id="sidebar_left_toggle" class="ad ad-lines"></span>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user" [routerLink]="['/login']"></span> Sign Out</a></li>
-          </ul>
+        <div class="nav navbar-nav navbar-right" style="padding-top: 13px;">
+            <button type="button" class="btn btn-primary" (click)="logout()">
+                <i class="fa fa-power-off"></i>
+                Sign Out</button>
+        </div>
 
 
 
@@ -45,7 +47,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a class="accordion-toggle menu" href="#" [routerLink]="['/main/thue-phong']">
+                    <a class="accordion-toggle menu" href="#" [routerLink]="['/main/history']">
                         <span class="fa fa-home"></span>
                         <span class="sidebar-title">THUÊ PHÒNG</span>
                     </a>
