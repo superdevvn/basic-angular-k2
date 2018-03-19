@@ -1,0 +1,9 @@
+diff a/projects/quan-ly-ban-hang-01/Back-end/.vs/config/applicationhost.config b/projects/quan-ly-ban-hang-01/Back-end/.vs/config/applicationhost.config	(rejected hunks)
+@@ -162,7 +162,6 @@
+             </site>
+             <site name="SuperDev" id="2">
+                 <application path="/" applicationPool="Clr4IntegratedAppPool">
+-                    <virtualDirectory path="/" physicalPath="D:\Study\angular\projects\quan-ly-ban-hang-01\Back-end\SuperDev" />
+                     <virtualDirectory path="/" physicalPath="E:\SuperDev\basic-angular-k2\projects\quan-ly-ban-hang-01\Back-end\SuperDev" />
+                 </application>
+                 <bindings>
