@@ -18,7 +18,7 @@ export class LoginService {
                 password: password
             }).then(res => {
                 this.apiService.token = res.json();
-                this.cookieService.set('Auth', this.apiService.token);
+                this.cookieService.set('auth-superdev', this.apiService.token);
                 resolve(res.json());
             }).catch(err => {
                 console.log(err)

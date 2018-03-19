@@ -23,6 +23,13 @@
         <div class="col-md-4 col-md-offset-4">
           <button class="btn btn-primary" (click)="save()">Save</button>
         </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="form-group">
+              <strong class="text-primary">NAME</strong>
+              <input type="checkbox" class="form-control" [(ngModel)]="role.a">
+              <button class="btn btn-primary" [disabled]="!role.a">AAA</button>
+            </div>
+          </div>
       </div>
       </div>
     </div>

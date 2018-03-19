@@ -53,6 +53,9 @@
                     <button class="btn btn-xs btn-info" (click)="detail(user)">
                       <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </button>
+                    <button [disabled]="user.ToDate" class="btn btn-xs btn-success" (click)="return(user)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
                   </div>
                   </td>
                   <td>
