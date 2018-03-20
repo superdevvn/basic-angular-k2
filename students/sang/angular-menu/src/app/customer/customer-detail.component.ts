@@ -13,7 +13,7 @@ import { CustomerService } from './customer.service';
 export class CustomerDetailComponent implements OnInit {
 
   routerSubscription: any;
-  role: any={};
+  customer: any={};
   id: number;
   constructor(private customerService:CustomerService, private route:ActivatedRoute, private router: Router,
      private notification: NotificationService, private apiService:ApiService) { }
@@ -23,15 +23,15 @@ this.routerSubscription = this.route.params.subscribe(params=>{
   this.id = +params['id']; //convert string 'id' to a number
   if (this.id >0)
   this.customerService.getCustomer(this.id).then(res=>{
-    this.role = res;
-    console.log(this.role);
+    this.customer = res;
+    console.log(this.customer);
   })
 })
   
 }
 
 save(){
-  this.customerService.saveCustomer(this.role).then((res:any)=>{
+  this.customerService.saveCustomer(this.customer).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/customer-detail",res.Id]);
     this.notification.success('Saved');
   })

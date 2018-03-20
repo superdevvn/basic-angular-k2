@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { RoleService } from './role.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotificationService } from '../services/notification.service';
 import { ApiService } from '../services/api.service';
+import { CategoryService } from './cate.service';
 
 @Component({
-  selector: 'role-detail',
-  templateUrl: './role-detail.component.html',
-  styleUrls: ['./role-detail.component.css']
+  selector: 'category-detail',
+  templateUrl: './category-detail.component.html',
+  styleUrls: ['./category-detail.component.css']
  
 })
-export class RoleDetailComponent implements OnInit {
+export class CategoryDetailComponent implements OnInit {
 
   routerSubscription: any;
   role: any={};
   id: number;
   titles:String='';
-  constructor(private roleService:RoleService, private route:ActivatedRoute, private router: Router,
+  constructor(private categoryService:CategoryService, private route:ActivatedRoute, private router: Router,
      private notification: NotificationService, private apiService:ApiService) { }
 
   ngOnInit() {
@@ -24,19 +24,19 @@ this.routerSubscription = this.route.params.subscribe(params=>{
   this.id = +params['id']; //convert string 'id' to a number
   if (this.id >0)
   {
-  this.titles="You are editting a role";
-  this.roleService.getRole(this.id).then(res=>{
+  this.titles="You are editting a category";
+  this.categoryService.getCategory(this.id).then(res=>{
     this.role = res;
     console.log(this.role);
   })
 }
-else this.titles="You are creating a new role";
+else this.titles="You are creating a new category";
 })
   
 }
 
 save(){
-  this.roleService.saveRole(this.role).then((res:any)=>{
+  this.categoryService.saveCategory(this.role).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/role-detail",res.Id]);
     this.notification.success('Saved');
   })

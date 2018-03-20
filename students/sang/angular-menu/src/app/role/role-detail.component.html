@@ -1,12 +1,70 @@
-<div class="form">
-<div class="form-group" id="old">
-  <label for="usr">Name:</label>
-  <input type="text" class="form-control" id="usr" [(ngModel)]="role.Name">
+<div class="page-content">
+    <div class="row">
+<div class="col-md-12">
+  <div class="widget-box">
+    <div class="widget-header">
+      <h4 class="widget-title">ROLE DETAIL</h4>
+    </div>
+    <div class="widget-body">
+      <div class="widget-main">
+          <div class="form">
+          <strong class="text-primary text-center">
+              <h2>{{titles}}</h2>
+             </strong>
+          <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="form-group">
+            <strong class="text-primary">NAME</strong>
+            <input type="text" class="form-control" [(ngModel)]="role.Name">
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+          <div class="form-group">
+            <strong class="text-primary">DESCRIPTION</strong>
+            <textarea class="form-control" [(ngModel)]="role.Description"></textarea>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn btn-primary" (click)="save()">Save</button>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="form-group">
+              <strong class="text-primary">NAME</strong>
+              <input type="checkbox" class="form-control" [(ngModel)]="role.a">
+              <button class="btn btn-primary" [disabled]="!role.a">AAA</button>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="form-group" id="new">
-  <label for="pwd">Description:</label>
-  <input type="" class="form-control" id="pwd" [(ngModel)]="role.Description">
 </div>
-<div class="myBtn">
-  <button class="btn btn-primary" (click)="save()">Save</button></div>
 </div>
+</div>
+<!-- <div class="page-content">
+  <div class="page-header">
+    <h1>
+      <strong>ROLE DETAIL</strong>
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="form-group">
+          <strong class="text-primary">NAME</strong>
+          <input type="text" class="form-control" [(ngModel)]="role.Name">
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="form-group">
+          <strong class="text-primary">DESCRIPTION</strong>
+          <textarea class="form-control" [(ngModel)]="role.Description"></textarea>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-4">
+        <button class="btn btn-primary" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+</div> -->

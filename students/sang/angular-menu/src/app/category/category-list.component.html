@@ -1,11 +1,11 @@
 <div class="page-content">
   <div class="page-header">
     <h1>
-      <strong>BOOK LIST</strong>
+      <strong>CATEGORY LIST</strong>
     </h1>
   </div>
   <!-- /.page-header -->
-  <button class="btn btn-primary" (click)="create()">New Book </button>
+  <button class="btn btn-primary" (click)="create()">New Category </button>
   <hr>
   <div class="row">
     <div class="col-xs-12">
@@ -16,47 +16,42 @@
           <table id="simple-table" class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th class="text-center">Category ID</th>
-                <th class="text-center">Code</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Description</th>
-                <th class="text-center">Status</th>
-                <th class="text-center">
-                  <i class="fa fa-pencil"></i>
-                  <i class="fa fa-trash-o"></i>
+                <th class="center">
+                  #
                 </th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th class="text-center">
+                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </th>
               </tr>
             </thead>
 
             <tbody>
-              <tr *ngFor="let book of books">
-
-                <td>{{book.CategoryId}}</td>
-                <td>{{book.Code}}</td>
-                <td>{{book.Name}}</td>
-                <td>{{book.Description}}</td>
-                <td style="text-align: center;">
-                  <button class="btn" [ngClass]="{'btn-success':book.IsActived, 'btn-danger': !book.IsActived}">
-                    {{book.IsActived?'Actived':'Inactive'}}
-                  </button>
+              <tr *ngFor="let role of roles, let idx=index">
+                <td class="text-center">
+                  {{idx+1}}
                 </td>
-                <td style="width:125px">
+                <td>{{role.Id}}</td>
+                <td>{{role.Name}}</td>
+                <td>{{role.Description}}</td>
+                <td>
                   <div class="text-center">
                     <div class="hidden-sm hidden-xs btn-group">
 
 
-                      <button class="btn btn-xs btn-info" (click)="detail(book)">
+                      <button class="btn btn-xs btn-info" (click)="detail(role)">
                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
 
-                      <button class="btn btn-xs btn-danger" (click)="delete(book)">
+                      <button class="btn btn-xs btn-danger" (click)="delete(role)">
                         <i class="ace-icon fa fa-trash-o bigger-120"></i>
                       </button>
                     </div>
-
-
-
                   </div>
+
 
                   <div class="hidden-md hidden-lg">
                     <div class="inline pos-rel">

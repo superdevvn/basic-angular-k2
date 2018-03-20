@@ -10,13 +10,13 @@ import { CustomerService } from './customer.service';
   templateUrl: './customer-list.component.html'
 })
 export class CustomerListComponent implements OnInit {
-roles: any[];
+customers: any[];
   constructor(private customerService: CustomerService, private router:Router, private loadingService: LoadingService,
   private apiService:ApiService, private Notification:NotificationService) { }
 
   ngOnInit() {
-    this.customerService.getCustomers().then((roles:any[])=>{
-    this.roles = roles;
+    this.customerService.getCustomers().then((customer:any[])=>{
+    this.customers = customer;
     this.loadingService.stop();
 
     }).catch(err=>{
@@ -25,19 +25,19 @@ roles: any[];
     })
     }
 
-    detail(role){
-      alert(role.Name);
-      this.router.navigate(["/main/customer-detail",role.Id]);
+    detail(customer){
+      alert(customer.Name);
+      this.router.navigate(["/main/customer-detail",customer.Id]);
     }
 
     create(){
       this.router.navigate(["/main/customer-detail",0]);
     }
 
-    delete(role) {
-      this.customerService.deleteRole(role.Id).then(() => {
-        this.customerService.getCustomers().then((roles: any[]) => {
-          this.roles = roles;
+    delete(customer) {
+      this.customerService.deleteRole(customer.Id).then(() => {
+        this.customerService.getCustomers().then((customers: any[]) => {
+          this.customers = customer;
         });
       });
       this.Notification.success('Deleted');

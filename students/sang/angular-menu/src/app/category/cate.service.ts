@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 @Injectable()
-export class CateService {
+export class CategoryService {
 
   constructor(private apiService:ApiService) { }
 
 
 
-getCates(){
+getCategories(){
   return new Promise((resolve,reject)=>{
     this.apiService.post('/api/getCategories/',{}).then(res=>{
       console.log(res.json());
@@ -21,7 +21,7 @@ getCates(){
   })
 }
 
-getCate(id){
+getCategory(id){
   return new Promise((resolve,reject)=>{
     this.apiService.get(`/api/getCategory/${id}`).then(res=>{
       console.log(res.json());
@@ -34,7 +34,7 @@ getCate(id){
   })
 }
 
-saveCate(role){
+saveCategory(role){
   return new Promise((resolve,reject)=>{
     this.apiService.post('/api/saveCategory/',role).then(res=>{
       console.log(res.json());

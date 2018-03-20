@@ -9,13 +9,13 @@ import { NotificationService } from '../services/notification.service';
   templateUrl: './sach-list.component.html'
 })
 export class SachListComponent implements OnInit {
-roles: any[];
+books: any[];
   constructor(private sachService: SachService, private router:Router, private loadingService: LoadingService,
   private apiService:ApiService, private Notification:NotificationService) { }
 
   ngOnInit() {
-    this.sachService.getBooks().then((roles:any[])=>{
-    this.roles = roles;
+    this.sachService.getBooks().then((book:any[])=>{
+    this.books = book;
     this.loadingService.stop();
 
     }).catch(err=>{
@@ -24,19 +24,19 @@ roles: any[];
     })
     }
 
-    detail(role){
-      alert(role.Name);
-      this.router.navigate(["/main/sach-detail",role.Id]);
+    detail(book){
+      alert(book.Name);
+      this.router.navigate(["/main/sach-detail",book.Id]);
     }
 
     create(){
       this.router.navigate(["/main/sach-detail",0]);
     }
 
-    delete(role) {
-      this.sachService.deleteRole(role.Id).then(() => {
-        this.sachService.getBooks().then((roles: any[]) => {
-          this.roles = roles;
+    delete(book) {
+      this.sachService.deleteRole(book.Id).then(() => {
+        this.sachService.getBooks().then((books: any[]) => {
+          this.books = book;
         });
       });
       this.Notification.success('Deleted');
