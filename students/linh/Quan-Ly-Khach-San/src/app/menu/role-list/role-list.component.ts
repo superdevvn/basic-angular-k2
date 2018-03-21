@@ -18,10 +18,10 @@ export class RoleListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadingService.start();
+    // this.loadingService.start();
     this.roleService.getRoles().then((roles: any[]) => {
       this.roles = roles;
-      this.loadingService.stop();
+      // this.loadingService.stop();
     });
   }
 

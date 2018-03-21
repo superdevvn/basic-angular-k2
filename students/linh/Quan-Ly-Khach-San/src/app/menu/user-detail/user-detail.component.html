@@ -18,9 +18,9 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <h6 class="card-inside-title">Role *</h6>
-                    <select class="form-control" [(ngModel)]="user.RoleId"></select>
+                    <select class="form-control" [(ngModel)]="user.RoleId">
                       <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
-                    
+                    </select>
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@
                   <div class="form-group">
                     <div class="form-line">
                       <h6 style="font-size: 20px;">
-                        <input type="checkbox" style="width: 20px; height: 20px;" checked="checked"  [(ngModel)]="user.IsActived"/>
+                        <input type="checkbox" style="width: 20px; height: 20px;" checked="checked" [(ngModel)]="user.IsActived" />
                         <strong>&nbsp;&nbsp;&nbsp;&nbsp;Already is Actived</strong>
                       </h6>
                     </div>
