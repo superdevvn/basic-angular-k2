@@ -39,7 +39,12 @@ save(){
   this.roleService.saveRole(this.role).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/role-detail",res.Id]);
     this.notification.success('Saved');
+    this.router.navigate(["/main/role-list"]);
   })
+}
+
+back(){
+  this.router.navigate(["/main/role-list"]);
 }
 
 ngOnDestroy(){

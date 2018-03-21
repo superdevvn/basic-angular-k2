@@ -21,16 +21,10 @@
 
 		<div class="navbar-buttons navbar-header pull-right" role="navigation">
 			<ul class="nav ace-nav">
-
-
-
-
-
 				<li>
-					<button (click)="logout()">
-						<i class="ace-icon fa fa-power-off"></i>
-						Logout
-					</button>
+						<button type="button" class="btn btn-default btn-sm" (click)="logout()" style="margin-right: 13px;">
+								<span class="glyphicon glyphicon-log-out"></span> Log out
+							  </button>
 				</li>
 			</ul>
 		</div>
@@ -48,24 +42,12 @@
 		</script>
 		<ul class="nav nav-list">
 			<li class="active">
-				<a href="index.html">
+					<a [routerLink]="['/main/dashboard']">
 					<i class="menu-icon fa fa-tachometer"></i>
 					<span class="menu-text"> Dashboard </span>
 				</a>
 
 				<b class="arrow"></b>
-			</li>
-			<li class="">
-				<a [routerLink]="['/main/user-list']" class="dropdown-toggle">
-					<i class="menu-icon fa fa-list"></i>
-					<span class="menu-text"> User </span>
-
-
-				</a>
-
-				<b class="arrow"></b>
-
-
 			</li>
 
 			<li class="">
@@ -73,33 +55,37 @@
 					<i class="menu-icon fa fa-cog"></i>
 					<span class="menu-text"> Role </span>
 				</a>
+				<b class="arrow"></b>
+			</li>
 
+			<li class="">
+				<a [routerLink]="['/main/user-list']" class="dropdown-toggle">
+					<i class="menu-icon fa fa-user-secret"></i>
+					<span class="menu-text"> User </span>
+				</a>
 				<b class="arrow"></b>
 			</li>
 
 			<li class="">
 				<a [routerLink]="['/main/customer-list']">
-					<i class="menu-icon fa fa-cog"></i>
+					<i class="menu-icon fa fa-user"></i>
 					<span class="menu-text"> Customer </span>
 				</a>
-
-				<b class="arrow"></b>
 			</li>
+				<b class="arrow"></b>
+				<li class="">
+					<a [routerLink]="['/main/category-list']">
+						<i class="menu-icon fa fa-list-ul"></i>
+						<span class="menu-text"> Category </span>
+					</a>
 
-
+					<b class="arrow"></b>
+				
+			</li>
 			<li class="">
 				<a [routerLink]="['/main/sach-list']">
-					<i class="menu-icon fa fa-list-alt"></i>
+					<i class="menu-icon fa fa-book"></i>
 					<span class="menu-text"> Book </span>
-				</a>
-
-				<b class="arrow"></b>
-			</li>
-
-			<li class="">
-				<a [routerLink]="['/main/category-list']">
-					<i class="menu-icon fa fa-list-alt"></i>
-					<span class="menu-text"> Category </span>
 				</a>
 
 				<b class="arrow"></b>
@@ -109,14 +95,12 @@
 
 			<li class="">
 				<a [routerLink]="['/main/booking-list']">
-					<i class="menu-icon fa fa-picture-o"></i>
+					<i class="menu-icon fa fa-shopping-cart"></i>
 					<span class="menu-text">Booking </span>
 				</a>
 
 				<b class="arrow"></b>
 			</li>
-
-
 		</ul>
 		<!-- /.nav-list -->
 

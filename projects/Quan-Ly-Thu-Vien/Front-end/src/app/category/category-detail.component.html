@@ -8,9 +8,10 @@
     <div class="widget-body">
       <div class="widget-main">
           <div class="form">
-          <strong class="text-primary text-center">
-              <h2>{{titles}}</h2>
-             </strong>
+              <strong class=" text-center">
+                  <h2 style="color:#906E7D">{{title}}</h2>
+                  <hr>
+                 </strong>
           <div class="row">
         <div class="col-md-4 col-md-offset-4">
           <div class="form-group">
@@ -24,9 +25,14 @@
             <textarea class="form-control" [(ngModel)]="role.Description"></textarea>
           </div>
         </div>
-        <div class="col-md-4 col-md-offset-4">
-          <button class="btn btn-primary" (click)="save()">Save</button>
-        </div>
+        <div class=" col-md-4 col-md-offset-4">
+            <button class="btn btn-primary" (click)="save()">
+              Save
+            </button>
+            <button class="btn btn-warning" (click)="back()">
+              Back
+            </button>
+          </div>
       </div>
       </div>
     </div>

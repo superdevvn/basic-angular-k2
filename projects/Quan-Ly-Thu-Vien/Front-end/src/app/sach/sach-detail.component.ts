@@ -29,14 +29,21 @@ this.routerSubscription = this.route.params.subscribe(params=>{
     this.categories = categories;
     console.log(this.categories);
     if(this.id==0)
-    this.book.CategoryId = categories[0].id;
+    {
+      this.title="You are creating a new book"
+      this.book.CategoryId = categories[0].id;
+    }
+    
   })
   this.id = +params['id']; //convert string 'id' to a number
   if (this.id >0)
-  this.sachService.getBook(this.id).then(res=>{
-    this.book = res;
-    console.log(this.book);
-  })
+  {
+    this.sachService.getBook(this.id).then(res=>{
+      this.book = res;
+      console.log(this.book);
+    })
+  }
+ 
 })
   
 }
@@ -45,9 +52,13 @@ save(){
   this.sachService.saveBook(this.book).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/sach-detail",res.Id]);
     this.notification.success('Saved');
+    this.router.navigate(["/main/sach-list"]);
   })
 }
 
+back(){
+  this.router.navigate(["/main/sach-list"]);
+}
 ngOnDestroy(){
   this.routerSubscription.unsubscribe();
 }

@@ -51,7 +51,12 @@ save(){
   this.userService.saveUser(this.user).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/user-detail",res.Id]);
     this.notification.success('Saved');
+    this.router.navigate(["/main/user-list"]);
   })
+}
+
+back(){
+  this.router.navigate(["/main/user-list"])
 }
 
 ngOnDestroy(){

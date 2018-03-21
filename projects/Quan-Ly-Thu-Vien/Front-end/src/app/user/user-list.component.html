@@ -13,12 +13,21 @@
       <div class="row">
         <div class="col-xs-12">
           <table id="simple-table" class="table table-bordered table-hover">
+              <colgroup>
+                <col style="width:50px" />
+                <col style="width:100px" />
+                <col style="width:100px" />
+                <col style="width:200px" />
+                <col style="width:150px" />
+                <col style="width:120px" />
+              </colgroup>
             <thead>
               <tr>
                
                 <th class="text-center">#</th>
                 <th class="text-center">First Name</th>
                 <th class="text-center">Last Name</th>
+                <th class="text-center">Full Name</th>
                 <th class="text-center">Status</th>
                 <th class="text-center">Role</th>
                 <th class="text-center">Description</th>
@@ -34,6 +43,7 @@
                 <td class="center">{{idx}}</td>
                 <td>{{user.FirstName}}</td>
                 <td>{{user.LastName}}</td>
+                <td>{{user.FirstName}} {{user.LastName}}</td>
                 <td style="text-align: center;">
                   <button class="btn" [ngClass]="{'btn-success':user.IsActived, 'btn-danger': !user.IsActived}">
                     {{user.IsActived?'Actived':'Blocked'}}

@@ -8,6 +8,10 @@
           <div class="widget-body">
             <div class="widget-main">
               <div class="form">
+                  <strong class=" text-center">
+                      <h2 style="color:#906E7D">{{title}}</h2>
+                      <hr>
+                     </strong>
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="form-group box">
@@ -37,9 +41,14 @@
                   </div>
                   
                 </div>
-                <div class="myBtn">
-                  <button class="btn btn-primary" (click)="save()">Save</button>
-                </div>
+                <div class="text-left">
+                    <button class="btn btn-primary" (click)="save()">
+                      Save
+                    </button>
+                    <button class="btn btn-warning" (click)="back()">
+                      Back
+                    </button>
+                  </div>
               </div>
             </div>
           </div>

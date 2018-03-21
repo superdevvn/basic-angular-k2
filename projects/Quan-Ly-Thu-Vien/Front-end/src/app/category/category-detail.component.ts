@@ -15,7 +15,7 @@ export class CategoryDetailComponent implements OnInit {
   routerSubscription: any;
   role: any={};
   id: number;
-  titles:String='';
+  title:String='';
   constructor(private categoryService:CategoryService, private route:ActivatedRoute, private router: Router,
      private notification: NotificationService, private apiService:ApiService) { }
 
@@ -24,13 +24,13 @@ this.routerSubscription = this.route.params.subscribe(params=>{
   this.id = +params['id']; //convert string 'id' to a number
   if (this.id >0)
   {
-  this.titles="You are editting a category";
+  this.title="You are editting a category";
   this.categoryService.getCategory(this.id).then(res=>{
     this.role = res;
     console.log(this.role);
   })
 }
-else this.titles="You are creating a new category";
+else this.title="You are creating a new category";
 })
   
 }
@@ -39,7 +39,11 @@ save(){
   this.categoryService.saveCategory(this.role).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/role-detail",res.Id]);
     this.notification.success('Saved');
+    this.router.navigate(["/main/category-list"]);
   })
+}
+back(){
+  this.router.navigate(["/main/category-list"]);
 }
 
 ngOnDestroy(){

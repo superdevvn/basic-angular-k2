@@ -17,7 +17,7 @@
                   <div class="col-sm-4 col-md-4 col-lg-4">
                   <div class="form-group box">
                     <strong class="text-primary">USER ID</strong>
-                    <select class="form-control" [(ngModel)]="inOut.UserId">
+                    <select class="form-control" [(ngModel)]="inOut.UserId"[disabled]="true">
                         <option *ngFor="let user of users" [ngValue]="user.Id">{{user.FirstName}}</option>
                     </select>
                   </div>
@@ -26,7 +26,7 @@
                 <div class="col-sm-4 col-md-4 col-lg-4">
                   <div class="form-group box">
                     <strong class="text-primary">CUSTOMER ID</strong>
-                    <select class="form-control" [(ngModel)]="inOut.CustomerId">
+                    <select class="form-control" [(ngModel)]="inOut.CustomerId" [disabled]="true">
                         <option *ngFor="let customer of customers" [ngValue]="customer.Id">{{customer.FirstName}}</option>
                     </select>
                   </div>
@@ -35,7 +35,7 @@
                 <div class="col-sm-4 col-md-4 col-lg-4">
                   <div class="form-group box">
                     <strong class="text-primary">BOOK ID</strong>
-                    <select class="form-control" [(ngModel)]="inOut.BookId">
+                    <select class="form-control" [(ngModel)]="inOut.BookId" [disabled]="true">
                         <option *ngFor="let book of books" [ngValue]="book.Id">{{book.Name}}</option>
                     </select>
                   </div>
@@ -46,14 +46,14 @@
                 <div class="col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group box">
                     <strong class="text-primary">FROM DATE</strong>
-                    <input type="" class="form-control" id="pwd" [(ngModel)]="inOut.FromDate">
+                    <input type="" class="form-control" id="pwd" [(ngModel)]="inOut.FromDate" [disabled]="true">
                   </div>
                 </div>
 
                 <div class="col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group box">
                     <strong class="text-primary">TO DATE</strong>
-                    <input type="text" class="form-control" id="usr" [(ngModel)]="NULL">
+                    <input type="text" class="form-control" id="usr" [(ngModel)]="NULL" [disabled]="true">
                   </div>
                 </div>
               </div>
@@ -61,9 +61,9 @@
               
               </div>
               <div class="myBtn">
-                <button class="btn btn-primary" (click)="save()">
-                  Save
-                </button>
+                  <button class="btn btn-success" (click)="return()">
+                      Return
+                    </button>
                 <button class="btn btn-warning" (click)="back()">
                   Back
                 </button>

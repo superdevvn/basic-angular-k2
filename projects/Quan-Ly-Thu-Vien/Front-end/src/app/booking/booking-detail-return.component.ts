@@ -8,12 +8,12 @@ import { UserService } from '../user/user.service';
 import { SachService } from '../sach/sach.service';
 
 @Component({
-  selector: 'booking-detail',
-  templateUrl: './booking-detail.component.html',
-  styleUrls: ['./booking-detail.component.css']
+  selector: 'booking-detail-return',
+  templateUrl: './booking-detail-return.component.html',
+
 
 })
-export class BookingDetailComponent implements OnInit {
+export class BookingDetailReturn implements OnInit {
 
   routerSubscription: any;
   inOut: any = {};
@@ -55,7 +55,7 @@ export class BookingDetailComponent implements OnInit {
       })
       this.id = +params['id']; //convert string 'id' to a number
       if (this.id > 0) {
-        this.title = "You are editting a transaction"
+        this.title = "You are returning a book"
         this.bookingService.getInOut(this.id).then(res => {
           this.inOut = res;
           console.log(this.inOut);
@@ -72,7 +72,6 @@ export class BookingDetailComponent implements OnInit {
     this.bookingService.saveInOut(this.inOut).then((res: any) => {
       if (this.id === 0) this.router.navigate(["/main/booking-detail", res.Id]);
       this.notification.success('Saved');
-      this.router.navigate(["/main/booking-list"]);
     })
   }
 
@@ -81,6 +80,7 @@ export class BookingDetailComponent implements OnInit {
     this.bookingService.saveInOut(this.inOut).then((res: any) => {
       if (this.id === 0) this.router.navigate(["/main/booking-detail", res.Id]);
       this.notification.success('Updated');
+      this.router.navigate(["/main/booking-list"]);
     })
   }
 

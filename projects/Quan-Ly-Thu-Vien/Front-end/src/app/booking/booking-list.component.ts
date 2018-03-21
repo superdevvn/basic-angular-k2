@@ -10,13 +10,15 @@ import { BookingService } from './booking.service';
   templateUrl: './booking-list.component.html'
 })
 export class BookingListComponent implements OnInit {
-roles: any[];
-  constructor(private bookService: BookingService, private router:Router, private loadingService: LoadingService,
-  private apiService:ApiService, private Notification:NotificationService) { }
+inOuts: any={};
+id: number;
+  constructor(private bookingService: BookingService, private router:Router, private loadingService: LoadingService,
+  private apiService:ApiService, private Notification:NotificationService,
+private notification: NotificationService) { }
 
   ngOnInit() {
-    this.bookService.getRoles().then((roles:any[])=>{
-    this.roles = roles;
+    this.bookingService.getInOuts().then((inOut:any[])=>{
+    this.inOuts = inOut;
     this.loadingService.stop();
 
     }).catch(err=>{
@@ -25,23 +27,28 @@ roles: any[];
     })
     }
 
-    detail(role){
+    detail(inOut){
 
-      this.router.navigate(["/main/booking-detail",role.Id]);
+      this.router.navigate(["/main/booking-detail",inOut.Id]);
     }
 
     create(){
       this.router.navigate(["/main/booking-detail",0]);
     }
 
-    delete(role) {
-      this.bookService.deleteRole(role.Id).then(() => {
-        this.bookService.getRoles().then((roles: any[]) => {
-          this.roles = roles;
+    delete(inOut) {
+      this.bookingService.deleteRole(inOut.Id).then(() => {
+        this.bookingService.getInOuts().then((inOut: any[]) => {
+          this.inOuts = inOut;
         });
       });
       this.Notification.success('Deleted');
     }
 
+    redirect(inOut){
+
+      this.router.navigate(["/main/booking-detail-return",inOut.Id]);
+    }
+    
     
 }
