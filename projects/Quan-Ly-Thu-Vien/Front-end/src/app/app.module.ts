@@ -47,7 +47,7 @@ import { BookingDetailReturn } from './booking/booking-detail-return.component';
 const routes: Routes =[
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: "main", component: MenuComponent, children:[
-    {path :'', redirectTo:"booking-list",pathMatch:"full"},
+    {path :'', redirectTo:"dashboard",pathMatch:"full"},
     {path : 'sach-list', component: SachListComponent},
     {path : 'sach-detail/:id', component: SachDetailComponent},
     {path : 'role-list',component:RoleListComponent},
