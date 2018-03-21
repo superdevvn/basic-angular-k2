@@ -18,9 +18,7 @@ export class MenuComponent implements OnInit {
     private cookieService: CookieService) { }
 
   ngOnInit() {
-    this.loginService.getAuthorize().then(user => {
-      this.user = user;
-    })
+    
   }
 
   ngAfterViewInit() {
@@ -28,9 +26,8 @@ export class MenuComponent implements OnInit {
       Core.init();
     }, 1000);
   }
-  logout() {
-    this.cookieService.deleteAll(this.apiService.token);
-    this.router.navigate(["/login"]);
+  logout(){
+    this.loginService.logout();
   }
 
 }

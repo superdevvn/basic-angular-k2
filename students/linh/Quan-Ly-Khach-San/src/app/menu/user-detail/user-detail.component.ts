@@ -42,7 +42,6 @@ export class UserDetailComponent implements OnInit {
         this.userdetailService.getUser(this.id).then(res => {
           this.user = res;
           console.log(this.user);
-
         });
       }
       else this.title = "BẠN ĐANG THÊM MỚI MỘT THÀNH VIÊN";

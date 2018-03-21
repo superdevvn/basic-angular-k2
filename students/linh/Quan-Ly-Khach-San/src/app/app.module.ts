@@ -31,6 +31,7 @@ import { RoomDetailComponent } from './menu/room-detail/room-detail.component';
 import { RoomDetailService } from './menu/room-detail/room-detail.service';
 import { InOutService } from './menu/thue-phong/in-out.service';
 import { InoutDetailComponent } from './menu/inout-detail/inout-detail.component';
+import { InoutDetailServiceService } from './menu/inout-detail/inout-detail-service.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -87,7 +88,8 @@ const routes: Routes = [
     UserDetailService,
     PhongService,
     RoomDetailService,
-    InOutService],
+    InOutService,
+    InoutDetailServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
