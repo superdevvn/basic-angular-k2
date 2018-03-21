@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
 using SuperDev.Models;
 using SuperDev.Repositories;
 
@@ -19,7 +19,7 @@ namespace SuperDev.Services
             roleRepository.Delete(id);
         }
 
-        public IEnumerable<Role> GetList()
+        public IEnumerable GetList()
         {
             var roleRepository = new RoleRepository();
             return roleRepository.GetEntities();

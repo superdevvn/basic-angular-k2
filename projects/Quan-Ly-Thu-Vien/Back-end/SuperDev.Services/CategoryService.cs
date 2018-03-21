@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using SuperDev.Models;
 using SuperDev.Repositories;
 
@@ -6,23 +7,26 @@ namespace SuperDev.Services
 {
     public class CategoryService
     {
-        public Category PersistCategory(Category category)
+        CategoryRepository categoryRepository = new CategoryRepository();
+        public Category Persist(Category category)
         {
-            var categoryRepository = new CategoryRepository();
             if (category.Id > 0) return categoryRepository.Update(category);
             return categoryRepository.Create(category);
         }
 
-        public IEnumerable<Category> GetList()
+        public void Delete(int id)
         {
-            var categoryRepository = new CategoryRepository();
+            categoryRepository.Delete(id);
+        }
+
+        public IEnumerable GetList()
+        {
             return categoryRepository.GetList();
         }
 
         public Category GetById(int id)
         {
-            var categoryRepository = new CategoryRepository();
-            return categoryRepository.GetById(id);
+            return categoryRepository.GetEntity(id);
         }
     }
 }

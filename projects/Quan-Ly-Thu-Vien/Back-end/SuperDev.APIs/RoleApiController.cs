@@ -6,6 +6,14 @@ namespace SuperDev.APIs
 {
     public partial class SuperDevApiController : ApiController
     {
+        [HttpPost]
+        [Route("api/getRoles")]
+        public IHttpActionResult GetRoles()
+        {
+            var roleService = new RoleService();
+            return Ok(roleService.GetList());
+        }
+
         [HttpGet]
         [Route("api/getRole/{id}")]
         public IHttpActionResult GetRole(int id)
@@ -19,15 +27,16 @@ namespace SuperDev.APIs
         public IHttpActionResult SaveRole([FromBody]Role role)
         {
             var roleService = new RoleService();
-            return Ok(roleService.PersistRole(role));
-        }        
+            return Ok(roleService.Persist(role));
+        }
 
-        [HttpPost]
-        [Route("api/getRoles")]
-        public IHttpActionResult GetRoles()
+        [HttpDelete]
+        [Route("api/deleteRole")]
+        public IHttpActionResult DeleteRole(int id)
         {
             var roleService = new RoleService();
-            return Ok(roleService.GetList());
+            roleService.Delete(id);
+            return Ok();
         }
     }
 }

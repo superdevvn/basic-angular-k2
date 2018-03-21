@@ -1,6 +1,7 @@
 ﻿using SuperDev.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 namespace SuperDev.Repositories
 {
@@ -29,7 +30,17 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<UserComplex> GetEntities()
+        public void Delete(int id)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                var user = context.Users.Find(id);
+                context.Users.Remove(user);
+                context.SaveChanges();
+            }
+        }
+
+        public IEnumerable GetEntities()
         {
             using (var context = new SuperDevDbContext())
             {
