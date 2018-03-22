@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import {Router} from "@angular/router"
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'login',
@@ -11,7 +12,9 @@ export class LoginComponent implements OnInit {
 
   username:string;
   password: string;
-  constructor(private router: Router,private loginService:LoginService) { }
+  user:any ={};
+  constructor(private router: Router,private loginService:LoginService,
+  private cookieService: CookieService) { }
 
   ngOnInit() {
 
@@ -28,5 +31,12 @@ export class LoginComponent implements OnInit {
      
   }
 
+  rememberMe(){
+    if(this.cookieService.get('remember')){
+        this.user.username=this.cookieService.get('username');
+        this.user.password=this.cookieService.get('password');
+        this.user.rememberMe=this.cookieService.get('remember');
+    }
+}
   
 }

@@ -6,7 +6,7 @@ import { ApiService } from '../services/api.service';
 import { CookieService } from "ngx-cookie-service"
 @Injectable()
 export class LoginService {
-    user: any[];
+    user: any={};
     constructor(private apiService: ApiService, private cookieService: CookieService, private router: Router) {
 
     }
@@ -42,4 +42,7 @@ export class LoginService {
         this.apiService.token = "none";
         this.router.navigate(["/login"]);
     }
+
+
+
 }
