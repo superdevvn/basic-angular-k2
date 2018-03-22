@@ -15,7 +15,7 @@ password: string;
   }
   login(){
     this.loginService.login(this.username, this.password).then(()=>{
-      this.router.navigate(["/main/dashboard"]);
+      this.router.navigate(["/main"]);
     }).catch((err)=>{
       alert("Login Fail");
       console.error(err);
