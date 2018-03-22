@@ -13,6 +13,14 @@
                       <hr>
                      </strong>
                 <div class="row">
+
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group box">
+                            <strong class="text-primary">CODE:</strong>
+                          <input type="text" class="form-control" id="usr" [(ngModel)]="book.Code">
+                        </div>
+                      </div>
+
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="form-group box">
                             <strong class="text-primary">CATEGORY:</strong>                
@@ -21,22 +29,17 @@
                             </select>
                         </div>
                       </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="form-group box">
-                            <strong class="text-primary">CODE:</strong>
-                          <input type="text" class="form-control" id="usr" [(ngModel)]="book.Code">
-                        </div>
-                      </div>
-                  <div class="col-sm-6 col-md-6 col-lg-6">
+                  
+                  <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group box">
                         <strong class="text-primary">BOOK NAME:</strong>
                       <input type="text" class="form-control" id="usr" [(ngModel)]="book.Name">
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group box">
                         <strong class="text-primary">DESCRIPTION</strong>
-                      <input type="text" class="form-control" id="usr" [(ngModel)]="book.Description">
+                      <textarea type="text" class="form-control" id="usr" [(ngModel)]="book.Description" style="height: 100px"></textarea>
                     </div>
                   </div>
                   

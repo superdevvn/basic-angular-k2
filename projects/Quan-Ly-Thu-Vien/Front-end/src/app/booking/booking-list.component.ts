@@ -5,6 +5,7 @@ import { LoadingService } from '../services/loading.service';
 import { ApiService } from '../services/api.service';
 import { NotificationService } from '../services/notification.service';
 import { BookingService } from './booking.service';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'booking-list',
   templateUrl: './booking-list.component.html'

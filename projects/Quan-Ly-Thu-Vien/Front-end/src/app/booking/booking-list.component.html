@@ -14,12 +14,12 @@
         <div class="col-xs-12">
           <table id="simple-table" class="table table-bordered table-hover">
             <colgroup>
-              <col style="width:50px" />
+              <col style="width:30px" />
               <col style="width:75px" />
               <col style="width:75px" />
-              <col style="width:75px" />
-              <col style="width:200px" />
-              <col style="width:200px" />
+              <col style="width:125px" />
+              <col style="width:125px" />
+              <col style="width:125px" />
               <col style="width:75px" />
             </colgroup>
             <thead>
@@ -47,11 +47,12 @@
                 <td class="center">
                   {{idx+1}}
                 </td>
-                <td>{{inOut.UserId}}</td>
-                <td>{{inOut.CustomerId}}</td>
-                <td>{{inOut.BookId}}</td>
-                <td>{{inOut.FromDate}}</td>
-                <td>{{inOut.ToDate}}</td>
+                <td>{{inOut.Username}}</td>
+                <td>{{inOut.CustomerName}}</td>
+                <td>{{inOut.BookName}}</td>
+                <td>{{inOut.FromDate | date:'yyyy-MM-dd HH:mm a z':'+0700'}}</td>
+                <td>{{inOut.ToDate | date:'yyyy-MM-dd HH:mm a z':'+0700'}}</td>
+                
               
                 <td>
                   <div class="text-center">
