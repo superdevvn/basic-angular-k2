@@ -6,14 +6,6 @@ export class InoutServiceService {
 
   constructor(private apiService: ApiService) { }
 
-  getInOut(id) {
-    return new Promise((resolve, reject) => {
-      this.apiService.get(`api/getInOut/${id}`).then((res) => {
-        resolve(res.json());
-      }).catch(err => {
-        reject(err);
-      });
-    });
-  }
+  
 
 }
