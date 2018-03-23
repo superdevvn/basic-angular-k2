@@ -27,6 +27,7 @@ export class LoginService {
     }
 
     getAuthorize() {
+        debugger
         return new Promise((resolve, reject) => {
             this.apiService.get(`api/authorize/${this.apiService.token}`).then(res => {
                 this.user = res.json();
