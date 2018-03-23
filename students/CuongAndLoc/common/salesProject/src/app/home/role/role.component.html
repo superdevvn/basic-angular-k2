@@ -1,0 +1,61 @@
+<!-- -------------- Topbar Menu Wrapper -------------- -->
+
+<!-- -------------- /Topbar Menu Wrapper -------------- -->
+
+
+<!-- -------------- Content1 -------------- -->
+<div id="content" class="animated fadeIn">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <!-- -------------- Standard Fields -------------- -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <span class="panel-title">Role Information</span>
+                </div>
+                <div class="panel-body">
+
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group">
+
+                            <label for="inputStandard" class="col-lg-3 control-label">Name</label>
+
+                            <div class="col-lg-8">
+                                <div>
+                                    <input type="text" class="form-control" [(ngModel)]="role.Name" name="Name" />
+                                </div>
+                            </div>
+
+                            <br/>
+                            <br/>
+                            <label for="inputStandard" class="col-lg-3 control-label">Description</label>
+                            <div class="col-lg-8">
+                                <div>
+                                    <input type="text" class="form-control" [(ngModel)]="role.Description" name="Description" />
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="col-lg-12  btn-submit ">
+                                <button class="btn btn-primary" (click)="save(customer)">Save</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- -------------- /Content1 -------------- -->

@@ -3,12 +3,14 @@ import { Router, } from '@angular/router';
 import { Http, Headers, Response } from '@angular/http';
 import { promise } from 'selenium-webdriver';
 import { CookieService } from 'ngx-cookie-service';
+import { LoadingService } from './loadingService/loading.service';
 
 @Injectable()
 export class ApiService {
-    host: string = 'http://103.232.121.69:5202';
+  //  host: string = 'http://103.232.121.69:5202';
+   host: string = 'http://localhost:8245';
     token: string = "none";
-    constructor(private router: Router, private http: Http, private cookieService: CookieService) {
+    constructor(private router: Router, private http: Http, private cookieService: CookieService, private loadingService:LoadingService) {
         this.token = this.cookieService.check('Auth') ? this.cookieService.get('Auth') : 'none';
     }
 
@@ -25,7 +27,10 @@ export class ApiService {
                         reject("Có lỗi xảy ra");
                     }
                 }).catch(err => {
-                    if (err.status == 401) this.router.navigate(["/login"]);
+                    if (err.status == 401){
+                        this.router.navigate(["/login"]);
+                        this.loadingService.stop();
+                    } 
                     else reject(err);
                 });
         });

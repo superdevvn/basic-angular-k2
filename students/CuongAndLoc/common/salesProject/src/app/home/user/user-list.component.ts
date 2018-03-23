@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
 import { Router } from '@angular/router';
 import { NotificationService } from '../../loadingService/notification.service';
+import { UserService } from './user.service';
+
 declare var $: any;
 declare var Core: any;
 @Component({
@@ -10,12 +11,13 @@ declare var Core: any;
 
 })
 export class UserListComponent implements OnInit {
-
-  constructor(private userService: UserService, private router: Router, private notificationService: NotificationService) { }
   users: any[];
+  constructor(private userService: UserService, private router: Router, private notificationService: NotificationService) { }
+
   ngOnInit() {
-    this.userService.getUsers().then((users: any) => {
-      this.users = users;
+    this.userService.getUsers().then((customers: any) => {
+      this.users = customers;
+      console.log(this.users);
     });
   }
   detail(user) {
@@ -24,12 +26,12 @@ export class UserListComponent implements OnInit {
   create() {
     this.router.navigate(["/main/user-detail", 0]);
   }
-  delete(user) {
-    this.userService.deleteUser(user.Id).then(() => {
-      this.notificationService.success('delete Success');
-      this.router.navigate(["/main/user-list"]);
-    }).catch(err => {
-      this.notificationService.error('Delete happen');
-    })
-  }
+  // delete(customer) {
+  //   this.userService.deletecustomer(customer.Id).then(() => {
+  //     this.notificationService.success('delete Success');
+  //     this.router.navigate(["/main/customer-list"]);
+  //   }).catch(err => {
+  //     this.notificationService.error('Delete Failed');
+  //   })
+  // }
 }

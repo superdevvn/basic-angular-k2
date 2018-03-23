@@ -1,0 +1,9 @@
+.sidebar-toggler{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+#sidebar_left{
+height: 100vh !important;
+}

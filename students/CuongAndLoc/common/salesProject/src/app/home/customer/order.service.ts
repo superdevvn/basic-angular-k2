@@ -7,11 +7,12 @@ declare var $:any;
 
 
 @Injectable()
-export class UserService {
+export class OrderService {
     constructor(private apiService: ApiService) { }
-    getUser(id) {
+    getOrder(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`/api/getUser/${id}`).then(res => {             
+            this.apiService.get(`/api/getOrder/${id}`).then(res => {
+              
                 resolve(res.json());
             }).catch(err => {
                 console.log(err);
@@ -19,10 +20,10 @@ export class UserService {
             });
         });
     }
-    getUsers() {
+    getOrders() {
         return new Promise((resolve, reject) => {
-            this.apiService.post('/api/getUsers/', {}).then(res => {
-             
+            this.apiService.post('/api/getOrders/', {}).then(res => {
+              
                 resolve(res.json());
             }).catch(err => {
                 console.log(err);
@@ -30,22 +31,14 @@ export class UserService {
             });
         });
     }
-    saveUser(user) {
+    savecustomer(customer) {
         return new Promise((resolve, reject) => {
-            this.apiService.post('/api/saveUser/', user).then(res => {
+            this.apiService.post('/api/saveOrder/', customer).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
             });
         });
     }
-    // deletecustomer(id) {
-    //     return new Promise((resolve, reject) => {
-    //         this.apiService.delete(`/api/deleteCustomer?id=${id}`).then(() => {
-    //             resolve();
-    //         }).catch(err => {
-    //             reject(err);
-    //         })
-    //     });
-    // }
+   
 }

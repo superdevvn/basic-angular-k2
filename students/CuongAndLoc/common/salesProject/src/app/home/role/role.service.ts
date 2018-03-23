@@ -1,17 +1,13 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { ApiService } from "../../api.service";
-
-
 declare var $:any;
-
-
-
 @Injectable()
-export class UserService {
+export class RoleService {
     constructor(private apiService: ApiService) { }
-    getUser(id) {
+    getRole(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`/api/getUser/${id}`).then(res => {             
+            this.apiService.get(`/api/getRole/${id}`).then(res => {             
                 resolve(res.json());
             }).catch(err => {
                 console.log(err);
@@ -19,10 +15,9 @@ export class UserService {
             });
         });
     }
-    getUsers() {
+    getRoles() {
         return new Promise((resolve, reject) => {
-            this.apiService.post('/api/getUsers/', {}).then(res => {
-             
+            this.apiService.post('/api/getRoles/', {}).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 console.log(err);
@@ -30,18 +25,18 @@ export class UserService {
             });
         });
     }
-    saveUser(user) {
+    saveRole(product) {
         return new Promise((resolve, reject) => {
-            this.apiService.post('/api/saveUser/', user).then(res => {
+            this.apiService.post('/api/saveRole/', product).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
             });
         });
     }
-    // deletecustomer(id) {
+    // deleteRole(id) {
     //     return new Promise((resolve, reject) => {
-    //         this.apiService.delete(`/api/deleteCustomer?id=${id}`).then(() => {
+    //         this.apiService.delete(`/api/deleteRole?id=${id}`).then(() => {
     //             resolve();
     //         }).catch(err => {
     //             reject(err);
