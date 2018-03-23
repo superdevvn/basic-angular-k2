@@ -1,27 +1,4 @@
-#old{
-    margin: auto;
-    width: 50%;
-    
-    padding: 10px;
-}
-
-#new{
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
 
 .myBtn{
     text-align: center;
-}
-.form{
-    border: 1px solid;
-    border-color: #906E7D;
-    padding-bottom: 20px;
-    margin-top: 5px;
-    margin-left: 300px;
-    margin-right: 300px;
-    
-    
-    
 }

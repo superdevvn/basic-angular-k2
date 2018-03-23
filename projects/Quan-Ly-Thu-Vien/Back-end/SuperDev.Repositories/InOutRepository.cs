@@ -1,6 +1,7 @@
 ﻿using SuperDev.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 namespace SuperDev.Repositories
 {
@@ -29,11 +30,22 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<InOut> GetList()
+        public IEnumerable GetList()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.InOuts.ToList();
+                return context.InOuts.Select(e => new InOutComplex
+                {
+                    Id = e.Id,
+                    UserId = e.UserId,
+                    Username = e.User.Username,
+                    BookId = e.BookId,
+                    BookName = e.Book.Name,
+                    CustomerId = e.CustomerId,
+                    CustomerName = e.Customer.FirstName + " "+ e.Customer.LastName,
+                    FromDate = e.FromDate,
+                    ToDate = e.ToDate
+                }).ToList();
             }
         }
 

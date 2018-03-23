@@ -8,7 +8,7 @@ export class BookingService {
 
 
 
-getRoles(){
+getInOuts(){
   return new Promise((resolve,reject)=>{
     this.apiService.post('/api/getInOuts/',{}).then(res=>{
       console.log(res.json());
@@ -21,7 +21,7 @@ getRoles(){
   })
 }
 
-getRole(id){
+getInOut(id){
   return new Promise((resolve,reject)=>{
     this.apiService.get(`/api/getInOut/${id}`).then(res=>{
       console.log(res.json());
@@ -34,7 +34,7 @@ getRole(id){
   })
 }
 
-saveRole(role){
+saveInOut(role){
   return new Promise((resolve,reject)=>{
     this.apiService.post('/api/saveInOut/',role).then(res=>{
       console.log(res.json());

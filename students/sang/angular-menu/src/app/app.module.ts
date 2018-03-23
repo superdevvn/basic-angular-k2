@@ -27,15 +27,15 @@ import { LoadingService } from './services/loading.service';
 import { SachService } from './sach/sach.service';
 import { SachDetailComponent } from './sach/sach-detail.component';
 import { SachListComponent } from './sach/sach-list.component';
-import { CateService } from './category/cate.service';
-import { CateListComponent } from './category/cate-list.component';
-import { CateDetailComponent } from './category/cate-detail.component';
 import { CustomerService } from './customer/customer.service';
 import { CustomerListComponent } from './customer/customer-list.component';
 import { CustomerDetailComponent } from './customer/customer-detail.component';
 import { BookingService } from './booking/booking.service';
 import { BookingListComponent } from './booking/booking-list.component';
 import { BookingDetailComponent } from './booking/booking-detail.component';
+import { CategoryService } from './category/cate.service';
+import { CategoryDetailComponent } from './category/category-detail.component';
+import { CategoryListComponent } from './category/category-list.component';
 
 
 
@@ -53,13 +53,12 @@ const routes: Routes =[
     {path : 'role-detail/:id',component:RoleDetailComponent},
     {path : 'user-detail/:id',component:UserDetailComponent},
     {path : 'user-list',component:UserListComponent},
-    {path : 'cate-list',component:CateListComponent},
     {path : 'customer-list',component:CustomerListComponent},
     {path : 'customer-detail/:id',component:CustomerDetailComponent},
-    {path : 'cate-detail/:id',component:CateDetailComponent},
     {path : 'booking-detail/:id',component:BookingDetailComponent},
-    {path : 'booking-list',component:BookingListComponent}
-
+    {path : 'booking-list',component:BookingListComponent},
+    {path : 'category-list',component:CategoryListComponent},
+    {path : 'category-detail/:id',component:CategoryDetailComponent}
 
   ]},
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
@@ -78,12 +77,12 @@ const routes: Routes =[
     RoleDetailComponent,
     UserListComponent,
     UserDetailComponent,
-    CateListComponent,
-    CateDetailComponent,
     CustomerDetailComponent,
     CustomerListComponent,
     BookingListComponent,
-    BookingDetailComponent
+    BookingDetailComponent,
+    CategoryDetailComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +91,7 @@ const routes: Routes =[
     FormsModule
   ],
   providers: [UtilityService,ApiService,LoginService,RoleService,UserService,CookieService,
-    NotificationService,LoadingService,SachService,CateService,CustomerService,BookingService],
+    NotificationService,LoadingService,SachService,CustomerService,BookingService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

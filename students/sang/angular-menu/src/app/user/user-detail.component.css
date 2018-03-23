@@ -1,37 +1,5 @@
-#old{
-    margin: auto;
-    width: 50%;
-    
-    padding: 10px;
-}
-
-#new{
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
 
 .myBtn{
     text-align: center;
     
-}
-
-.form{
-    height: fit-content;
-    border: 1px solid;
-    border-color: #906E7D;
-    padding-bottom: 20px;
-    margin-top: 5px;
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-.box{
-   margin-top: 20px;
-   margin-left: 20px;
-margin-right: 20px;
-}
-
-.row{
-    height:300px;
 }

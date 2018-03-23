@@ -6,10 +6,15 @@
           <strong>DANH SÁCH VAI TRÒ</strong>
         </span>
       </header>
-      <div style="padding-left: 1030px;">
-        <button class="btn btn-primary" (click)="create()">Thêm
-          <i class="fa fa-plus"></i>
-        </button>
+
+      <div class="panel-body pn" style="margin-top: 10px;">
+        <div class="table-responsive">
+          <div style="padding-left: 1030px;">
+            <button class="btn btn-primary" (click)="create()">Thêm
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="panel-body pn" style="margin-top: 10px;">
         <div class="table-responsive">
@@ -25,8 +30,12 @@
                 <tr class="bg-primary">
                   <th class="text-center">Name</th>
                   <th class="text-center">Description</th>
-                  <th class="text-center"><i class="fa fa-pencil"></i></th>
-                  <th class="text-center"><i class="fa fa-trash-o"></i></th>
+                  <th class="text-center">
+                    <i class="fa fa-pencil"></i>
+                  </th>
+                  <th class="text-center">
+                    <i class="fa fa-trash-o"></i>
+                  </th>
                 </tr>
               </thead>
               <tbody>

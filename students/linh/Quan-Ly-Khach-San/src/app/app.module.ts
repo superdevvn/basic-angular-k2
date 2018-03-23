@@ -31,9 +31,11 @@ import { RoomDetailComponent } from './menu/room-detail/room-detail.component';
 import { RoomDetailService } from './menu/room-detail/room-detail.service';
 import { InOutService } from './menu/thue-phong/in-out.service';
 import { InoutDetailComponent } from './menu/inout-detail/inout-detail.component';
+import { InoutDetailServiceService } from './menu/inout-detail/inout-detail-service.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
   {
     path: 'main', component: MenuComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -49,8 +51,7 @@ const routes: Routes = [
       { path: 'room-detail/:id', component: RoomDetailComponent },
       { path: 'inout-detail/:id', component: InoutDetailComponent }
     ]
-  },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' }
+  }
 ]
 
 @NgModule({
@@ -87,7 +88,8 @@ const routes: Routes = [
     UserDetailService,
     PhongService,
     RoomDetailService,
-    InOutService],
+    InOutService,
+    InoutDetailServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

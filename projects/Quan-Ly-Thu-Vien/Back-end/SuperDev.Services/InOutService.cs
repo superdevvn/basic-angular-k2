@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using SuperDev.Models;
 using SuperDev.Repositories;
 
@@ -13,7 +14,7 @@ namespace SuperDev.Services
             return inOutRepository.Create(inOut);
         }
 
-        public IEnumerable<InOut> GetList()
+        public IEnumerable GetList()
         {
             var inOutRepository = new InOutRepository();
             return inOutRepository.GetList();

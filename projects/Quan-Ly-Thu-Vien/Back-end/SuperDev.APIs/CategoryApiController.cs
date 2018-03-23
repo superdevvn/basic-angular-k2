@@ -19,7 +19,7 @@ namespace SuperDev.APIs
         public IHttpActionResult SaveCategory([FromBody]Category category)
         {
             var categoryService = new CategoryService();
-            return Ok(categoryService.PersistCategory(category));
+            return Ok(categoryService.Persist(category));
         }        
 
         [HttpPost]
@@ -28,6 +28,15 @@ namespace SuperDev.APIs
         {
             var categoryService = new CategoryService();
             return Ok(categoryService.GetList());
+        }
+
+        [HttpDelete]
+        [Route("api/deleteCategory")]
+        public IHttpActionResult DeleteCategory(int id)
+        {
+            var categoryService = new CategoryService();
+            categoryService.Delete(id);
+            return Ok();
         }
     }
 }

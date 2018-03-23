@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SuperDev.Models;
 
 namespace SuperDev.Repositories
@@ -32,7 +29,17 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<Category> GetList()
+        public void Delete(int id)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                var category = context.Categories.Find(id);
+                context.Categories.Remove(category);
+                context.SaveChanges();
+            }
+        }
+
+        public IEnumerable GetList()
         {
             using (var context = new SuperDevDbContext())
             {
@@ -40,7 +47,7 @@ namespace SuperDev.Repositories
             }
         }
 
-        public Category GetById(int id)
+        public Category GetEntity(int id)
         {
             using (var context = new SuperDevDbContext())
             {

@@ -27,7 +27,16 @@ namespace SuperDev.APIs
         public IHttpActionResult SaveUser([FromBody]User user)
         {
             var userService = new UserService();
-            return Ok(userService.PersistUser(user));
+            return Ok(userService.Persist(user));
+        }
+
+        [HttpDelete]
+        [Route("api/deleteUser")]
+        public IHttpActionResult DeleteUser(int id)
+        {
+            var userService = new UserService();
+            userService.Delete(id);
+            return Ok();
         }
     }
 }

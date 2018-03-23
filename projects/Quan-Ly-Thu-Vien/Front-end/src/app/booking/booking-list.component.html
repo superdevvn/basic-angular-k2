@@ -1,7 +1,7 @@
 <div class="page-content">
   <div class="page-header">
     <h1>
-      Booking List
+      <strong>TRANSACTION LIST</strong>
     </h1>
   </div>
   <!-- /.page-header -->
@@ -13,96 +13,72 @@
       <div class="row">
         <div class="col-xs-12">
           <table id="simple-table" class="table table-bordered table-hover">
+            <colgroup>
+              <col style="width:30px" />
+              <col style="width:75px" />
+              <col style="width:75px" />
+              <col style="width:125px" />
+              <col style="width:125px" />
+              <col style="width:125px" />
+              <col style="width:75px" />
+            </colgroup>
             <thead>
               <tr>
-                <th class="center">
-                  <label class="pos-rel">
-                    <input type="checkbox" class="ace" />
-                    <span class="lbl"></span>
-                  </label>
+                <th class="text-center">
+                  #
                 </th>
-                <th>Id</th>
-                <th>User ID</th>
-                <th>Customer ID</th>
-                <th>Book ID</th>
+
+                <th>User</th>
+                <th>Customer</th>
+                <th>Book</th>
                 <th>From Date</th>
                 <th>To Date</th>
-                <th>Setting</th>
-                <th>Delete role</th>
+                <th class="text-center">
+                  <i class="fa fa-check"></i>
+                  <i class="fa fa-pencil"></i>
+                  <i class="fa fa-trash-o"></i>
+                  
+                </th>
               </tr>
             </thead>
 
             <tbody>
-              <tr *ngFor="let user of users">
+              <tr *ngFor="let inOut of inOuts; let idx=index">
                 <td class="center">
-                  <label class="pos-rel">
-                    <input type="checkbox" class="ace" />
-                    <span class="lbl"></span>
-                  </label>
+                  {{idx+1}}
                 </td>
-                <td>{{user.Id}}</td>
-                <td>{{user.UserId}}</td>
-                <td>{{user.CustomerId}}</td>
-                <td>{{user.BookId}}</td>
-                <td>{{user.FromDate}}</td>
-                <td>{{user.ToDate}}</td>
+                <td>{{inOut.Username}}</td>
+                <td>{{inOut.CustomerName}}</td>
+                <td>{{inOut.BookName}}</td>
+                <td>{{inOut.FromDate | date:'yyyy-MM-dd HH:mm a z':'+0700'}}</td>
+                <td>{{inOut.ToDate | date:'yyyy-MM-dd HH:mm a z':'+0700'}}</td>
+                
+              
                 <td>
-                  <div class="hidden-sm hidden-xs btn-group">
-                   
-
-                    <button class="btn btn-xs btn-info" (click)="detail(user)">
-                      <i class="ace-icon fa fa-pencil bigger-120"></i>
-                    </button>
-                  </div>
-                  </td>
-                  <td>
-                  <div>
-                    <button class="btn btn-xs btn-danger" (click)="delete(user)">
-                      <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                    </button>
-
-                   
-                  </div>
-
-                  <div class="hidden-md hidden-lg">
-                    <div class="inline pos-rel">
-                      <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                        <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                  <div class="text-center">
+                    <div class="hidden-sm hidden-xs btn-group">
+                        <button class="btn btn-xs btn-success" (click)="redirect(inOut)"  [disabled]="inOut.ToDate">
+                            <i class="ace-icon fa fa-check bigger-120"></i>
+                          </button>
+                      <button class="btn btn-xs btn-info" (click)="detail(inOut)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
 
-                      <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                        <li>
-                          <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                            <span class="blue">
-                              <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                            </span>
-                          </a>
-                        </li>
+                      <button class="btn btn-xs btn-danger" (click)="delete(inOut)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
 
-                        <li>
-                          <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                            <span class="green">
-                              <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                            </span>
-                          </a>
-                        </li>
 
-                        <li>
-                          <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                            <span class="red">
-                              <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
-        </div><!-- /.span -->
-      </div><!-- /.row -->
+        </div>
+        <!-- /.span -->
+      </div>
+      <!-- /.row -->
     </div>
   </div>
 </div>

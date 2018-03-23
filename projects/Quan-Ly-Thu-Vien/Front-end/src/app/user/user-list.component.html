@@ -1,7 +1,7 @@
 <div class="page-content">
   <div class="page-header">
     <h1>
-      User
+      <strong>USER LIST</strong>
     </h1>
   </div>
   <!-- /.page-header -->
@@ -13,98 +13,64 @@
       <div class="row">
         <div class="col-xs-12">
           <table id="simple-table" class="table table-bordered table-hover">
+              <colgroup>
+                <col style="width:50px" />
+                <col style="width:100px" />
+                <col style="width:100px" />
+                <col style="width:200px" />
+                <col style="width:150px" />
+                <col style="width:120px" />
+              </colgroup>
             <thead>
               <tr>
-                <th class="center">
-                  <label class="pos-rel">
-                    <input type="checkbox" class="ace" />
-                    <span class="lbl"></span>
-                  </label>
+               
+                <th class="text-center">#</th>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+                <th class="text-center">Full Name</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Role</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">
+                  <i class="fa fa-pencil"></i>
+                  <i class="fa fa-trash-o"></i>
                 </th>
-                <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Status</th>
-                <th>Role</th>
-                <th>Password</th>
-                <th>Description</th>
-                <th >Setting</th>
-                <th>Delete role</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr *ngFor="let user of users">
-                <td class="center">
-                  <label class="pos-rel">
-                    <input type="checkbox" class="ace" />
-                    <span class="lbl"></span>
-                  </label>
-                </td>
-                <td>{{user.Id}}</td>
+              <tr *ngFor="let user of users; let idx=index">
+                <td class="center">{{idx}}</td>
                 <td>{{user.FirstName}}</td>
                 <td>{{user.LastName}}</td>
-                <td>{{user.IsActived}}</td>
+                <td>{{user.FirstName}} {{user.LastName}}</td>
+                <td style="text-align: center;">
+                  <button class="btn" [ngClass]="{'btn-success':user.IsActived, 'btn-danger': !user.IsActived}">
+                    {{user.IsActived?'Actived':'Blocked'}}
+                  </button>
+                </td>
                 <td>{{user.RoleName}}</td>
-                <td>{{user.Password}}</td>
                 <td>{{user.Description}}</td>
-                <td>
-                  <div class="hidden-sm hidden-xs btn-group">
-                   
-
-                    <button class="btn btn-xs btn-info" (click)="detail(user)">
-                      <i class="ace-icon fa fa-pencil bigger-120"></i>
-                    </button>
-                  </div>
-                  </td>
-                  <td>
-                  <div>
-                    <button class="btn btn-xs btn-danger" (click)="delete(user)">
-                      <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                    </button>
-
-                   
-                  </div>
-
-                  <div class="hidden-md hidden-lg">
-                    <div class="inline pos-rel">
-                      <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                        <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                <td style="width:125px">
+                  <div class="text-center">
+                    <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-info" (click)="detail(user)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
-
-                      <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                        <li>
-                          <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                            <span class="blue">
-                              <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                            </span>
-                          </a>
-                        </li>
-
-                        <li>
-                          <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                            <span class="green">
-                              <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                            </span>
-                          </a>
-                        </li>
-
-                        <li>
-                          <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                            <span class="red">
-                              <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
+                      <button class="btn btn-xs btn-danger" (click)="delete(user)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
                     </div>
                   </div>
+
                 </td>
               </tr>
             </tbody>
           </table>
-        </div><!-- /.span -->
-      </div><!-- /.row -->
+        </div>
+        <!-- /.span -->
+      </div>
+      <!-- /.row -->
     </div>
   </div>
 </div>

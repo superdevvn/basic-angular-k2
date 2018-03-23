@@ -29,5 +29,14 @@ namespace SuperDev.APIs
             var bookService = new BookService();
             return Ok(bookService.GetList());
         }
+
+        [HttpDelete]
+        [Route("api/deleteBook")]
+        public IHttpActionResult DeleteBook(int id)
+        {
+            var bookService = new BookService();
+            bookService.Delete(id);
+            return Ok();
+        }
     }
 }

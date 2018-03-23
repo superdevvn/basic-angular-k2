@@ -1,17 +1,17 @@
-﻿using SuperDev.Models;
-using SuperDev.Repositories;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using System.Web;
+using SuperDev.Models;
+using SuperDev.Repositories;
 using SuperDev.Utilities;
 
 namespace SuperDev.Services
 {
     public class UserService
     {
-        public User PersistUser(User user)
+        private UserRepository userRepository = new UserRepository();
+        public User Persist(User user)
         {
-            var userRepository = new UserRepository();
             if (user.Id > 0)
             {
                 var entity = userRepository.GetEntity(user.Id);
@@ -29,23 +29,26 @@ namespace SuperDev.Services
             }
         }
 
-        public IEnumerable<UserComplex> GetList()
+        public void Delete(int id)
         {
-            var userRepository = new UserRepository();
+            userRepository.Delete(id);
+        }
+
+        public IEnumerable GetList()
+        {
             return userRepository.GetEntities();
         }
 
         public User GetById(int id)
         {
-            var userRepository = new UserRepository();
             return userRepository.GetEntity(id);
         }
 
         public User Login(string username, string password)
         {
-            var userRepository = new UserRepository();
             var user = userRepository.GetEntity(username, Utility.HashMD5(password));
             if (user == null) throw new Exception("Sai tên đăng nhập hoặc mật khẩu");
+            if (!user.IsActived) throw new Exception("Tài khoản bị khóa");
             return user;
         }
 
@@ -56,7 +59,6 @@ namespace SuperDev.Services
 
         public User Decrypt(string token)
         {
-            var userRepository = new UserRepository();
             token = Utility.Decrypt(token);
             string username = token.Split('~')[0];
             string password = token.Split('~')[1];

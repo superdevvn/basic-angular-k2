@@ -15,6 +15,7 @@ export class RoleDetailComponent implements OnInit {
   routerSubscription: any;
   role: any={};
   id: number;
+  titles:String='';
   constructor(private roleService:RoleService, private route:ActivatedRoute, private router: Router,
      private notification: NotificationService, private apiService:ApiService) { }
 
@@ -22,10 +23,14 @@ export class RoleDetailComponent implements OnInit {
 this.routerSubscription = this.route.params.subscribe(params=>{
   this.id = +params['id']; //convert string 'id' to a number
   if (this.id >0)
+  {
+  this.titles="You are editting a role";
   this.roleService.getRole(this.id).then(res=>{
     this.role = res;
     console.log(this.role);
   })
+}
+else this.titles="You are creating a new role";
 })
   
 }

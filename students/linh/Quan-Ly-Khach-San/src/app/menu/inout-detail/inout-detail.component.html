@@ -17,10 +17,10 @@
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">Role *</h6>
-                    <select class="form-control" [(ngModel)]="user.RoleId">
-                      <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
-                    </select>
+                    <h6 class="card-inside-title"> CMND</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="list.CMND"/>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -29,9 +29,9 @@
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">Username *</h6>
+                    <h6 class="card-inside-title"> CUSTOMER NAME</h6>
                     <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="user.Username" />
+                      <input type="text" class="form-control" [(ngModel)]="list.CustomerName"/>
                     </div>
                   </div>
                 </div>
@@ -45,9 +45,9 @@
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">Password *</h6>
+                    <h6 class="card-inside-title">ROOM</h6>
                     <div class="form-line">
-                      <input type="password" class="form-control" [(ngModel)]="user.Password" />
+                      <input type="text" class="form-control" [(ngModel)]="list.RoomId"/>
                     </div>
                   </div>
                 </div>
@@ -57,9 +57,9 @@
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">Full Name</h6>
+                    <h6 class="card-inside-title">FROM DATE</h6>
                     <div class="form-line">
-                      <input type="text" class="form-control" disabled="disabled" value="{{user.FirstName +' '+ user.LastName}}" />
+                      <input type="text" class="form-control" [(ngModel)]="list.FromDate" />
                     </div>
                   </div>
                 </div>
@@ -73,21 +73,9 @@
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">First Name</h6>
+                    <h6 class="card-inside-title">TO DATE</h6>
                     <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="user.FirstName" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <h6 class="card-inside-title">Last Name</h6>
-                    <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="user.LastName" />
+                      <input type="text" class="form-control" [(ngModel)]="list.ToDate" />
                     </div>
                   </div>
                 </div>
@@ -95,28 +83,10 @@
             </div>
           </div>
         </div>
-        <div class="panel-body pn">
-          <div class="section row">
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <div class="form-line">
-                      <h6 style="font-size: 20px;">
-                        <input type="checkbox" style="width: 20px; height: 20px;" checked="checked"  [(ngModel)]="user.IsActived"/>
-                        <strong>&nbsp;&nbsp;&nbsp;&nbsp;Already is Actived</strong>
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
           <button class="btn btn-primary">Thêm</button>
-        </div>
-        <div class="col-md-12">
+        </div> -->
+        <!-- <div class="col-md-12">
           <div class="table-responsive">
             <div class="bs-component">
               <table class="table table-bordered table-hover">
@@ -139,16 +109,22 @@
                 <tbody>
                   <tr *ngFor="let inOutLine of inOut.InOutLines">
                     <td>#</td>
-                    <td><input class="form-control" [(ngModel)]="inOutLine.Name" /></td>
-                    <td><input class="form-control" [(ngModel)]="inOutLine.Cost" /></td>
-                    <td><input class="form-control" [(ngModel)]="inOutLine.Quantity" /></td>
+                    <td>
+                      <input class="form-control" [(ngModel)]="inOutLine.Name" />
+                    </td>
+                    <td>
+                      <input class="form-control" [(ngModel)]="inOutLine.Cost" />
+                    </td>
+                    <td>
+                      <input class="form-control" [(ngModel)]="inOutLine.Quantity" />
+                    </td>
                     <td>{{inOutLine.Cost*inOutLine.Quantity}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="panel-footer">
           <div class="row">
             <div class="col-sm-6 col-sm-offset-6 text-right">

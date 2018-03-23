@@ -10,8 +10,6 @@ import {CookieService} from"ngx-cookie-service";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { TacGiaComponent } from './tac-gia/tac-gia.component';
-import { MuonTraComponent } from './muon-tra/muon-tra.component';
 import { UtilityService } from "./services/utility.service";
 import { LoginComponent } from './login/login.component';
 import { ApiService } from "./services/api.service";
@@ -27,15 +25,19 @@ import { LoadingService } from './services/loading.service';
 import { SachService } from './sach/sach.service';
 import { SachDetailComponent } from './sach/sach-detail.component';
 import { SachListComponent } from './sach/sach-list.component';
-import { CateService } from './category/cate.service';
-import { CateListComponent } from './category/cate-list.component';
-import { CateDetailComponent } from './category/cate-detail.component';
 import { CustomerService } from './customer/customer.service';
 import { CustomerListComponent } from './customer/customer-list.component';
 import { CustomerDetailComponent } from './customer/customer-detail.component';
-import { BookingService } from './booking/booking.service';
-import { BookingListComponent } from './booking/booking-list.component';
+import { CategoryService } from './category/cate.service';
+import { CategoryDetailComponent } from './category/category-detail.component';
+import { CategoryListComponent } from './category/category-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookingDetailComponent } from './booking/booking-detail.component';
+import { BookingListComponent } from './booking/booking-list.component';
+import { BookingService } from './booking/booking.service';
+import { BookingDetailReturn } from './booking/booking-detail-return.component';
+
+
 
 
 
@@ -45,21 +47,21 @@ import { BookingDetailComponent } from './booking/booking-detail.component';
 const routes: Routes =[
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: "main", component: MenuComponent, children:[
-    {path :'', redirectTo:"booking-list",pathMatch:"full"},
+    {path :'', redirectTo:"dashboard",pathMatch:"full"},
     {path : 'sach-list', component: SachListComponent},
     {path : 'sach-detail/:id', component: SachDetailComponent},
-    {path : 'muon-tra', component: MuonTraComponent},
     {path : 'role-list',component:RoleListComponent},
     {path : 'role-detail/:id',component:RoleDetailComponent},
     {path : 'user-detail/:id',component:UserDetailComponent},
     {path : 'user-list',component:UserListComponent},
-    {path : 'cate-list',component:CateListComponent},
     {path : 'customer-list',component:CustomerListComponent},
     {path : 'customer-detail/:id',component:CustomerDetailComponent},
-    {path : 'cate-detail/:id',component:CateDetailComponent},
     {path : 'booking-detail/:id',component:BookingDetailComponent},
-    {path : 'booking-list',component:BookingListComponent}
-
+    {path : 'booking-list',component:BookingListComponent},
+    {path : 'category-list',component:CategoryListComponent},
+    {path : 'category-detail/:id',component:CategoryDetailComponent},
+    {path : 'booking-detail-return/:id',component:BookingDetailReturn},
+    {path : 'dashboard',component:DashboardComponent},
 
   ]},
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
@@ -69,21 +71,23 @@ const routes: Routes =[
   declarations: [
     AppComponent,
     MenuComponent,
-    TacGiaComponent,
     SachListComponent,
     SachDetailComponent,
-    MuonTraComponent,
     LoginComponent,
     RoleListComponent,
     RoleDetailComponent,
     UserListComponent,
     UserDetailComponent,
-    CateListComponent,
-    CateDetailComponent,
     CustomerDetailComponent,
     CustomerListComponent,
+    CategoryDetailComponent,
+    CategoryListComponent,
+    DashboardComponent,
+    BookingDetailComponent,
     BookingListComponent,
-    BookingDetailComponent
+    BookingDetailReturn,
+    DashboardComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -92,7 +96,7 @@ const routes: Routes =[
     FormsModule
   ],
   providers: [UtilityService,ApiService,LoginService,RoleService,UserService,CookieService,
-    NotificationService,LoadingService,SachService,CateService,CustomerService,BookingService],
+    NotificationService,LoadingService,SachService,CustomerService,CategoryService,BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

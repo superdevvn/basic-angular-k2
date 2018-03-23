@@ -3,18 +3,18 @@ import {Router} from "@angular/router"
 import { LoadingService } from '../services/loading.service';
 import { ApiService } from '../services/api.service';
 import { NotificationService } from '../services/notification.service';
-import { CateService } from './cate.service';
+import { CategoryService } from './cate.service';
 @Component({
-  selector: 'cate-list',
-  templateUrl: './cate-list.component.html'
+  selector: 'category-list',
+  templateUrl: './category-list.component.html'
 })
-export class CateListComponent implements OnInit {
+export class CategoryListComponent implements OnInit {
 roles: any[];
-  constructor(private cateService: CateService, private router:Router, private loadingService: LoadingService,
+  constructor(private categoryService: CategoryService, private router:Router, private loadingService: LoadingService,
   private apiService:ApiService, private Notification:NotificationService) { }
 
   ngOnInit() {
-    this.cateService.getCates().then((roles:any[])=>{
+    this.categoryService.getCategories().then((roles:any[])=>{
     this.roles = roles;
     this.loadingService.stop();
 
@@ -25,17 +25,17 @@ roles: any[];
     }
 
     detail(role){
-      alert(role.Name);
-      this.router.navigate(["/main/cate-detail",role.Id]);
+
+      this.router.navigate(["/main/category-detail",role.Id]);
     }
 
     create(){
-      this.router.navigate(["/main/cate-detail",0]);
+      this.router.navigate(["/main/category-detail",0]);
     }
 
     delete(role) {
-      this.cateService.deleteRole(role.Id).then(() => {
-        this.cateService.getCates().then((roles: any[]) => {
+      this.categoryService.deleteRole(role.Id).then(() => {
+        this.categoryService.getCategories().then((roles: any[]) => {
           this.roles = roles;
         });
       });
