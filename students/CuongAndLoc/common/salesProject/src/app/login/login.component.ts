@@ -14,18 +14,18 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   constructor(private router: Router, private loginService: loginService, private loadingService: LoadingService) { }
-
+  isRemember: boolean = false;
   ngOnInit() {
 
   }
   login() {
     this.loadingService.start();
-    this.loginService.login(this.username, this.password).then(() => {
+    this.loginService.login(this.username, this.password, this.isRemember).then(() => {
       this.loadingService.stop();
       this.router.navigate(["/main"]);
     }).catch(err => {
       this.loadingService.stop();
-    })
+    });
   }
 
 }

@@ -9,10 +9,10 @@
         <!-- -------------- Products Status Table -------------- -->
         <div class="row">
             <div class="col-xs-12">
-                    <button class="btn btn-primary" (click)="create()">Create new user</button><br/><br/>
+                    <button class="btn btn-primary" (click)="create()">Create new Customer</button><br/><br/>
                 <div class="panel">
                     <div class="panel-heading">
-                        <span class="panel-title hidden-xs"> user status</span>
+                        <span class="panel-title hidden-xs"> Customer status</span>
                     </div>
                     <div class="panel-body pn">
                         <div class="table-responsive">
@@ -20,42 +20,47 @@
                                 <thead>
                                     <tr class="bg-light">
                                         <th class="text-center  bg-primary"></th>
-                                        <th class="text-center bg-primary">ID</th>     
-                                        <th class="text-center bg-primary">Username</th>                            
-                                        <th class="text-center bg-primary">Name</th>                                  
+                                        <th class="text-center bg-primary">ID</th>
+                                
+                                        <th class="text-center bg-primary">Name</th>
+                                        <th class="text-center bg-primary">Code</th>
+                                        <th class="text-center bg-primary">Address</th>
                                         <th class="text-center bg-primary">Description</th>
                                         <th class="text-center bg-primary">Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor='let user of users'>
+                                    <tr *ngFor='let customer of customers'>
                                         <td class="text-center">
                                             <label class="option block mn">
                                                 <input type="checkbox" name="inputname" value="FR">
                                                 <span class="checkbox mn"></span>
                                             </label>
                                         </td>
-                                        <td class="text-center ">
-                                            {{user.Id}}
+                                        <td>
+                                            {{customer.Id}}
                                         </td>
-                                        <td class="text-center ">
-                                            {{user.Username}}
-                                        </td>  
-                                        <td class="text-center ">
-                                            {{user.FirstName}} {{user.LastName}}
-                                        </td >
-                                   
-                                        <td class="text-center ">
-                                            {{user.Description}}
+                                        
+                                        <td>
+                                            {{customer.Name}}
                                         </td>
-                                        <td class="text-center ">
-                                          <!-- <button class="btn btn-primary" (click)="detail(user)">edit</button>
-                                          <button class="btn btn-primary" (click)="delete(user)">delete</button> -->
+                                        <td>
+                                            {{customer.Code}}
+                                        </td>
+                                        <td>
+                                            {{customer.Address}}
+                                        </td>
+                                        <td>
+                                            {{customer.Description}}
+                                        </td>
+                                        <td>
+                                          <!-- <button class="btn btn-primary" (click)="detail(customer)">edit</button>
+                                          <button class="btn btn-primary" (click)="delete(customer)">delete</button> -->
                                           <div class="btn-group">
-                                                <button type="button" class="btn btn-info" (click)="detail(user)">
+                                                <button type="button" class="btn btn-info" (click)="detail(customer)">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-info dark" (click)="delete(user)">
+                                                <button type="button" class="btn btn-info dark" (click)="delete(customer)">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </div>

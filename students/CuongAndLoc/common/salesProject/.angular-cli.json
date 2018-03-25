@@ -25,30 +25,18 @@
         "assets/AutoHintTheme/js/plugins/magnific/magnific-popup.css",
         "assets/AutoHintTheme/js/plugins/c3charts/c3.min.css",
         "assets/AutoHintTheme/skin/default_skin/css/theme.min.css",
-        "assets/AutoHintTheme/allcp/forms/css/forms.css"
-    
+        "assets/AutoHintTheme/allcp/forms/css/forms.css"  
       ],
       "scripts": [
-        "assets/AutoHintTheme/js/plugins/canvasbg/canvasbg.js",
         "assets/AutoHintTheme/js/jquery/jquery-1.11.3.min.js",
         "assets/AutoHintTheme/js/jquery/jquery_ui/jquery-ui.min.js",
-        "assets/AutoHintTheme/js/plugins/highcharts/highcharts.js",
-        "assets/AutoHintTheme/js/plugins/c3charts/d3.min.js",
-        "assets/AutoHintTheme/js/plugins/c3charts/c3.min.js",
-        "assets/AutoHintTheme/js/plugins/circles/circles.js",
-        "assets/AutoHintTheme/js/plugins/jvectormap/jquery.jvectormap.min.js",
-        "assets/AutoHintTheme/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js",
         "assets/AutoHintTheme/js/plugins/fullcalendar/lib/moment.min.js",
         "assets/AutoHintTheme/js/plugins/fullcalendar/fullcalendar.min.js",
         "assets/AutoHintTheme/allcp/forms/js/jquery-ui-monthpicker.min.js",
         "assets/AutoHintTheme/allcp/forms/js/jquery-ui-datepicker.min.js",
-        "assets/AutoHintTheme/js/plugins/magnific/jquery.magnific-popup.js",
         "assets/AutoHintTheme/js/utility/utility.js",
         "assets/AutoHintTheme/js/demo/demo.js",
-        "assets/AutoHintTheme/js/main.js",
-        "assets/AutoHintTheme/js/demo/widgets.js",
-        "assets/AutoHintTheme/js/demo/widgets_sidebar.js",
-        "assets/AutoHintTheme/js/pages/dashboard1.js"
+        "assets/AutoHintTheme/js/main.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
