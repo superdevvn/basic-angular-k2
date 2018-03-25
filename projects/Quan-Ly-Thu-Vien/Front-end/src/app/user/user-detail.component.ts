@@ -50,7 +50,8 @@ this.userService.getUsers().then((users: any) => {
 save(){
   this.userService.saveUser(this.user).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/user-detail",res.Id]);
-    this.notification.success('Saved');
+    debugger
+    this.notification.info('Saved');
     this.router.navigate(["/main/user-list"]);
   })
 }

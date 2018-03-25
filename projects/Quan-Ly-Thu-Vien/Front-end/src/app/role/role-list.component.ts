@@ -39,7 +39,7 @@ roles: any[];
           this.roles = roles;
         });
       });
-      this.Notification.success('Deleted');
+      this.Notification.danger('Deleted');
     }
 
     

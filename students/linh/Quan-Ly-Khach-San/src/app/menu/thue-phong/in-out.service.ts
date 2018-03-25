@@ -15,4 +15,14 @@ export class InOutService {
       });
     });
   }
+
+  deleteInOut(id) {
+    return new Promise((resolve, reject) => {
+      this.apiService.delete(`api/deleteInOut?id=${id}`).then(res => {
+        resolve(res);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
 }

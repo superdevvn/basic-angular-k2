@@ -38,7 +38,7 @@ else this.title="You are creating a new category";
 save(){
   this.categoryService.saveCategory(this.role).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/role-detail",res.Id]);
-    this.notification.success('Saved');
+    this.notification.info('Saved');
     this.router.navigate(["/main/category-list"]);
   })
 }

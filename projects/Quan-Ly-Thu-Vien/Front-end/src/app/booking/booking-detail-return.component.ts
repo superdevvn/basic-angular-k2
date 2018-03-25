@@ -79,7 +79,7 @@ export class BookingDetailReturn implements OnInit {
     this.inOut.ToDate = new Date();
     this.bookingService.saveInOut(this.inOut).then((res: any) => {
       if (this.id === 0) this.router.navigate(["/main/booking-detail", res.Id]);
-      this.notification.success('Updated');
+      this.notification.info('Saved');
       this.router.navigate(["/main/booking-list"]);
     })
   }

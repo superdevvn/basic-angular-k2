@@ -55,15 +55,14 @@
                 <div class="col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group box">
                       <strong class="text-primary">STATUS</strong>
-                    <input type="" class="form-control" id="pwd" [(ngModel)]="user.IsActived">
+                    <select class="form-control" [(ngModel)]="user.IsActived">
+                        <option  [ngValue]="user.IsActived">{{user.IsActived}}</option>
+                        <option  [ngValue]="!user.IsActived">{{!user.IsActived}}</option>
+                    </select>
                   </div>
                 </div>
-            
-                
-            
-               
-            
-                <div class="col-sm-12 col-md-12 col-lg-12">
+
+     <div class="col-sm-12 col-md-12 col-lg-12">
                   <div class="form-group box">
                       <strong class="text-primary">DESCRIPTION</strong>
                     <textarea class="form-control" id="usr" [(ngModel)]="user.Description" style="height:100px"></textarea>

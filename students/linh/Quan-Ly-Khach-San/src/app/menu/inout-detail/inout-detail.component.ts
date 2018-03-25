@@ -28,19 +28,19 @@ export class InoutDetailComponent implements OnInit {
           console.log(this.list);
         });
       }
-      else{
+      else {
         this.title = "BẠN ĐANG THÊM MỚI MỘT ĐƠN THUÊ PHÒNG";
-        this.list.FromDate=new Date();
-      } 
+        this.list.FromDate = new Date();
+      }
     });
   }
 
   back() {
     this.router.navigate(["/main/history"]);
   }
-  save(){
-    this.inoutService.saveInOut(this.list).then((res:any)=>{
-      if(this.id==0) this.router.navigate(["/main/inout-detail",res.id]);
+  save() {
+    this.inoutService.saveInOut(this.list).then((res: any) => {
+      if (this.id == 0) this.router.navigate(["/main/inout-detail", res.id]);
     });
   }
 

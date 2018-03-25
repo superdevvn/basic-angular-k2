@@ -71,7 +71,7 @@ export class BookingDetailComponent implements OnInit {
   save() {
     this.bookingService.saveInOut(this.inOut).then((res: any) => {
       if (this.id === 0) this.router.navigate(["/main/booking-detail", res.Id]);
-      this.notification.success('Saved');
+      this.notification.info("Saved");
       this.router.navigate(["/main/booking-list"]);
     })
   }

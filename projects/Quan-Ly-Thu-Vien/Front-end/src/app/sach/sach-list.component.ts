@@ -25,7 +25,6 @@ books: any[];
     }
 
     detail(book){
-      alert(book.Name);
       this.router.navigate(["/main/sach-detail",book.Id]);
     }
 
@@ -39,7 +38,7 @@ books: any[];
           this.books = book;
         });
       });
-      this.Notification.success('Deleted');
+      this.Notification.danger('Deleted');
     }
 
     

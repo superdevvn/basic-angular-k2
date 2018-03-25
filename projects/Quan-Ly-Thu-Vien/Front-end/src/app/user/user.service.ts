@@ -47,7 +47,7 @@ export class UserService {
   
   deleteUser(id) {
     return new Promise((resolve, reject) => {
-      this.apiService.delete(`api/deleteRole?id=${id}`).then(res => {
+      this.apiService.delete(`/api/deleteUser?id=${id}`).then(res => {
         resolve(res);
       }).catch(err => {
         reject(err);

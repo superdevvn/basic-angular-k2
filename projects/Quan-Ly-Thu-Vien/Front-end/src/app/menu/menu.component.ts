@@ -14,13 +14,11 @@ export class MenuComponent implements OnInit {
     private router: Router) {
 
   }
-
   ngOnInit() {
 
-    this.loginService.getAuthorize().catch(() => {
-      this.router.navigate(["/login"]);
-
-    })
+    this.loginService.getAuthorize().catch(err=>{
+      this.router.navigate(['login']);
+    });
   }
   logout() {
     this.loginService.logout();

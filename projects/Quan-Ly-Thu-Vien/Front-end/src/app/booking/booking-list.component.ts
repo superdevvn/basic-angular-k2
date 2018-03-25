@@ -43,7 +43,7 @@ private notification: NotificationService) { }
           this.inOuts = inOut;
         });
       });
-      this.Notification.success('Deleted');
+      this.Notification.danger('Deleted');
     }
 
     redirect(inOut){
