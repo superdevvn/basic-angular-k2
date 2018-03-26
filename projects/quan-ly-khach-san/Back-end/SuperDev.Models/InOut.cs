@@ -13,7 +13,6 @@ namespace SuperDev.Models
 
     public class InOut
     {
-
         public int Id { get; set; }
 
         public int RoomId { get; set; }
@@ -42,5 +41,27 @@ namespace SuperDev.Models
         public virtual Room Room { get; set; }
 
         public virtual List<InOutLine> InOutLines { get; set; }
+    }
+
+    public class InOutComplex
+    {
+        public int Id { get; set; }
+
+        public int RoomId { get; set; }
+
+        public string RoomName { get; set; }
+
+        public string CustomerName { get; set; }
+
+        public string CMND { get; set; }
+
+        public DateTime FromDate { get; set; }
+
+        public DateTime? ToDate { get; set; }
+
+        public decimal? TotalCost { get; set; }
+
+        [StringLength(1000)]
+        public string Description { get; set; }
     }
 }

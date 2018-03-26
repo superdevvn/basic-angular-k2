@@ -3,6 +3,7 @@ using SuperDev.Utilities;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Collections;
 
 namespace SuperDev.Repositories
 {
@@ -31,11 +32,22 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<InOut> GetEntities()
+        public IEnumerable GetEntities()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.InOuts.ToList();
+                return context.InOuts.Select(e => new InOutComplex
+                {
+                    Id = e.Id,
+                    RoomId = e.RoomId,
+                    RoomName = e.Room.Name,
+                    CustomerName = e.CustomerName,
+                    CMND = e.CMND,
+                    Description = e.Description,
+                    FromDate = e.FromDate,
+                    ToDate = e.ToDate,
+                    TotalCost = e.TotalCost
+                }).ToList();
             }
         }
 

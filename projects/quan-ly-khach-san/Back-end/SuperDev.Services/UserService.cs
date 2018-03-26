@@ -1,25 +1,26 @@
-﻿using SuperDev.Models;
+﻿using System;
+using System.Collections;
+using System.Web;
+using SuperDev.Models;
 using SuperDev.Repositories;
 using SuperDev.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Web;
 
 namespace SuperDev.Services
 {
     public class UserService
     {
+        private UserRepository userRepository = new UserRepository();
         public User Persist(User user)
         {
-            var userRepository = new UserRepository();
             if (user.Id > 0)
             {
                 var entity = userRepository.GetEntity(user.Id);
-                if(!string.Equals(entity.Password,user.Password)) user.Password = Utility.HashMD5(user.Password);
+                if (user.Password != entity.Password) user.Password = Utility.HashMD5(user.Password);
                 user.CreatedDate = entity.CreatedDate;
                 user.CreatedBy = entity.CreatedBy;
                 return userRepository.Update(user);
-            } else
+            }
+            else
             {
                 user.Password = Utility.HashMD5(user.Password);
                 user.CreatedDate = DateTime.Now;
@@ -28,36 +29,37 @@ namespace SuperDev.Services
             }
         }
 
-        public IEnumerable<UserComplex> GetList()
+        public void Delete(int id)
         {
-            var userRepository = new UserRepository();
+            userRepository.Delete(id);
+        }
+
+        public IEnumerable GetList()
+        {
             return userRepository.GetEntities();
         }
 
         public User GetById(int id)
         {
-            var userRepository = new UserRepository();
             return userRepository.GetEntity(id);
         }
 
         public User Login(string username, string password)
         {
-            var userRepository = new UserRepository();
             var user = userRepository.GetEntity(username, Utility.HashMD5(password));
             if (user == null) throw new Exception("Sai tên đăng nhập hoặc mật khẩu");
+            if (!user.IsActived) throw new Exception("Tài khoản bị khóa");
             return user;
         }
 
         public string Encrypt(User user)
         {
-            var token = Utility.Encrypt(user.Username + "~" + user.Password);
-            return token;
+            return Utility.Encrypt(user.Username + "~" + user.Password);
         }
 
         public User Decrypt(string token)
         {
             token = Utility.Decrypt(token);
-            var userRepository = new UserRepository();
             string username = token.Split('~')[0];
             string password = token.Split('~')[1];
             return userRepository.GetEntity(username, password);

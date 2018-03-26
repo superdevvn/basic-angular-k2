@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Linq;
 using SuperDev.Models;
 using SuperDev.Repositories;
-using System.Linq;
 
 namespace SuperDev.Services
 {
@@ -29,7 +29,7 @@ namespace SuperDev.Services
             return inOutRepository.Create(inOut);
         }
 
-        public IEnumerable<InOut> GetList()
+        public IEnumerable GetList()
         {
             var inOutRepository = new InOutRepository();
             return inOutRepository.GetEntities();
