@@ -39,7 +39,8 @@ constructor(private userService: UserService, private router:Router, private loa
           this.users = users;
         });
       });
-      this.Notification.success('Deleted');
+      debugger;
+      this.Notification.danger('Deleted');
     }
 
   }

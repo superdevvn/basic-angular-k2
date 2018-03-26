@@ -15,8 +15,8 @@ export class MenuComponent implements OnInit {
 
   }
   ngOnInit() {
+
     this.loginService.getAuthorize().catch(err=>{
-      debugger
       this.router.navigate(['login']);
     });
   }

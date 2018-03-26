@@ -4,10 +4,12 @@ import { Router } from '@angular/router';
 import { Headers, Response } from "@angular/http";
 import { ApiService } from '../services/api.service';
 import { CookieService } from "ngx-cookie-service"
+import { NotificationService } from '../services/notification.service';
 @Injectable()
 export class LoginService {
     user: any={};
-    constructor(private apiService: ApiService, private cookieService: CookieService, private router: Router) {
+    constructor(private apiService: ApiService, private cookieService: CookieService,
+         private router: Router, private notificationService: NotificationService) {
 
     }
     //auth-superdev
@@ -19,8 +21,10 @@ export class LoginService {
             }).then(res => {
                 this.apiService.token = res.json();
                 this.cookieService.set('auth-superdev', this.apiService.token);
+                this.notificationService.success("Log in successful");
                 resolve(res.json());
             }).catch(err => {
+                this.notificationService.warning("Wrong username or password");
                 console.log(err)
             })
         });

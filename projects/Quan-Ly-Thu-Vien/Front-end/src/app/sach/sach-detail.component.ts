@@ -51,7 +51,7 @@ this.routerSubscription = this.route.params.subscribe(params=>{
 save(){
   this.sachService.saveBook(this.book).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/sach-detail",res.Id]);
-    this.notification.success('Saved');
+    this.notification.info('Saved');
     this.router.navigate(["/main/sach-list"]);
   })
 }

@@ -26,7 +26,6 @@ customers: any[];
     }
 
     detail(customer){
-      alert(customer.Name);
       this.router.navigate(["/main/customer-detail",customer.Id]);
     }
 
@@ -40,7 +39,7 @@ customers: any[];
           this.customers = customer;
         });
       });
-      this.Notification.success('Deleted');
+      this.Notification.danger('Deleted');
     }
 
     

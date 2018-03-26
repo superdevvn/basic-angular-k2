@@ -38,7 +38,7 @@ else this.title="You are creating a new customer";
 save(){
   this.customerService.saveCustomer(this.customer).then((res:any)=>{
     if(this.id ===0) this.router.navigate(["/main/customer-detail",res.Id]);
-    this.notification.success('Saved');
+    this.notification.info('Saved');
     this.router.navigate(["/main/customer-list"]);
   })
 }

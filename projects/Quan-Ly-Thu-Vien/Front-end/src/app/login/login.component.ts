@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import {Router} from "@angular/router"
 import { CookieService } from 'ngx-cookie-service';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'login',
@@ -14,18 +15,18 @@ export class LoginComponent implements OnInit {
   password: string;
   user:any ={};
   constructor(private router: Router,private loginService:LoginService,
-  private cookieService: CookieService) { }
+  private cookieService: CookieService, private notificationService: NotificationService) { }
 
   ngOnInit() {
-
     }
     login(){
       this.loginService.login(this.username,this.password).then(()=>{
-        this.router.navigate(["/main/role-list"]);
+        this.router.navigate(["/main/dashboard"]);
       }).catch((err)=>{
         {
           alert("Login fail");
-          console.error(err);
+          console.log(err);
+          this.notificationService.success("Wrong user name of password");
         }
       })
      
