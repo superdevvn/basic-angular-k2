@@ -13,13 +13,18 @@ password: string;
 
   ngOnInit() {
   }
-  login(){
-    this.loginService.login(this.username, this.password).then(()=>{
+  
+  login() {
+    this.loginService.login(this.username, this.password).then(() => {
       this.router.navigate(["/main"]);
-    }).catch((err)=>{
-      alert("Login Fail");
-      console.error(err);
-    });
+    }).catch((err) => {
+      {
+        alert("Login fail");
+        console.error(err);
+      }
+    })
+
   }
+
 
 }

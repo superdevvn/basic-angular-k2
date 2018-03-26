@@ -52,7 +52,8 @@ export class UserDetailComponent implements OnInit {
   }
   save() {
     this.userdetailService.saveUser(this.user).then((res: any) => {
-      if (this.id == 0) this.router.navigate(['/main/user-detail', res.id]);
+      if (this.id == 0) this.router.navigate(['/main/user-detail', res.Id]);
+      this.router.navigate(['/main/user-list']);
       this.notificationService.success('Saved');
     });
   }

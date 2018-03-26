@@ -32,10 +32,10 @@ import { RoomDetailService } from './menu/room-detail/room-detail.service';
 import { InOutService } from './menu/thue-phong/in-out.service';
 import { InoutDetailComponent } from './menu/inout-detail/inout-detail.component';
 import { InoutDetailServiceService } from './menu/inout-detail/inout-detail-service.service';
+import { ReturnComponent } from './menu/return/return.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
   {
     path: 'main', component: MenuComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -49,9 +49,11 @@ const routes: Routes = [
       { path: 'nhan-vien', component: NhanVienComponent },
       { path: 'history', component: ThuePhongComponent },
       { path: 'room-detail/:id', component: RoomDetailComponent },
-      { path: 'inout-detail/:id', component: InoutDetailComponent }
+      { path: 'inout-detail/:id', component: InoutDetailComponent },
+      { path: 'return/:id', component: ReturnComponent }
     ]
-  }
+  },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -69,7 +71,8 @@ const routes: Routes = [
     DichVuComponent,
     ThuePhongComponent,
     RoomDetailComponent,
-    InoutDetailComponent
+    InoutDetailComponent,
+    ReturnComponent
   ],
   imports: [
     FormsModule,

@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <span class="panel-title">LỊCH SỬ THUÊ PHÒNG</span>
       </div>
-      <div style="padding-left: 1030px;">
+      <div class="text-right" style="padding-right: 4px;">
         <button class="btn btn-primary" (click)="create()">Thêm
           <i class="fa fa-plus"></i>
         </button>
@@ -31,7 +31,7 @@
                   <th>FROM DATE</th>
                   <th>TO DATE</th>
                   <th>CHỈNH SỬA</th>
-                  <th>XÓA</th>
+                  <th>Trạng Thái</th>
                   <th>TOTAL COST</th>
                 </tr>
               </thead>
@@ -50,12 +50,9 @@
                     </div>
                   </td>
                   <td>
-                    <div class="hidden-sm hidden-xs btn-group">
-
-                      <button class="btn btn-xs btn-danger">
-                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                      </button>
-                    </div>
+                    <button class="btn"  [ngClass]="{'btn-success':list.ToDate, 'btn-danger': !list.ToDate}" (click)="toReturn(list)" [disabled]="list.ToDate">
+                      {{list.ToDate?'Checked Out':'Check Out'}}
+                    </button>
                   </td>
                   <td>{{list.TotalCost}}</td>
                 </tr>

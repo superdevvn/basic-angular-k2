@@ -51,7 +51,6 @@ export class RoomDetailComponent implements OnInit {
         this.roomdetailService.getRoom(this.id).then(res => {
           this.room = res;
           console.log(this.room);
-
         });
       }
       else {
@@ -73,6 +72,7 @@ export class RoomDetailComponent implements OnInit {
   saveRoom() {
     this.roomdetailService.saveRoom(this.room).then((res: any) => {
       if (this.id == 0) this.router.navigate(["/main/room-detail", res.Id]);
+      this.router.navigate(["/main/room-list"])
     })
   }
 

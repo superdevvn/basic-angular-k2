@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { InOutService } from '../thue-phong/in-out.service';
-import { InoutDetailServiceService } from './inout-detail-service.service';
+import { InoutDetailServiceService } from '../inout-detail/inout-detail-service.service';
 import { PhongService } from '../phong/phong.service';
 
 @Component({
-  selector: 'app-inout-detail',
-  templateUrl: './inout-detail.component.html',
-  styleUrls: ['./inout-detail.component.css']
+  selector: 'app-return',
+  templateUrl: './return.component.html',
+  styleUrls: ['./return.component.css']
 })
-export class InoutDetailComponent implements OnInit {
-
+export class ReturnComponent implements OnInit {
   routerSubscription: any;
   id: number;
   list: any = {};
@@ -25,7 +23,7 @@ export class InoutDetailComponent implements OnInit {
     this.routerSubscription = this.route.params.subscribe(params => {//
       this.id = +params['id']; // (+) converts string 'id' to a number
       if (this.id > 0) {
-        this.title = "BẠN ĐANG CHỈNH SỬA MỘT ĐƠN THUÊ PHÒNG";
+        this.title = "BẠN ĐANG THAO TÁC TRẢ PHÒNG";
         this.inoutService.getInOut(this.id).then(res => {
           this.list = res;
           console.log(this.list);
@@ -40,17 +38,16 @@ export class InoutDetailComponent implements OnInit {
       this.rooms = rooms;
     })
   }
-
-  back() {
-    this.router.navigate(["/main/history"]);
-  }
   save() {
     this.inoutService.saveInOut(this.list).then((res: any) => {
-      if (this.id == 0) {
-        this.router.navigate(["/main/inout-detail", res.Id]);
-        this.router.navigate(["/main/history"]);
-      }
+      this.router.navigate(["/main/history"]);
     });
+  }
+  return() {
+    this.list.ToDate = new Date();
+    this.inoutService.saveInOut(this.list).then((res: any)=>{
+      this.router.navigate(["/main/history"]);
+    })
   }
 
 }

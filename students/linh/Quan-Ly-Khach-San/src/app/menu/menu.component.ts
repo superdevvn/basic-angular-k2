@@ -18,7 +18,9 @@ export class MenuComponent implements OnInit {
     private cookieService: CookieService) { }
 
   ngOnInit() {
-    
+    this.loginService.getAuthorize().catch(err=>{
+      this.router.navigate(['login']);
+    });
   }
 
   ngAfterViewInit() {

@@ -22,13 +22,16 @@ export class ThuePhongComponent implements OnInit {
   detail(list) {
     this.router.navigate(["/main/inout-detail", list.Id]);
   }
-  
+
   delete(list) {
     this.inoutService.deleteInOut(list.Id).then(() => {
       this.inoutService.getInOuts().then((listInOuts: any[]) => {
         this.listInOuts = listInOuts;
       });
     });
+  }
+  toReturn(list) {
+    this.router.navigate(["/main/return", list.Id]);
   }
 
 }
