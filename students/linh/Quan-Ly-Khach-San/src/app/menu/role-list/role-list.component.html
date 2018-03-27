@@ -40,8 +40,8 @@
               </thead>
               <tbody>
                 <tr *ngFor="let role of roles">
-                  <td>{{role.Name}}</td>
-                  <td>{{role.Description}}</td>
+                  <td class="linh">{{role.Name}}</td>
+                  <td >{{role.Description}}</td>
                   <td align="center">
                     <div class="hidden-sm hidden-xs btn-group">
                       <button class="btn btn-xs btn-info" (click)="detail(role)">

@@ -25,7 +25,8 @@ export class UserDetailComponent implements OnInit {
     private userdetailService: UserDetailService,
     private notificationService: NotificationService,
     private userlistService: UserListService,
-    private rolelistService: RoleListService) { }
+    private rolelistService: RoleListService,
+    private notification: NotificationService) { }
 
   ngOnInit() {
     this.routerSubscription = this.route.params.subscribe(params => {
@@ -54,7 +55,7 @@ export class UserDetailComponent implements OnInit {
     this.userdetailService.saveUser(this.user).then((res: any) => {
       if (this.id == 0) this.router.navigate(['/main/user-detail', res.Id]);
       this.router.navigate(['/main/user-list']);
-      this.notificationService.success('Saved');
+      this.notificationService.success('Save Successfully');
     });
   }
   back() {

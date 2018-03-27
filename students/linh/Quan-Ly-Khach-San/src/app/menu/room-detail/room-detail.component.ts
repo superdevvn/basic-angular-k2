@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PhongService } from '../phong/phong.service';
 import { RoomDetailService } from './room-detail.service';
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-room-detail',
@@ -41,7 +42,8 @@ export class RoomDetailComponent implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private roomdetailService: RoomDetailService,
-    private roomlistService: PhongService) { }
+    private roomlistService: PhongService,
+    private notification: NotificationService) { }
 
   ngOnInit() {
     this.routerSubscription = this.route.params.subscribe(params => {
@@ -73,6 +75,7 @@ export class RoomDetailComponent implements OnInit {
     this.roomdetailService.saveRoom(this.room).then((res: any) => {
       if (this.id == 0) this.router.navigate(["/main/room-detail", res.Id]);
       this.router.navigate(["/main/room-list"])
+      this.notification.success('Save Successfully');
     })
   }
 

@@ -77,7 +77,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <h6 class="card-inside-title">TO DATE</h6>
-                    <div class="form-line">
+                    <div class="form-line" >
                       <input type="text" class="form-control" [(ngModel)]="list.ToDate" />
                     </div>
                   </div>
@@ -86,48 +86,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-12">
-          <button class="btn btn-primary">Thêm</button>
-        </div> -->
-        <!-- <div class="col-md-12">
-          <div class="table-responsive">
-            <div class="bs-component">
-              <table class="table table-bordered table-hover">
-                <colgroup>
-                  <col width="50px" />
-                  <col />
-                  <col width="150px" />
-                  <col width="100px" />
-                  <col width="150px" />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Dịch vụ</th>
-                    <th>Đơn giá</th>
-                    <th>Số lượng</th>
-                    <th>Thành tiền</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let inOutLine of inOut.InOutLines">
-                    <td>#</td>
-                    <td>
-                      <input class="form-control" [(ngModel)]="inOutLine.Name" />
-                    </td>
-                    <td>
-                      <input class="form-control" [(ngModel)]="inOutLine.Cost" />
-                    </td>
-                    <td>
-                      <input class="form-control" [(ngModel)]="inOutLine.Quantity" />
-                    </td>
-                    <td>{{inOutLine.Cost*inOutLine.Quantity}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div> -->
         <div class="panel-footer">
           <div class="row">
             <div class="col-sm-6 col-sm-offset-6 text-right">

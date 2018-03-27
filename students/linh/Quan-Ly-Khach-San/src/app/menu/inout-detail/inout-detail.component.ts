@@ -47,9 +47,9 @@ export class InoutDetailComponent implements OnInit {
   save() {
     this.inoutService.saveInOut(this.list).then((res: any) => {
       if (this.id == 0) {
-        this.router.navigate(["/main/inout-detail", res.Id]);
-        this.router.navigate(["/main/history"]);
+        this.router.navigate(['/main/inout-detail', res.id]);
       }
+      this.router.navigate(['/main/history']);
     });
   }
 

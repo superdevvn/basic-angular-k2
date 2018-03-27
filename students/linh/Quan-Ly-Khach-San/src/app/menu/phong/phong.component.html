@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <span class="panel-title">DANH SÁCH PHÒNG</span>
       </div>
-      <div style="padding-left: 1030px;">
+      <div class="text-right" style="padding-right: 4px;">
         <button class="btn btn-primary" (click)="create()">Thêm
           <i class="fa fa-plus"></i>
         </button>
@@ -26,34 +26,34 @@
               </colgroup>
               <thead>
                 <tr class="bg-primary">
-                  <th>CODE</th>
-                  <th>NAME</th>
-                  <th>DESCRIPTION</th>
-                  <th>SIZE</th>
-                  <th>TYPE</th>
-                  <th>PRICE/HOUR</th>
-                  <th>PRICE/DAY</th>
-                  <th>CHỈNH SỬA</th>
-                  <th>XÓA</th>
+                  <th class="linh">CODE</th>
+                  <th class="linh">NAME</th>
+                  <th class="linh">DESCRIPTION</th>
+                  <th class="linh">SIZE</th>
+                  <th class="linh">TYPE</th>
+                  <th class="linh">PRICE/HOUR</th>
+                  <th class="linh">PRICE/DAY</th>
+                  <th class="linh">CHỈNH SỬA</th>
+                  <th class="linh">XÓA</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let room of rooms">
-                  <td>{{room.Code}}</td>
-                  <td>{{room.Name}}</td>
-                  <td>{{room.Description}}</td>
-                  <td>{{room.Size}}</td>
-                  <td>{{room.Type}}</td>
-                  <td>{{room.PricePerHour}}</td>
-                  <td>{{room.PricePerDay}}</td>
-                  <td>
+                  <td class="linh">{{room.Code}}</td>
+                  <td class="linh">{{room.Name}}</td>
+                  <td >{{room.Description}}</td>
+                  <td class="linh">{{room.Size}}</td>
+                  <td class="linh">{{room.Type}}</td>
+                  <td class="linh">{{room.PricePerHour}}</td>
+                  <td class="linh">{{room.PricePerDay}}</td>
+                  <td class="linh">
                     <div class="hidden-sm hidden-xs btn-group">
                       <button class="btn btn-xs btn-info" (click)="detail(room)">
                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
                     </div>
                   </td>
-                  <td>
+                  <td class="linh">
                     <div class="hidden-sm hidden-xs btn-group">
 
                       <button class="btn btn-xs btn-danger">

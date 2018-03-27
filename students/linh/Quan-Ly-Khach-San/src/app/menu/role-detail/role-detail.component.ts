@@ -36,7 +36,8 @@ export class RoleDetailComponent implements OnInit {
   save() {
     this.roledetailService.saveRole(this.role).then((res: any) => {
       if (this.id == 0) this.router.navigate(["/main/role-detail", res.id]);
-      this.notificationService.success('Saved');
+      this.notificationService.success('Save Successfully');
+      this.router.navigate(["/main/role-list"]);
     })
   }
   back() {

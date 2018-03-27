@@ -23,38 +23,38 @@
                 <col width="100" />
                 <col width="90" />
               </colgroup>
-              <thead>
+              <thead >
                 <tr class="bg-primary">
-                  <th>TÊN TÀI KHOẢN</th>
-                  <th>HỌ TÊN</th>
-                  <th>VAI TRÒ</th>
-                  <th>NGƯỜI TẠO</th>
-                  <th>NGÀY TẠO</th>
-                  <th>TÌNH TRẠNG</th>
-                  <th>CHỈNH SỬA</th>
-                  <th>XÓA</th>
+                  <th style="text-align: center;">TÊN TÀI KHOẢN</th>
+                  <th style="text-align: center;">HỌ TÊN</th>
+                  <th style="text-align: center;">VAI TRÒ</th>
+                  <th style="text-align: center;">NGƯỜI TẠO</th>
+                  <th style="text-align: center;">NGÀY TẠO</th>
+                  <th style="text-align: center;">TÌNH TRẠNG</th>
+                  <th style="text-align: center;">CHỈNH SỬA</th>
+                  <th style="text-align: center;">XÓA</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let user of users">
-                  <td>{{user.Username}}</td>
-                  <td>{{user.FirstName +' '+user.LastName}}</td>
-                  <td>{{user.RoleName}}</td>
-                  <td>{{user.CreatorName}}</td>
-                  <td>{{user.CreatedDate | date: 'HH:mm:ss dd/MM/yyyy'}}</td>
+                  <td style="text-align: center;">{{user.Username}}</td>
+                  <td style="text-align: center;">{{user.FirstName +' '+user.LastName}}</td>
+                  <td style="text-align: center;">{{user.RoleName}}</td>
+                  <td style="text-align: center;">{{user.CreatorName}}</td>
+                  <td style="text-align: center;">{{user.CreatedDate | date: 'HH:mm:ss dd/MM/yyyy'}}</td>
                   <td style="text-align: center;">
                       <button class="btn" [disabled]="true" [ngClass]="{'btn-success':user.IsActived, 'btn-danger': !user.IsActived}">
                           {{user.IsActived?'Actived':'Blocked'}}
                       </button>
                   </td>
-                  <td>
+                  <td style="text-align: center;">
                     <div class="hidden-sm hidden-xs btn-group">
                       <button class="btn btn-xs btn-info" (click)="detail(user)">
                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
                     </div>
                   </td>
-                  <td>
+                  <td style="text-align: center;">
                     <div class="hidden-sm hidden-xs btn-group">
                       <button class="btn btn-xs btn-danger">
                         <i class="ace-icon fa fa-trash-o bigger-120"></i>
