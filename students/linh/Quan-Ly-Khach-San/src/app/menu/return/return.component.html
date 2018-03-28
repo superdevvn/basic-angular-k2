@@ -1,101 +1,54 @@
-<section id="content" class="table-layout animated fadeIn">
-
-  <div class="allcp-form theme-primary tab-pane mw600" id="register" role="tabpanel">
-    <div class="panel">
-      <div class="panel-heading">
-        <span class="panel-title">
-          {{title}}
-        </span>
-      </div>
-      <!-- -------------- /Panel Heading -------------- -->
-
-      <div method="post" action="/" id="form-register">
-
-        <div class="panel-body pn">
-          <div class="section row">
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <h6 class="card-inside-title"> CMND</h6>
-                    <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.CMND" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div class="row" style="padding-top: 20px;padding-left: 0px;">
+  <div class="col-lg-12">
+    <div class="form-horizontal">
+      <section class="panel">
+        <header class="panel-heading">
+          <h4 class="panel-title" style="padding-top: 12px;">{{title}}</h4>
+        </header>
+        <div class="panel-body" style="padding-right:0px;">
+          <div class="form-group">
+            <label class="col-sm-3 control-label">CUSTOMER NAME </label>
+            <div class="col-sm-9" style="width: 700px;">
+              <input type="text" class="form-control" [(ngModel)]="list.CustomerName" />
             </div>
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <h6 class="card-inside-title"> CUSTOMER NAME</h6>
-                    <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.CustomerName" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">CMND</label>
+            <div class="col-sm-9" style="width: 700px;">
+              <input type="text" class="form-control" [(ngModel)]="list.CMND" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Room</label>
+            <div class="col-sm-9" style="width: 700px;">
+              <select class="form-control" [(ngModel)]="list.RoomId">
+                <option *ngFor="let room of rooms" [ngValue]="room.Id">{{room.Name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">FromDate</label>
+            <div class="col-sm-9" style="width: 700px; margin-top: 8px;">
+              <label class="text-primary">{{list.FromDate}}</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">ToDate</label>
+            <div class="col-sm-9" style="width: 700px; margin-top: 8px;">
+              <label class="text-primary">{{list.ToDate}}</label>
             </div>
           </div>
         </div>
-        <div class="panel-body pn">
-          <div class="section row">
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <h6 class="card-inside-title">ROOM</h6>
-                    <div class="form-line">
-                      <!-- <input type="text" class="form-control" [(ngModel)]="list.RoomId"/> -->
-                      <select class="form-control" [(ngModel)]="list.RoomId">
-                        <option *ngFor="let room of rooms" [ngValue]="room.Id">{{room.Name}}</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <h6 class="card-inside-title">FROM DATE</h6>
-                    <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.FromDate" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body pn">
-          <div class="section row">
-            <div class="col-md-6">
-              <div class="row clearfix">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <h6 class="card-inside-title">TO DATE</h6>
-                    <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.ToDate" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-footer">
+        <footer class="panel-footer">
           <div class="row">
-            <div class="col-sm-6 col-sm-offset-6 text-right">
+            <div class="col-sm-9 col-sm-offset-3">
               <button type="button" class="btn btn-default" (click)="return()">
                 <i class="fa fa-arrow-circle-left"></i>
                 CHECK OUT</button>
             </div>
           </div>
-        </div>
-      </div>
+        </footer>
+      </section>
     </div>
   </div>
-</section>
+</div>
