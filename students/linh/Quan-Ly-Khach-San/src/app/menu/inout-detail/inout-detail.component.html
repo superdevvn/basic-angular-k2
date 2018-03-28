@@ -13,11 +13,11 @@
 
         <div class="panel-body pn">
           <div class="section row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title"> CMND</h6>
+                    <strong class="card-inside-title"> CMND</strong>
                     <div class="form-line">
                       <input type="text" class="form-control" [(ngModel)]="list.CMND" />
                     </div>
@@ -25,11 +25,11 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title"> CUSTOMER NAME</h6>
+                    <strong class="card-inside-title"> CUSTOMER NAME</strong>
                     <div class="form-line">
                       <input type="text" class="form-control" [(ngModel)]="list.CustomerName" />
                     </div>
@@ -37,15 +37,11 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel-body pn">
-          <div class="section row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">ROOM</h6>
+                    <strong class="card-inside-title">ROOM</strong>
                     <div class="form-line">
                       <!-- <input type="text" class="form-control" [(ngModel)]="list.RoomId"/> -->
                       <select class="form-control" [(ngModel)]="list.RoomId">
@@ -56,32 +52,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">FROM DATE</h6>
-                    <div class="form-line">
-                      <!-- <input type="text" class="form-control" [(ngModel)]="list.FromDate" /> -->
-                      <label class="text-primary" >{{list.FromDate}}</label>
-                    </div>
+                    <strong class="card-inside-title">FROM DATE: </strong>
+                    <span class="text-primary" >{{list.FromDate | date:'HH:mm dd/MM/yyyy'}}</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel-body pn">
-          <div class="section row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
               <div class="row clearfix">
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <h6 class="card-inside-title">TO DATE</h6>
-                    <div class="form-line">
-                      <!-- <input type="text" class="form-control" [(ngModel)]="list.ToDate" /> -->
-                      <label class="text-primary" >{{list.ToDate}}</label>
-                    </div>
+                    <strong class="card-inside-title">TO DATE: </strong>
+                    <span class="text-primary" >{{list.ToDate | date:'HH:mm dd/MM/yyyy'}}</span>
                   </div>
                 </div>
               </div>
@@ -90,7 +76,7 @@
         </div>
         <div class="panel-footer">
           <div class="row">
-            <div class="col-sm-6 col-sm-offset-6 text-right">
+            <div class="col-md-6 col-md-offset-3">
               <button type="button" class="btn btn-default" (click)="back()">
                 <i class="fa fa-arrow-circle-left"></i>
                 BACK</button>
