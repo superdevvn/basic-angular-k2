@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { InOutService } from '../thue-phong/in-out.service';
 import { InoutDetailServiceService } from './inout-detail-service.service';
 import { PhongService } from '../phong/phong.service';
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-inout-detail',
@@ -19,7 +20,8 @@ export class InoutDetailComponent implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private inoutService: InoutDetailServiceService,
-    private roomService: PhongService) { }
+    private roomService: PhongService,
+    private nitification: NotificationService) { }
 
   ngOnInit() {
     this.routerSubscription = this.route.params.subscribe(params => {//
@@ -33,7 +35,7 @@ export class InoutDetailComponent implements OnInit {
       }
       else {
         this.title = "BẠN ĐANG THÊM MỚI MỘT ĐƠN THUÊ PHÒNG";
-        this.list.FromDate = new Date();
+        this.list.FromDate = new Date().toISOString();
       }
     });
     this.roomService.getRooms().then((rooms: any) => {
@@ -51,6 +53,7 @@ export class InoutDetailComponent implements OnInit {
       }
       this.router.navigate(['/main/history']);
     });
+    this.nitification.success('Save Successfully');
   }
 
 }

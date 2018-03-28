@@ -19,9 +19,9 @@
                 <col width="120" />
                 <col width="140" />
                 <col width="140" />
-                <col width="100" />
-                <col width="100" />
                 <col width="200" />
+                <col width="100" />
+                <col width="100" />
               </colgroup>
               <thead>
                 <tr class="bg-primary">
@@ -30,31 +30,31 @@
                   <th style="text-align: center;">ROOM</th>
                   <th style="text-align: center;">FROM DATE</th>
                   <th style="text-align: center;">TO DATE</th>
-                  <th style="text-align: center;">CHỈNH SỬA</th>
-                  <th style="text-align: center;">Trạng Thái</th>
                   <th style="text-align: center;">TOTAL COST</th>
+                  <th style="text-align: center;">Trạng Thái</th>
+                  <th style="text-align: center;">CHỈNH SỬA</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let list of listInOuts">
                   <td style="text-align: center;">{{list.CMND}}</td>
                   <td style="text-align: center;">{{list.CustomerName}}</td>
-                  <td style="text-align: center;">{{list.RoomId}}</td>
+                  <td style="text-align: center;">{{list.RoomName}}</td>
                   <td style="text-align: center;">{{list.FromDate | date:'HH:mm dd/MM/yyyy'}}</td>
                   <td style="text-align: center;">{{list.ToDate | date:'HH:mm dd/MM/yyyy'}}</td>
+                  <td style="text-align: center;">{{list.TotalCost}}</td>
+                  <td style="text-align: center;">
+                    <button class="btn" [ngClass]="{'btn-success':list.ToDate, 'btn-danger': !list.ToDate}" (click)="toReturn(list)" [disabled]="list.ToDate">
+                      {{list.ToDate?'Checked Out':'Check Out'}}
+                    </button>
+                  </td>
                   <td style="text-align: center;">
                     <div class="hidden-sm hidden-xs btn-group">
-                      <button class="btn btn-xs btn-info" (click)="detail(list)" [disabled]="list.ToDate">
+                      <button class="btn btn-xs btn-info" (click)="detail(list)" [disabled]="list.ToDate" >
                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                       </button>
                     </div>
                   </td>
-                  <td style="text-align: center;">
-                    <button class="btn"  [ngClass]="{'btn-success':list.ToDate, 'btn-danger': !list.ToDate}" (click)="toReturn(list)" [disabled]="list.ToDate">
-                      {{list.ToDate?'Checked Out':'Check Out'}}
-                    </button>
-                  </td>
-                  <td style="text-align: center;">{{list.TotalCost}}</td>
                 </tr>
               </tbody>
             </table>

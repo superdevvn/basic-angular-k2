@@ -31,7 +31,7 @@ export class ReturnComponent implements OnInit {
       }
       else {
         this.title = "BẠN ĐANG THÊM MỚI MỘT ĐƠN THUÊ PHÒNG";
-        this.list.FromDate = new Date();
+        this.list.FromDate = new Date().toISOString();
       }
     });
     this.roomService.getRooms().then((rooms: any) => {
@@ -44,10 +44,17 @@ export class ReturnComponent implements OnInit {
     });
   }
   return() {
-    this.list.ToDate = new Date();
-    this.inoutService.saveInOut(this.list).then((res: any)=>{
+    this.list.ToDate = new Date().toISOString();
+    let fromDate = new Date(this.list.FromDate);
+    let toDate = new Date(this.list.ToDate);
+    let time = toDate.getTime() - fromDate.getTime();
+    let second = time / 1000;
+    let hour = second / 3600;
+    this.list.TotalCost = time;
+    this.inoutService.saveInOut(this.list).then((res: any) => {
       this.router.navigate(["/main/history"]);
     })
+
   }
 
 }
