@@ -16,13 +16,13 @@
               <colgroup>
                 <col width="70" />
                 <col />
-                <col width="270" />
+                <col width="300" />
                 <col width="120" />
                 <col width="120" />
                 <col width="120" />
                 <col width="120" />
-                <col width="100" />
-                <col width="90" />
+                <col width="60" />
+                <col width="60" />
               </colgroup>
               <thead>
                 <tr class="bg-primary">
@@ -33,15 +33,19 @@
                   <th class="linh">TYPE</th>
                   <th class="linh">PRICE/HOUR</th>
                   <th class="linh">PRICE/DAY</th>
-                  <th class="linh">CHỈNH SỬA</th>
-                  <th class="linh">XÓA</th>
+                  <th class="text-center">
+                    <i class="fa fa-pencil"></i>
+                  </th>
+                  <th class="text-center">
+                    <i class="fa fa-trash-o"></i>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let room of rooms">
                   <td class="linh">{{room.Code}}</td>
                   <td class="linh">{{room.Name}}</td>
-                  <td >{{room.Description}}</td>
+                  <td>{{room.Description}}</td>
                   <td class="linh">{{room.Size}}</td>
                   <td class="linh">{{room.Type}}</td>
                   <td class="linh">{{room.PricePerHour}}</td>

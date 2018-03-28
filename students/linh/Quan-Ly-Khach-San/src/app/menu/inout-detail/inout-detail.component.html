@@ -19,7 +19,7 @@
                   <div class="form-group">
                     <h6 class="card-inside-title"> CMND</h6>
                     <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.CMND"/>
+                      <input type="text" class="form-control" [(ngModel)]="list.CMND" />
                     </div>
                   </div>
                 </div>
@@ -31,7 +31,7 @@
                   <div class="form-group">
                     <h6 class="card-inside-title"> CUSTOMER NAME</h6>
                     <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.CustomerName"/>
+                      <input type="text" class="form-control" [(ngModel)]="list.CustomerName" />
                     </div>
                   </div>
                 </div>
@@ -62,7 +62,8 @@
                   <div class="form-group">
                     <h6 class="card-inside-title">FROM DATE</h6>
                     <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="list.FromDate" />
+                      <!-- <input type="text" class="form-control" [(ngModel)]="list.FromDate" /> -->
+                      <label class="text-primary" >{{list.FromDate}}</label>
                     </div>
                   </div>
                 </div>
@@ -77,8 +78,9 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <h6 class="card-inside-title">TO DATE</h6>
-                    <div class="form-line" >
-                      <input type="text" class="form-control" [(ngModel)]="list.ToDate" />
+                    <div class="form-line">
+                      <!-- <input type="text" class="form-control" [(ngModel)]="list.ToDate" /> -->
+                      <label class="text-primary" >{{list.ToDate}}</label>
                     </div>
                   </div>
                 </div>
